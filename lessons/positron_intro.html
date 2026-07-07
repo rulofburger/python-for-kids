@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rulof Burger">
 
-<title>Python for Beginners</title>
+<title>3&nbsp; Getting Started with Positron – Python for Beginners</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,31 +23,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./setup.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-327a23648f728c563436848380818549.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-653c3e1b0c96ef8d302438ea72566883.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-327a23648f728c563436848380818549.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../lessons/python_lesson_1.html" rel="next">
+<link href="../setup.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-327a23648f728c563436848380818549.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,172 +110,10 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -253,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/positron_intro.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with Positron</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -268,10 +137,9 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Python for Beginners</a> 
-        <div class="sidebar-tools-main tools-wide">
+      <a href="../">Python for Beginners</a> 
+        <div class="sidebar-tools-main">
     <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -289,19 +157,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/positron_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/positron_intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with Positron</span></span></a>
   </div>
 </li>
@@ -316,31 +184,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/python_lesson_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/python_lesson_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lesson 1: Your First Python Program</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/python_lesson_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/python_lesson_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lesson 2: Making Python Interactive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/python_lesson_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/python_lesson_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lesson 3: Making Decisions with if</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/python_lesson_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/python_lesson_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lesson 4: Repeating Code with Loops</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lessons/python_lesson_5.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/python_lesson_5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lesson 5: Lists and For Loops</span></span></a>
   </div>
 </li>
@@ -357,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projects/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../projects/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Projects</span></span></a>
   </div>
 </li>
@@ -374,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenges/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Extra Challenges</span></span></a>
   </div>
 </li>
@@ -390,35 +258,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#python-for-beginners" id="toc-python-for-beginners" class="nav-link active" data-scroll-target="#python-for-beginners"><span class="header-section-number">1</span> Python for Beginners</a></li>
-  <li><a href="#start-here" id="toc-start-here" class="nav-link" data-scroll-target="#start-here"><span class="header-section-number">1.1</span> Start here</a></li>
-  <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link" data-scroll-target="#what-you-will-learn"><span class="header-section-number">1.2</span> What you will learn</a></li>
-  <li><a href="#course-map" id="toc-course-map" class="nav-link" data-scroll-target="#course-map"><span class="header-section-number">1.3</span> Course map</a></li>
-  <li><a href="#suggested-pace" id="toc-suggested-pace" class="nav-link" data-scroll-target="#suggested-pace"><span class="header-section-number">1.4</span> Suggested pace</a></li>
-  <li><a href="#ready" id="toc-ready" class="nav-link" data-scroll-target="#ready"><span class="header-section-number">1.5</span> Ready?</a></li>
+  <li><a href="#welcome-to-positron" id="toc-welcome-to-positron" class="nav-link active" data-scroll-target="#welcome-to-positron"><span class="header-section-number">4</span> Welcome to Positron</a></li>
+  <li><a href="#explorer-left-hand-panel" id="toc-explorer-left-hand-panel" class="nav-link" data-scroll-target="#explorer-left-hand-panel"><span class="header-section-number">5</span> 1. Explorer (left-hand panel)</a></li>
+  <li><a href="#editor-centre" id="toc-editor-centre" class="nav-link" data-scroll-target="#editor-centre"><span class="header-section-number">6</span> 2. Editor (centre)</a></li>
+  <li><a href="#terminal-bottom" id="toc-terminal-bottom" class="nav-link" data-scroll-target="#terminal-bottom"><span class="header-section-number">7</span> 3. Terminal (bottom)</a></li>
+  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console"><span class="header-section-number">8</span> 4. Console</a></li>
+  <li><a href="#problems-and-output" id="toc-problems-and-output" class="nav-link" data-scroll-target="#problems-and-output"><span class="header-section-number">9</span> 5. Problems and Output</a></li>
+  <li><a href="#running-your-first-program" id="toc-running-your-first-program" class="nav-link" data-scroll-target="#running-your-first-program"><span class="header-section-number">10</span> Running your first program</a></li>
+  <li><a href="#keyboard-shortcuts" id="toc-keyboard-shortcuts" class="nav-link" data-scroll-target="#keyboard-shortcuts"><span class="header-section-number">11</span> Keyboard shortcuts</a></li>
+  <li><a href="#good-habits" id="toc-good-habits" class="nav-link" data-scroll-target="#good-habits"><span class="header-section-number">12</span> Good habits</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">13</span> Looking ahead</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/blob/main/lessons/positron_intro.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python for Beginners</h1>
-<p class="subtitle lead">A hands-on coding course for curious learners</p>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with Positron</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Rulof Burger </p>
-          </div>
-  </div>
     
   
     
@@ -429,94 +293,128 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="python-for-beginners" class="level1 hero-banner" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Python for Beginners</h1>
-<p>A friendly, practical course for learning real Python by building small programs, solving exercises, and making fun projects.</p>
+<section id="welcome-to-positron" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Welcome to Positron</h1>
+<p>Positron is a modern programming environment (called an <strong>IDE</strong>, or Integrated Development Environment). It provides everything you need to write, run and organise your Python programs.</p>
+<p>Don’t worry about learning every feature immediately. In this course, you will mainly use five parts of the window.</p>
 </section>
-<section id="start-here" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="start-here"><span class="header-section-number">1.1</span> Start here</h2>
-<p>This course is designed for complete beginners. You do not need to know any coding before you begin.</p>
-<p>You will learn by:</p>
+<section id="explorer-left-hand-panel" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 1. Explorer (left-hand panel)</h1>
+<p>The <strong>Explorer</strong> shows the files and folders in your project.</p>
+<p>For example:</p>
+<pre class="text"><code>Python Course
+│
+├── lesson1.py
+├── lesson2.py
+├── guessing_game.py
+└── notes.txt</code></pre>
+<p>Use the Explorer to:</p>
 <ul>
-<li>reading short explanations,</li>
-<li>typing code yourself,</li>
-<li>solving exercises,</li>
-<li>opening hints only when needed,</li>
-<li>checking full solutions only after trying properly,</li>
-<li>and building small projects.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Best way to learn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Type the examples yourself instead of copying and pasting. Programming is learned through practice.</p>
-</div>
-</div>
-</section>
-<section id="what-you-will-learn" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="what-you-will-learn"><span class="header-section-number">1.2</span> What you will learn</h2>
-<p>By the end of the first five lessons, you will be able to:</p>
-<ul>
-<li>write and run Python programs,</li>
-<li>print text and numbers,</li>
-<li>use variables,</li>
-<li>ask the user for input,</li>
-<li>make decisions with <code>if</code>,</li>
-<li>repeat code with loops,</li>
-<li>and work with lists.</li>
+<li>open an existing program</li>
+<li>create a new file</li>
+<li>organise your work into folders</li>
 </ul>
 </section>
-<section id="course-map" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="course-map"><span class="header-section-number">1.3</span> Course map</h2>
-<div class="course-grid">
-<section id="setup" class="level3 course-card" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1.3.1</span> 1. Setup</h3>
-<p>Install Python, open Positron, and learn the main parts of the coding window.</p>
+<section id="editor-centre" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 2. Editor (centre)</h1>
+<p>The large area in the middle is the <strong>Editor</strong>.</p>
+<p>This is where you write your Python code.</p>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name? "</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello,"</span>, name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can have several files open at once. Each file appears as a tab across the top of the Editor.</p>
 </section>
-<section id="first-programs" class="level3 course-card" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="first-programs"><span class="header-section-number">1.3.2</span> 2. First programs</h3>
-<p>Use <code>print()</code>, variables, strings and arithmetic.</p>
+<section id="terminal-bottom" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> 3. Terminal (bottom)</h1>
+<p>The <strong>Terminal</strong> lets you type commands directly.</p>
+<p>For example:</p>
+<pre class="text"><code>python lesson1.py</code></pre>
+<p>runs your program.</p>
+<p>You can also create folders, move files and install packages from the Terminal.</p>
 </section>
-<section id="interactive-programs" class="level3 course-card" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="interactive-programs"><span class="header-section-number">1.3.3</span> 3. Interactive programs</h3>
-<p>Use <code>input()</code> to ask questions and respond to the user’s answers.</p>
+<section id="console" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> 4. Console</h1>
+<p>If you are using Python, you can also open a <strong>Python Console</strong>.</p>
+<p>Unlike the Editor, the Console lets you try small pieces of code immediately.</p>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is useful for experimenting.</p>
 </section>
-<section id="decisions" class="level3 course-card" data-number="1.3.4">
-<h3 data-number="1.3.4" class="anchored" data-anchor-id="decisions"><span class="header-section-number">1.3.4</span> 4. Decisions</h3>
-<p>Use <code>if</code>, <code>else</code> and <code>elif</code> to make your programs choose between options.</p>
+<section id="problems-and-output" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> 5. Problems and Output</h1>
+<p>If your program contains an error, Positron may show it in the <strong>Problems</strong> or <strong>Output</strong> panel.</p>
+<p>Read the error message carefully. It usually tells you:</p>
+<ul>
+<li>where the error happened</li>
+<li>what Python did not understand</li>
+</ul>
+<p>Even experienced programmers make mistakes. Learning to read error messages is an important programming skill.</p>
 </section>
-<section id="loops" class="level3 course-card" data-number="1.3.5">
-<h3 data-number="1.3.5" class="anchored" data-anchor-id="loops"><span class="header-section-number">1.3.5</span> 5. Loops</h3>
-<p>Use <code>while</code> and <code>for</code> loops so your programs can repeat actions.</p>
-</section>
-<section id="projects" class="level3 course-card" data-number="1.3.6">
-<h3 data-number="1.3.6" class="anchored" data-anchor-id="projects"><span class="header-section-number">1.3.6</span> 6. Projects</h3>
-<p>Build games, calculators, quizzes and other small programs.</p>
-</section>
-</div>
-</section>
-<section id="suggested-pace" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="suggested-pace"><span class="header-section-number">1.4</span> Suggested pace</h2>
-<p>A good pace is <strong>one lesson per session</strong>, with 45–60 minutes per lesson.</p>
-<p>For each lesson:</p>
+<section id="running-your-first-program" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Running your first program</h1>
 <ol type="1">
-<li>Read the explanation.</li>
-<li>Run the examples.</li>
-<li>Try the exercises.</li>
-<li>Open hints only when needed.</li>
-<li>Check the solutions at the end.</li>
-<li>Try at least one challenge.</li>
+<li>Open the Explorer.</li>
+<li>Create a new file called <code>lesson1.py</code>.</li>
+<li>Type:</li>
 </ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Save the file.</li>
+<li>Click the <strong>Run</strong> button, or open the Terminal and type:</li>
+</ol>
+<pre class="text"><code>python lesson1.py</code></pre>
+<p>If everything works, you should see:</p>
+<pre class="text"><code>Hello, world!</code></pre>
 </section>
-<section id="ready" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="ready"><span class="header-section-number">1.5</span> Ready?</h2>
-<p>Start with <a href="./setup.html">Setup</a>.</p>
+<section id="keyboard-shortcuts" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Keyboard shortcuts</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ctrl+S</td>
+<td>Save the current file</td>
+</tr>
+<tr class="even">
+<td>Ctrl+Z</td>
+<td>Undo</td>
+</tr>
+<tr class="odd">
+<td>Ctrl+Shift+P</td>
+<td>Open the Command Palette</td>
+</tr>
+<tr class="even">
+<td>Ctrl+`</td>
+<td>Open or close the Terminal</td>
+</tr>
+<tr class="odd">
+<td>Ctrl+/</td>
+<td>Comment or uncomment selected lines</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="good-habits" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Good habits</h1>
+<ul>
+<li>Save your work often.</li>
+<li>Give your files meaningful names.</li>
+<li>Read error messages carefully.</li>
+<li>Change only one thing at a time when fixing a bug.</li>
+<li>Experiment! The best way to learn programming is by trying ideas yourself.</li>
+</ul>
+</section>
+<section id="looking-ahead" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Looking ahead</h1>
+<p>After you are comfortable moving around Positron, you’re ready to begin Lesson 1 and write your first Python program.</p>
 
 
 </section>
@@ -524,19 +422,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -937,10 +822,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../setup.html" class="pagination-link" aria-label="Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setup</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./setup.html" class="pagination-link" aria-label="Setup">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setup</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../lessons/python_lesson_1.html" class="pagination-link" aria-label="Lesson 1: Your First Python Program">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lesson 1: Your First Python Program</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -949,5 +837,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/blob/main/lessons/positron_intro.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,0 +1,2047 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Python for Beginners",
+    "section": "",
+    "text": "1 Python for Beginners\nA friendly, practical course for learning real Python by building small programs, solving exercises, and making fun projects.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#start-here",
+    "href": "index.html#start-here",
+    "title": "Python for Beginners",
+    "section": "1.1 Start here",
+    "text": "1.1 Start here\nThis course is designed for complete beginners. You do not need to know any coding before you begin.\nYou will learn by:\n\nreading short explanations,\ntyping code yourself,\nsolving exercises,\nopening hints only when needed,\nchecking full solutions only after trying properly,\nand building small projects.\n\n\n\n\n\n\n\nTipBest way to learn\n\n\n\nType the examples yourself instead of copying and pasting. Programming is learned through practice.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-you-will-learn",
+    "href": "index.html#what-you-will-learn",
+    "title": "Python for Beginners",
+    "section": "1.2 What you will learn",
+    "text": "1.2 What you will learn\nBy the end of the first five lessons, you will be able to:\n\nwrite and run Python programs,\nprint text and numbers,\nuse variables,\nask the user for input,\nmake decisions with if,\nrepeat code with loops,\nand work with lists.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-map",
+    "href": "index.html#course-map",
+    "title": "Python for Beginners",
+    "section": "1.3 Course map",
+    "text": "1.3 Course map\n\n\n1.3.1 1. Setup\nInstall Python, open Positron, and learn the main parts of the coding window.\n\n\n1.3.2 2. First programs\nUse print(), variables, strings and arithmetic.\n\n\n1.3.3 3. Interactive programs\nUse input() to ask questions and respond to the user’s answers.\n\n\n1.3.4 4. Decisions\nUse if, else and elif to make your programs choose between options.\n\n\n1.3.5 5. Loops\nUse while and for loops so your programs can repeat actions.\n\n\n1.3.6 6. Projects\nBuild games, calculators, quizzes and other small programs.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#suggested-pace",
+    "href": "index.html#suggested-pace",
+    "title": "Python for Beginners",
+    "section": "1.4 Suggested pace",
+    "text": "1.4 Suggested pace\nA good pace is one lesson per session, with 45–60 minutes per lesson.\nFor each lesson:\n\nRead the explanation.\nRun the examples.\nTry the exercises.\nOpen hints only when needed.\nCheck the solutions at the end.\nTry at least one challenge.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#ready",
+    "href": "index.html#ready",
+    "title": "Python for Beginners",
+    "section": "1.5 Ready?",
+    "text": "1.5 Ready?\nStart with Setup.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "2  Setup",
+    "section": "",
+    "text": "2.1 What you need\nBefore starting the lessons, make sure the computer has the tools needed to run Python.\nYou need:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#what-you-need",
+    "href": "setup.html#what-you-need",
+    "title": "2  Setup",
+    "section": "",
+    "text": "Python: the programming language.\nPositron: the coding environment where you write and run Python programs.\nQuarto: only needed if you want to render this course website yourself.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#folder-structure",
+    "href": "setup.html#folder-structure",
+    "title": "2  Setup",
+    "section": "2.2 Folder structure",
+    "text": "2.2 Folder structure\nCreate a folder for your course work, for example:\nPythonCourseWork/\n├── lesson1.py\n├── lesson2.py\n├── games/\n└── experiments/\nPut your Python files in this folder.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#check-that-python-works",
+    "href": "setup.html#check-that-python-works",
+    "title": "2  Setup",
+    "section": "2.3 Check that Python works",
+    "text": "2.3 Check that Python works\nOpen a terminal in Positron and type:\npython --version\nYou should see a Python version number.\nThen create a file called:\nhello.py\nwith this code:\nprint(\"Hello, Python!\")\nRun it from the terminal:\npython hello.py\nIf you see:\nHello, Python!\nthen Python is working.\n\n\n\n\n\n\nNoteOn some Windows computers\n\n\n\nYou may need to type py hello.py instead of python hello.py.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#how-to-use-this-course-locally",
+    "href": "setup.html#how-to-use-this-course-locally",
+    "title": "2  Setup",
+    "section": "2.4 How to use this course locally",
+    "text": "2.4 How to use this course locally\nTo build the full website, open this folder in Positron and run:\nquarto render\nThe finished website will appear in:\n_book/\nOpen:\n_book/index.html\nin your browser.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/positron_intro.html",
+    "href": "lessons/positron_intro.html",
+    "title": "3  Getting Started with Positron",
+    "section": "",
+    "text": "4 Welcome to Positron\nPositron is a modern programming environment (called an IDE, or Integrated Development Environment). It provides everything you need to write, run and organise your Python programs.\nDon’t worry about learning every feature immediately. In this course, you will mainly use five parts of the window.\n\n\n5 1. Explorer (left-hand panel)\nThe Explorer shows the files and folders in your project.\nFor example:\nPython Course\n│\n├── lesson1.py\n├── lesson2.py\n├── guessing_game.py\n└── notes.txt\nUse the Explorer to:\n\nopen an existing program\ncreate a new file\norganise your work into folders\n\n\n\n6 2. Editor (centre)\nThe large area in the middle is the Editor.\nThis is where you write your Python code.\nExample:\nname = input(\"What is your name? \")\n\nprint(\"Hello,\", name)\nYou can have several files open at once. Each file appears as a tab across the top of the Editor.\n\n\n7 3. Terminal (bottom)\nThe Terminal lets you type commands directly.\nFor example:\npython lesson1.py\nruns your program.\nYou can also create folders, move files and install packages from the Terminal.\n\n\n8 4. Console\nIf you are using Python, you can also open a Python Console.\nUnlike the Editor, the Console lets you try small pieces of code immediately.\nFor example:\n3 + 4\nor\nprint(\"Hello\")\nThis is useful for experimenting.\n\n\n9 5. Problems and Output\nIf your program contains an error, Positron may show it in the Problems or Output panel.\nRead the error message carefully. It usually tells you:\n\nwhere the error happened\nwhat Python did not understand\n\nEven experienced programmers make mistakes. Learning to read error messages is an important programming skill.\n\n\n10 Running your first program\n\nOpen the Explorer.\nCreate a new file called lesson1.py.\nType:\n\nprint(\"Hello, world!\")\n\nSave the file.\nClick the Run button, or open the Terminal and type:\n\npython lesson1.py\nIf everything works, you should see:\nHello, world!\n\n\n11 Keyboard shortcuts\n\n\n\nShortcut\nWhat it does\n\n\n\n\nCtrl+S\nSave the current file\n\n\nCtrl+Z\nUndo\n\n\nCtrl+Shift+P\nOpen the Command Palette\n\n\nCtrl+`\nOpen or close the Terminal\n\n\nCtrl+/\nComment or uncomment selected lines\n\n\n\n\n\n12 Good habits\n\nSave your work often.\nGive your files meaningful names.\nRead error messages carefully.\nChange only one thing at a time when fixing a bug.\nExperiment! The best way to learn programming is by trying ideas yourself.\n\n\n\n13 Looking ahead\nAfter you are comfortable moving around Positron, you’re ready to begin Lesson 1 and write your first Python program.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Getting Started with Positron</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html",
+    "href": "lessons/python_lesson_1.html",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "",
+    "text": "5 Learning goals\nBy the end of this lesson you should be able to:\nEstimated time: 45–60 minutes",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-1",
+    "href": "lessons/python_lesson_1.html#exercise-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.1 Exercise 1",
+    "text": "12.1 Exercise 1\nWrite a program that prints:\nWelcome to Python!",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-2",
+    "href": "lessons/python_lesson_1.html#exercise-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.2 Exercise 2",
+    "text": "12.2 Exercise 2\nCreate a variable called name.\nStore your own name in it.\nPrint the variable.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-3",
+    "href": "lessons/python_lesson_1.html#exercise-3",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.3 Exercise 3",
+    "text": "12.3 Exercise 3\nCreate variables:\nage\nschool\nPrint both.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-4",
+    "href": "lessons/python_lesson_1.html#exercise-4",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.4 Exercise 4",
+    "text": "12.4 Exercise 4\nCalculate:\n25 + 17\nusing print().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-5",
+    "href": "lessons/python_lesson_1.html#exercise-5",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.5 Exercise 5",
+    "text": "12.5 Exercise 5\nCreate:\ncats = 3\ndogs = 5\nPrint the total number of pets.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-6",
+    "href": "lessons/python_lesson_1.html#exercise-6",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.6 Exercise 6",
+    "text": "12.6 Exercise 6\nA chocolate costs R18.\nYou buy 4.\nCreate variables and calculate the total cost.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-7",
+    "href": "lessons/python_lesson_1.html#exercise-7",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.7 Exercise 7",
+    "text": "12.7 Exercise 7\nCreate a variable called:\ntemperature\nGive it today’s temperature.\nPrint:\nToday's temperature is ...",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-8",
+    "href": "lessons/python_lesson_1.html#exercise-8",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "12.8 Exercise 8",
+    "text": "12.8 Exercise 8\nCreate:\nmoney = 100\nSpend R35.\nPrint how much money remains.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-1-football-commentator",
+    "href": "lessons/python_lesson_1.html#challenge-1-football-commentator",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.1 Challenge 1: Football commentator",
+    "text": "13.1 Challenge 1: Football commentator\nCreate variables:\nteam1\nteam2\nscore1\nscore2\nPrint something like:\nPirates 2 - 1 Chiefs",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-2-build-a-receipt",
+    "href": "lessons/python_lesson_1.html#challenge-2-build-a-receipt",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.2 Challenge 2: Build a receipt",
+    "text": "13.2 Challenge 2: Build a receipt\nProduce something like:\nSHOP RECEIPT\n\nMilk        R24\nBread       R18\nEggs        R52\n\nTotal:      R94\nChoose your own products and prices.\n\n\nClick to reveal hints",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-1-1",
+    "href": "lessons/python_lesson_1.html#exercise-1-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.3 Exercise 1",
+    "text": "13.3 Exercise 1\nUse print().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-2-1",
+    "href": "lessons/python_lesson_1.html#exercise-2-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.4 Exercise 2",
+    "text": "13.4 Exercise 2\nRemember that names are text. Text goes inside quotation marks.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-3-1",
+    "href": "lessons/python_lesson_1.html#exercise-3-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.5 Exercise 3",
+    "text": "13.5 Exercise 3\nVariables are created using:\nvariable = value",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-4-1",
+    "href": "lessons/python_lesson_1.html#exercise-4-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.6 Exercise 4",
+    "text": "13.6 Exercise 4\nDo not put quotation marks around the calculation.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-5-1",
+    "href": "lessons/python_lesson_1.html#exercise-5-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.7 Exercise 5",
+    "text": "13.7 Exercise 5\nYou can add variables together.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-6-1",
+    "href": "lessons/python_lesson_1.html#exercise-6-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.8 Exercise 6",
+    "text": "13.8 Exercise 6\nUse multiplication.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-7-1",
+    "href": "lessons/python_lesson_1.html#exercise-7-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.9 Exercise 7",
+    "text": "13.9 Exercise 7\nYou can print several things together.\nprint(\"Today's temperature is\", temperature)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-8-1",
+    "href": "lessons/python_lesson_1.html#exercise-8-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.10 Exercise 8",
+    "text": "13.10 Exercise 8\nSubtract 35 from the variable.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-1",
+    "href": "lessons/python_lesson_1.html#challenge-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.11 Challenge 1",
+    "text": "13.11 Challenge 1\nCreate four variables first. Then print them all together.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-2",
+    "href": "lessons/python_lesson_1.html#challenge-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.12 Challenge 2",
+    "text": "13.12 Challenge 2\nUse several print() statements. Do not worry about making everything line up perfectly yet.\n\n\n\nClick to reveal full solutions",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-1-2",
+    "href": "lessons/python_lesson_1.html#exercise-1-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.13 Exercise 1",
+    "text": "13.13 Exercise 1\nprint(\"Welcome to Python!\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-2-2",
+    "href": "lessons/python_lesson_1.html#exercise-2-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.14 Exercise 2",
+    "text": "13.14 Exercise 2\nname = \"Emma\"\n\nprint(name)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-3-2",
+    "href": "lessons/python_lesson_1.html#exercise-3-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.15 Exercise 3",
+    "text": "13.15 Exercise 3\nage = 15\nschool = \"Springfield High\"\n\nprint(age)\nprint(school)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-4-2",
+    "href": "lessons/python_lesson_1.html#exercise-4-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.16 Exercise 4",
+    "text": "13.16 Exercise 4\nprint(25 + 17)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-5-2",
+    "href": "lessons/python_lesson_1.html#exercise-5-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.17 Exercise 5",
+    "text": "13.17 Exercise 5\ncats = 3\ndogs = 5\n\nprint(cats + dogs)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-6-2",
+    "href": "lessons/python_lesson_1.html#exercise-6-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.18 Exercise 6",
+    "text": "13.18 Exercise 6\nprice = 18\nnumber = 4\n\nprint(price * number)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-7-2",
+    "href": "lessons/python_lesson_1.html#exercise-7-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.19 Exercise 7",
+    "text": "13.19 Exercise 7\ntemperature = 18\n\nprint(\"Today's temperature is\", temperature)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#exercise-8-2",
+    "href": "lessons/python_lesson_1.html#exercise-8-2",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.20 Exercise 8",
+    "text": "13.20 Exercise 8\nmoney = 100\n\nmoney = money - 35\n\nprint(money)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-1-1",
+    "href": "lessons/python_lesson_1.html#challenge-1-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.21 Challenge 1",
+    "text": "13.21 Challenge 1\nteam1 = \"Pirates\"\nteam2 = \"Chiefs\"\n\nscore1 = 2\nscore2 = 1\n\nprint(team1, score1, \"-\", score2, team2)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_1.html#challenge-2-1",
+    "href": "lessons/python_lesson_1.html#challenge-2-1",
+    "title": "4  Lesson 1: Your First Python Program",
+    "section": "13.22 Challenge 2",
+    "text": "13.22 Challenge 2\nmilk = 24\nbread = 18\neggs = 52\n\ntotal = milk + bread + eggs\n\nprint(\"SHOP RECEIPT\")\nprint()\nprint(\"Milk  R\", milk)\nprint(\"Bread R\", bread)\nprint(\"Eggs  R\", eggs)\nprint()\nprint(\"Total R\", total)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lesson 1: Your First Python Program</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html",
+    "href": "lessons/python_lesson_2.html",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "",
+    "text": "6 Learning goals\nBy the end of this lesson you should be able to:\nEstimated time: 45–60 minutes",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#mistake-1-forgetting-quotation-marks",
+    "href": "lessons/python_lesson_2.html#mistake-1-forgetting-quotation-marks",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "12.1 Mistake 1: Forgetting quotation marks",
+    "text": "12.1 Mistake 1: Forgetting quotation marks\nWrong:\nname = input(What is your name?)\nCorrect:\nname = input(\"What is your name? \")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#mistake-2-forgetting-int",
+    "href": "lessons/python_lesson_2.html#mistake-2-forgetting-int",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "12.2 Mistake 2: Forgetting int()",
+    "text": "12.2 Mistake 2: Forgetting int()\nWrong:\nage = input(\"How old are you? \")\nprint(age + 1)\nCorrect:\nage = int(input(\"How old are you? \"))\nprint(age + 1)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#mistake-3-typing-words-when-python-expects-a-number",
+    "href": "lessons/python_lesson_2.html#mistake-3-typing-words-when-python-expects-a-number",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "12.3 Mistake 3: Typing words when Python expects a number",
+    "text": "12.3 Mistake 3: Typing words when Python expects a number\nThis will crash if the user types \"twelve\":\nage = int(input(\"How old are you? \"))\nFor now, type numbers using digits, like:\n12\n15\n42",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-1",
+    "href": "lessons/python_lesson_2.html#exercise-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.1 Exercise 1",
+    "text": "13.1 Exercise 1\nAsk the user for their name.\nPrint:\nHello, ...",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-2",
+    "href": "lessons/python_lesson_2.html#exercise-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.2 Exercise 2",
+    "text": "13.2 Exercise 2\nAsk the user for their favourite food.\nPrint a sentence using their answer.\nExample:\nPizza sounds delicious.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-3",
+    "href": "lessons/python_lesson_2.html#exercise-3",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.3 Exercise 3",
+    "text": "13.3 Exercise 3\nAsk the user for their age.\nPrint how old they will be next year.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-4",
+    "href": "lessons/python_lesson_2.html#exercise-4",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.4 Exercise 4",
+    "text": "13.4 Exercise 4\nAsk the user for two numbers.\nPrint their sum.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-5",
+    "href": "lessons/python_lesson_2.html#exercise-5",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.5 Exercise 5",
+    "text": "13.5 Exercise 5\nAsk the user for the price of one chocolate.\nAsk how many chocolates they want to buy.\nPrint the total cost.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-6",
+    "href": "lessons/python_lesson_2.html#exercise-6",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.6 Exercise 6",
+    "text": "13.6 Exercise 6\nAsk the user how many goals Team A scored.\nAsk how many goals Team B scored.\nPrint the scoreline.\nExample:\nFinal score: 3 - 2",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-7",
+    "href": "lessons/python_lesson_2.html#exercise-7",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.7 Exercise 7",
+    "text": "13.7 Exercise 7\nAsk the user for a temperature in Celsius.\nConvert it to Fahrenheit using:\nFahrenheit = Celsius × 9 / 5 + 32\nPrint the answer.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-8",
+    "href": "lessons/python_lesson_2.html#exercise-8",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "13.8 Exercise 8",
+    "text": "13.8 Exercise 8\nAsk the user how much money they have.\nAsk how much they spend.\nPrint how much money they have left.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-1-personal-introduction-generator",
+    "href": "lessons/python_lesson_2.html#challenge-1-personal-introduction-generator",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.1 Challenge 1: Personal introduction generator",
+    "text": "14.1 Challenge 1: Personal introduction generator\nAsk the user for:\n\nname\nage\nfavourite hobby\nfavourite food\n\nThen print a short introduction.\nExample:\nThis is Alex.\nAlex is 15 years old.\nAlex likes mountain biking.\nAlex's favourite food is burgers.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-2-mini-shop-calculator",
+    "href": "lessons/python_lesson_2.html#challenge-2-mini-shop-calculator",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.2 Challenge 2: Mini shop calculator",
+    "text": "14.2 Challenge 2: Mini shop calculator\nAsk the user for:\n\nthe price of item 1\nthe quantity of item 1\nthe price of item 2\nthe quantity of item 2\n\nPrint a receipt showing the two totals and the final total.\nExample:\nItem 1 total: R60\nItem 2 total: R45\nFinal total: R105\n\n\nClick to reveal hints",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-1-1",
+    "href": "lessons/python_lesson_2.html#exercise-1-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.3 Exercise 1",
+    "text": "14.3 Exercise 1\nUse input() and store the answer in a variable.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-2-1",
+    "href": "lessons/python_lesson_2.html#exercise-2-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.4 Exercise 2",
+    "text": "14.4 Exercise 2\nThe answer is text, so you do not need int().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-3-1",
+    "href": "lessons/python_lesson_2.html#exercise-3-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.5 Exercise 3",
+    "text": "14.5 Exercise 3\nUse int() because age is a number.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-4-1",
+    "href": "lessons/python_lesson_2.html#exercise-4-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.6 Exercise 4",
+    "text": "14.6 Exercise 4\nBoth inputs must be converted to integers.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-5-1",
+    "href": "lessons/python_lesson_2.html#exercise-5-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.7 Exercise 5",
+    "text": "14.7 Exercise 5\nUse multiplication:\ntotal = price * quantity",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-6-1",
+    "href": "lessons/python_lesson_2.html#exercise-6-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.8 Exercise 6",
+    "text": "14.8 Exercise 6\nThe scores are numbers, so use int().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-7-1",
+    "href": "lessons/python_lesson_2.html#exercise-7-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.9 Exercise 7",
+    "text": "14.9 Exercise 7\nUse this formula:\nfahrenheit = celsius * 9 / 5 + 32",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-8-1",
+    "href": "lessons/python_lesson_2.html#exercise-8-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.10 Exercise 8",
+    "text": "14.10 Exercise 8\nSubtract spending from money.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-1",
+    "href": "lessons/python_lesson_2.html#challenge-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.11 Challenge 1",
+    "text": "14.11 Challenge 1\nUse four input() lines and four print() lines.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-2",
+    "href": "lessons/python_lesson_2.html#challenge-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.12 Challenge 2",
+    "text": "14.12 Challenge 2\nCalculate each item total first, then add them together.\n\n\n\nClick to reveal full solutions",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-1-2",
+    "href": "lessons/python_lesson_2.html#exercise-1-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.13 Exercise 1",
+    "text": "14.13 Exercise 1\nname = input(\"What is your name? \")\n\nprint(\"Hello,\", name)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-2-2",
+    "href": "lessons/python_lesson_2.html#exercise-2-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.14 Exercise 2",
+    "text": "14.14 Exercise 2\nfood = input(\"What is your favourite food? \")\n\nprint(food, \"sounds delicious.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-3-2",
+    "href": "lessons/python_lesson_2.html#exercise-3-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.15 Exercise 3",
+    "text": "14.15 Exercise 3\nage = int(input(\"How old are you? \"))\n\nprint(\"Next year you will be\", age + 1)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-4-2",
+    "href": "lessons/python_lesson_2.html#exercise-4-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.16 Exercise 4",
+    "text": "14.16 Exercise 4\nnumber1 = int(input(\"Enter the first number: \"))\nnumber2 = int(input(\"Enter the second number: \"))\n\nprint(\"The sum is\", number1 + number2)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-5-2",
+    "href": "lessons/python_lesson_2.html#exercise-5-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.17 Exercise 5",
+    "text": "14.17 Exercise 5\nprice = int(input(\"What is the price of one chocolate? \"))\nquantity = int(input(\"How many chocolates do you want? \"))\n\ntotal = price * quantity\n\nprint(\"The total cost is R\", total)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-6-2",
+    "href": "lessons/python_lesson_2.html#exercise-6-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.18 Exercise 6",
+    "text": "14.18 Exercise 6\nteam_a = int(input(\"How many goals did Team A score? \"))\nteam_b = int(input(\"How many goals did Team B score? \"))\n\nprint(\"Final score:\", team_a, \"-\", team_b)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-7-2",
+    "href": "lessons/python_lesson_2.html#exercise-7-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.19 Exercise 7",
+    "text": "14.19 Exercise 7\ncelsius = int(input(\"Enter the temperature in Celsius: \"))\n\nfahrenheit = celsius * 9 / 5 + 32\n\nprint(\"The temperature in Fahrenheit is\", fahrenheit)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#exercise-8-2",
+    "href": "lessons/python_lesson_2.html#exercise-8-2",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.20 Exercise 8",
+    "text": "14.20 Exercise 8\nmoney = int(input(\"How much money do you have? \"))\nspending = int(input(\"How much did you spend? \"))\n\nleft = money - spending\n\nprint(\"You have R\", left, \"left.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-1-1",
+    "href": "lessons/python_lesson_2.html#challenge-1-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.21 Challenge 1",
+    "text": "14.21 Challenge 1\nname = input(\"What is your name? \")\nage = int(input(\"How old are you? \"))\nhobby = input(\"What is your favourite hobby? \")\nfood = input(\"What is your favourite food? \")\n\nprint(\"This is\", name)\nprint(name, \"is\", age, \"years old.\")\nprint(name, \"likes\", hobby)\nprint(name + \"'s favourite food is\", food)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_2.html#challenge-2-1",
+    "href": "lessons/python_lesson_2.html#challenge-2-1",
+    "title": "5  Lesson 2: Making Python Interactive",
+    "section": "14.22 Challenge 2",
+    "text": "14.22 Challenge 2\nprice1 = int(input(\"Price of item 1: \"))\nquantity1 = int(input(\"Quantity of item 1: \"))\n\nprice2 = int(input(\"Price of item 2: \"))\nquantity2 = int(input(\"Quantity of item 2: \"))\n\ntotal1 = price1 * quantity1\ntotal2 = price2 * quantity2\nfinal_total = total1 + total2\n\nprint(\"Item 1 total: R\", total1)\nprint(\"Item 2 total: R\", total2)\nprint(\"Final total: R\", final_total)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Lesson 2: Making Python Interactive</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html",
+    "href": "lessons/python_lesson_3.html",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "",
+    "text": "7 Learning goals\nBy the end of this lesson you should be able to:\nEstimated time: 45–60 minutes",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#mistake-1-forgetting-the-colon",
+    "href": "lessons/python_lesson_3.html#mistake-1-forgetting-the-colon",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "13.1 Mistake 1: Forgetting the colon",
+    "text": "13.1 Mistake 1: Forgetting the colon\nWrong:\nif age &gt;= 13\n    print(\"Old enough\")\nCorrect:\nif age &gt;= 13:\n    print(\"Old enough\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#mistake-2-forgetting-indentation",
+    "href": "lessons/python_lesson_3.html#mistake-2-forgetting-indentation",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "13.2 Mistake 2: Forgetting indentation",
+    "text": "13.2 Mistake 2: Forgetting indentation\nWrong:\nif age &gt;= 13:\nprint(\"Old enough\")\nCorrect:\nif age &gt;= 13:\n    print(\"Old enough\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#mistake-3-using-instead-of",
+    "href": "lessons/python_lesson_3.html#mistake-3-using-instead-of",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "13.3 Mistake 3: Using = instead of ==",
+    "text": "13.3 Mistake 3: Using = instead of ==\nWrong:\nif answer = \"Paris\":\n    print(\"Correct\")\nCorrect:\nif answer == \"Paris\":\n    print(\"Correct\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-1",
+    "href": "lessons/python_lesson_3.html#exercise-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.1 Exercise 1",
+    "text": "14.1 Exercise 1\nAsk the user for their age.\nIf they are 13 or older, print:\nYou can join the coding club.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-2",
+    "href": "lessons/python_lesson_3.html#exercise-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.2 Exercise 2",
+    "text": "14.2 Exercise 2\nAsk the user for a number.\nIf the number is bigger than 10, print:\nThat is a big number.\nOtherwise, print:\nThat is a small number.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-3",
+    "href": "lessons/python_lesson_3.html#exercise-3",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.3 Exercise 3",
+    "text": "14.3 Exercise 3\nAsk:\nWhat is 7 + 5?\nIf the answer is 12, print:\nCorrect!\nOtherwise, print:\nTry again next time.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-4",
+    "href": "lessons/python_lesson_3.html#exercise-4",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.4 Exercise 4",
+    "text": "14.4 Exercise 4\nAsk the user for a password.\nIf the password is:\npython123\nprint:\nAccess granted.\nOtherwise print:\nAccess denied.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-5",
+    "href": "lessons/python_lesson_3.html#exercise-5",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.5 Exercise 5",
+    "text": "14.5 Exercise 5\nAsk the user for a test mark.\nPrint:\n\nExcellent if the mark is 80 or above\nGood if the mark is 60 or above\nPass if the mark is 50 or above\nNot yet passed otherwise",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-6",
+    "href": "lessons/python_lesson_3.html#exercise-6",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.6 Exercise 6",
+    "text": "14.6 Exercise 6\nAsk the user for the temperature.\nPrint:\n\nHot if it is 30 or above\nWarm if it is 20 or above\nCold otherwise",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-7",
+    "href": "lessons/python_lesson_3.html#exercise-7",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.7 Exercise 7",
+    "text": "14.7 Exercise 7\nAsk the user for two numbers.\nPrint which number is bigger.\nIf they are equal, print:\nThe numbers are equal.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-8",
+    "href": "lessons/python_lesson_3.html#exercise-8",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "14.8 Exercise 8",
+    "text": "14.8 Exercise 8\nAsk the user for their favourite colour.\nIf they type blue, print:\nBlue is a calm colour.\nIf they type red, print:\nRed is a strong colour.\nOtherwise, print:\nNice choice.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-1-mini-quiz",
+    "href": "lessons/python_lesson_3.html#challenge-1-mini-quiz",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.1 Challenge 1: Mini quiz",
+    "text": "15.1 Challenge 1: Mini quiz\nCreate a three-question quiz.\nAsk three questions, one at a time.\nKeep a score variable.\nAdd 1 to the score for each correct answer.\nAt the end, print the final score.\nExample:\nYour final score is 2 out of 3.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-2-adventure-choice-game",
+    "href": "lessons/python_lesson_3.html#challenge-2-adventure-choice-game",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.2 Challenge 2: Adventure choice game",
+    "text": "15.2 Challenge 2: Adventure choice game\nCreate a tiny adventure game.\nThe user starts at a fork in the road.\nAsk whether they want to go left or right.\nIf they go left, something happens.\nIf they go right, something else happens.\nThen ask one more question and give a final ending.\nExample:\nYou are standing at a fork in the road.\nDo you go left or right?\n\n\nClick to reveal hints",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-1-1",
+    "href": "lessons/python_lesson_3.html#exercise-1-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.3 Exercise 1",
+    "text": "15.3 Exercise 1\nUse:\nif age &gt;= 13:",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-2-1",
+    "href": "lessons/python_lesson_3.html#exercise-2-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.4 Exercise 2",
+    "text": "15.4 Exercise 2\nUse if and else.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-3-1",
+    "href": "lessons/python_lesson_3.html#exercise-3-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.5 Exercise 3",
+    "text": "15.5 Exercise 3\nConvert the answer to an integer.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-4-1",
+    "href": "lessons/python_lesson_3.html#exercise-4-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.6 Exercise 4",
+    "text": "15.6 Exercise 4\nThe password is text, so do not use int().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-5-1",
+    "href": "lessons/python_lesson_3.html#exercise-5-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.7 Exercise 5",
+    "text": "15.7 Exercise 5\nUse if, elif, elif, and else.\nStart with the highest mark.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-6-1",
+    "href": "lessons/python_lesson_3.html#exercise-6-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.8 Exercise 6",
+    "text": "15.8 Exercise 6\nCheck the hottest category first.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-7-1",
+    "href": "lessons/python_lesson_3.html#exercise-7-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.9 Exercise 7",
+    "text": "15.9 Exercise 7\nYou need three cases:\n\nfirst number bigger\nsecond number bigger\nequal",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-8-1",
+    "href": "lessons/python_lesson_3.html#exercise-8-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.10 Exercise 8",
+    "text": "15.10 Exercise 8\nUse == to compare the colour.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-1",
+    "href": "lessons/python_lesson_3.html#challenge-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.11 Challenge 1",
+    "text": "15.11 Challenge 1\nStart with:\nscore = 0\nThen add 1 for each correct answer:\nscore = score + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-2",
+    "href": "lessons/python_lesson_3.html#challenge-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.12 Challenge 2",
+    "text": "15.12 Challenge 2\nUse nested if statements if you want the second question to depend on the first answer.\n\n\n\nClick to reveal full solutions",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-1-2",
+    "href": "lessons/python_lesson_3.html#exercise-1-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.13 Exercise 1",
+    "text": "15.13 Exercise 1\nage = int(input(\"How old are you? \"))\n\nif age &gt;= 13:\n    print(\"You can join the coding club.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-2-2",
+    "href": "lessons/python_lesson_3.html#exercise-2-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.14 Exercise 2",
+    "text": "15.14 Exercise 2\nnumber = int(input(\"Enter a number: \"))\n\nif number &gt; 10:\n    print(\"That is a big number.\")\nelse:\n    print(\"That is a small number.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-3-2",
+    "href": "lessons/python_lesson_3.html#exercise-3-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.15 Exercise 3",
+    "text": "15.15 Exercise 3\nanswer = int(input(\"What is 7 + 5? \"))\n\nif answer == 12:\n    print(\"Correct!\")\nelse:\n    print(\"Try again next time.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-4-2",
+    "href": "lessons/python_lesson_3.html#exercise-4-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.16 Exercise 4",
+    "text": "15.16 Exercise 4\npassword = input(\"Enter the password: \")\n\nif password == \"python123\":\n    print(\"Access granted.\")\nelse:\n    print(\"Access denied.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-5-2",
+    "href": "lessons/python_lesson_3.html#exercise-5-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.17 Exercise 5",
+    "text": "15.17 Exercise 5\nmark = int(input(\"Enter your test mark: \"))\n\nif mark &gt;= 80:\n    print(\"Excellent\")\nelif mark &gt;= 60:\n    print(\"Good\")\nelif mark &gt;= 50:\n    print(\"Pass\")\nelse:\n    print(\"Not yet passed\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-6-2",
+    "href": "lessons/python_lesson_3.html#exercise-6-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.18 Exercise 6",
+    "text": "15.18 Exercise 6\ntemperature = int(input(\"Enter the temperature: \"))\n\nif temperature &gt;= 30:\n    print(\"Hot\")\nelif temperature &gt;= 20:\n    print(\"Warm\")\nelse:\n    print(\"Cold\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-7-2",
+    "href": "lessons/python_lesson_3.html#exercise-7-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.19 Exercise 7",
+    "text": "15.19 Exercise 7\nnumber1 = int(input(\"Enter the first number: \"))\nnumber2 = int(input(\"Enter the second number: \"))\n\nif number1 &gt; number2:\n    print(\"The first number is bigger.\")\nelif number2 &gt; number1:\n    print(\"The second number is bigger.\")\nelse:\n    print(\"The numbers are equal.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#exercise-8-2",
+    "href": "lessons/python_lesson_3.html#exercise-8-2",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.20 Exercise 8",
+    "text": "15.20 Exercise 8\ncolour = input(\"What is your favourite colour? \")\n\nif colour == \"blue\":\n    print(\"Blue is a calm colour.\")\nelif colour == \"red\":\n    print(\"Red is a strong colour.\")\nelse:\n    print(\"Nice choice.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-1-1",
+    "href": "lessons/python_lesson_3.html#challenge-1-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.21 Challenge 1",
+    "text": "15.21 Challenge 1\nscore = 0\n\nanswer1 = input(\"What language are we learning? \")\n\nif answer1 == \"Python\":\n    score = score + 1\n\nanswer2 = int(input(\"What is 6 * 7? \"))\n\nif answer2 == 42:\n    score = score + 1\n\nanswer3 = input(\"Which planet do we live on? \")\n\nif answer3 == \"Earth\":\n    score = score + 1\n\nprint(\"Your final score is\", score, \"out of 3.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_3.html#challenge-2-1",
+    "href": "lessons/python_lesson_3.html#challenge-2-1",
+    "title": "6  Lesson 3: Making Decisions with if",
+    "section": "15.22 Challenge 2",
+    "text": "15.22 Challenge 2\nprint(\"You are standing at a fork in the road.\")\nchoice1 = input(\"Do you go left or right? \")\n\nif choice1 == \"left\":\n    print(\"You find a dark cave.\")\n    choice2 = input(\"Do you enter the cave? yes or no? \")\n\n    if choice2 == \"yes\":\n        print(\"You find treasure!\")\n    else:\n        print(\"You return home safely.\")\n\nelif choice1 == \"right\":\n    print(\"You find a river.\")\n    choice2 = input(\"Do you swim across? yes or no? \")\n\n    if choice2 == \"yes\":\n        print(\"You reach a secret island.\")\n    else:\n        print(\"You sit by the river and eat lunch.\")\n\nelse:\n    print(\"You stand still and a friendly dog joins you.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Lesson 3: Making Decisions with if</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html",
+    "href": "lessons/python_lesson_4.html",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "",
+    "text": "8 Learning goals\nBy the end of this lesson you should be able to:\nEstimated time: 45–60 minutes",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#mistake-1-forgetting-to-update-the-variable",
+    "href": "lessons/python_lesson_4.html#mistake-1-forgetting-to-update-the-variable",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "15.1 Mistake 1: Forgetting to update the variable",
+    "text": "15.1 Mistake 1: Forgetting to update the variable\nWrong:\ncount = 1\n\nwhile count &lt;= 5:\n    print(count)\nThis loop never stops, because count always stays 1.\nCorrect:\ncount = 1\n\nwhile count &lt;= 5:\n    print(count)\n    count = count + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#mistake-2-indenting-too-much",
+    "href": "lessons/python_lesson_4.html#mistake-2-indenting-too-much",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "15.2 Mistake 2: Indenting too much",
+    "text": "15.2 Mistake 2: Indenting too much\nWrong:\ncount = 1\n\nwhile count &lt;= 5:\n    print(count)\n    count = count + 1\n    print(\"Done\")\nThis prints \"Done\" every time the loop runs.\nCorrect:\ncount = 1\n\nwhile count &lt;= 5:\n    print(count)\n    count = count + 1\n\nprint(\"Done\")\nThis prints \"Done\" once, after the loop has finished.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#mistake-3-using-the-wrong-condition",
+    "href": "lessons/python_lesson_4.html#mistake-3-using-the-wrong-condition",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "15.3 Mistake 3: Using the wrong condition",
+    "text": "15.3 Mistake 3: Using the wrong condition\nThis loop does not run at all:\ncount = 1\n\nwhile count &gt; 5:\n    print(count)\n    count = count + 1\nWhy? Because count &gt; 5 is already false at the start.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-1",
+    "href": "lessons/python_lesson_4.html#exercise-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.1 Exercise 1",
+    "text": "16.1 Exercise 1\nUse a while loop to print:\nHello\nHello\nHello",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-2",
+    "href": "lessons/python_lesson_4.html#exercise-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.2 Exercise 2",
+    "text": "16.2 Exercise 2\nUse a while loop to print the numbers from 1 to 5.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-3",
+    "href": "lessons/python_lesson_4.html#exercise-3",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.3 Exercise 3",
+    "text": "16.3 Exercise 3\nUse a while loop to print the numbers from 10 down to 1.\nThen print:\nGo!",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-4",
+    "href": "lessons/python_lesson_4.html#exercise-4",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.4 Exercise 4",
+    "text": "16.4 Exercise 4\nAsk the user for a number.\nPrint all the numbers from 1 up to that number.\nExample:\nEnter a number: 4\n1\n2\n3\n4",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-5",
+    "href": "lessons/python_lesson_4.html#exercise-5",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.5 Exercise 5",
+    "text": "16.5 Exercise 5\nCreate a variable called total.\nUse a loop to add the numbers from 1 to 5.\nPrint the final total.\nThe answer should be:\n15",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-6",
+    "href": "lessons/python_lesson_4.html#exercise-6",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.6 Exercise 6",
+    "text": "16.6 Exercise 6\nAsk the user to guess a secret number.\nKeep asking until they guess correctly.\nUse any secret number you like.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-7",
+    "href": "lessons/python_lesson_4.html#exercise-7",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.7 Exercise 7",
+    "text": "16.7 Exercise 7\nAsk the user for a password.\nKeep asking until they enter:\nletmein\nThen print:\nWelcome.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-8",
+    "href": "lessons/python_lesson_4.html#exercise-8",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "16.8 Exercise 8",
+    "text": "16.8 Exercise 8\nAsk the user how many times they want to practise.\nThen print:\nPractise makes progress.\nthat many times.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-1-guess-the-number-with-hints",
+    "href": "lessons/python_lesson_4.html#challenge-1-guess-the-number-with-hints",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.1 Challenge 1: Guess the number with hints",
+    "text": "17.1 Challenge 1: Guess the number with hints\nCreate a secret number.\nAsk the user to guess it.\nIf their guess is too low, print:\nToo low.\nIf their guess is too high, print:\nToo high.\nKeep going until they guess correctly.\nThen print:\nCorrect!",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-2-multiplication-practice",
+    "href": "lessons/python_lesson_4.html#challenge-2-multiplication-practice",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.2 Challenge 2: Multiplication practice",
+    "text": "17.2 Challenge 2: Multiplication practice\nAsk the user:\nWhat is 7 x 8?\nKeep asking until they answer correctly.\nCount how many tries they needed.\nAt the end, print something like:\nCorrect! You needed 3 tries.\n\n\nClick to reveal hints",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-1-1",
+    "href": "lessons/python_lesson_4.html#exercise-1-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.3 Exercise 1",
+    "text": "17.3 Exercise 1\nStart with:\ncount = 1\nThen use:\nwhile count &lt;= 3:",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-2-1",
+    "href": "lessons/python_lesson_4.html#exercise-2-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.4 Exercise 2",
+    "text": "17.4 Exercise 2\nPrint the counter inside the loop.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-3-1",
+    "href": "lessons/python_lesson_4.html#exercise-3-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.5 Exercise 3",
+    "text": "17.5 Exercise 3\nStart at 10 and subtract 1 each time.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-4-1",
+    "href": "lessons/python_lesson_4.html#exercise-4-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.6 Exercise 4",
+    "text": "17.6 Exercise 4\nThe final number comes from input(), so convert it using int().",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-5-1",
+    "href": "lessons/python_lesson_4.html#exercise-5-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.7 Exercise 5",
+    "text": "17.7 Exercise 5\nStart with:\ntotal = 0\ncount = 1\nInside the loop, add count to total.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-6-1",
+    "href": "lessons/python_lesson_4.html#exercise-6-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.8 Exercise 6",
+    "text": "17.8 Exercise 6\nUse a loop condition like:\nwhile guess != secret:\nYou need to give guess a starting value before the loop.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-7-1",
+    "href": "lessons/python_lesson_4.html#exercise-7-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.9 Exercise 7",
+    "text": "17.9 Exercise 7\nThis is similar to the password example in the lesson.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-8-1",
+    "href": "lessons/python_lesson_4.html#exercise-8-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.10 Exercise 8",
+    "text": "17.10 Exercise 8\nUse the number from the user as the stopping point.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-1",
+    "href": "lessons/python_lesson_4.html#challenge-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.11 Challenge 1",
+    "text": "17.11 Challenge 1\nUse if, elif, and else inside the loop.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-2",
+    "href": "lessons/python_lesson_4.html#challenge-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.12 Challenge 2",
+    "text": "17.12 Challenge 2\nStart with:\ntries = 0\nAdd 1 to tries every time the user guesses.\n\n\n\nClick to reveal full solutions",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-1-2",
+    "href": "lessons/python_lesson_4.html#exercise-1-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.13 Exercise 1",
+    "text": "17.13 Exercise 1\ncount = 1\n\nwhile count &lt;= 3:\n    print(\"Hello\")\n    count = count + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-2-2",
+    "href": "lessons/python_lesson_4.html#exercise-2-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.14 Exercise 2",
+    "text": "17.14 Exercise 2\ncount = 1\n\nwhile count &lt;= 5:\n    print(count)\n    count = count + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-3-2",
+    "href": "lessons/python_lesson_4.html#exercise-3-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.15 Exercise 3",
+    "text": "17.15 Exercise 3\ncount = 10\n\nwhile count &gt; 0:\n    print(count)\n    count = count - 1\n\nprint(\"Go!\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-4-2",
+    "href": "lessons/python_lesson_4.html#exercise-4-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.16 Exercise 4",
+    "text": "17.16 Exercise 4\nnumber = int(input(\"Enter a number: \"))\n\ncount = 1\n\nwhile count &lt;= number:\n    print(count)\n    count = count + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-5-2",
+    "href": "lessons/python_lesson_4.html#exercise-5-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.17 Exercise 5",
+    "text": "17.17 Exercise 5\ntotal = 0\ncount = 1\n\nwhile count &lt;= 5:\n    total = total + count\n    count = count + 1\n\nprint(total)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-6-2",
+    "href": "lessons/python_lesson_4.html#exercise-6-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.18 Exercise 6",
+    "text": "17.18 Exercise 6\nsecret = 7\nguess = 0\n\nwhile guess != secret:\n    guess = int(input(\"Guess the secret number: \"))\n\nprint(\"Correct!\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-7-2",
+    "href": "lessons/python_lesson_4.html#exercise-7-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.19 Exercise 7",
+    "text": "17.19 Exercise 7\npassword = \"\"\n\nwhile password != \"letmein\":\n    password = input(\"Enter the password: \")\n\nprint(\"Welcome.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#exercise-8-2",
+    "href": "lessons/python_lesson_4.html#exercise-8-2",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.20 Exercise 8",
+    "text": "17.20 Exercise 8\ntimes = int(input(\"How many times do you want to practise? \"))\n\ncount = 1\n\nwhile count &lt;= times:\n    print(\"Practise makes progress.\")\n    count = count + 1",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-1-1",
+    "href": "lessons/python_lesson_4.html#challenge-1-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.21 Challenge 1",
+    "text": "17.21 Challenge 1\nsecret = 12\nguess = 0\n\nwhile guess != secret:\n    guess = int(input(\"Guess the secret number: \"))\n\n    if guess &lt; secret:\n        print(\"Too low.\")\n    elif guess &gt; secret:\n        print(\"Too high.\")\n    else:\n        print(\"Correct!\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_4.html#challenge-2-1",
+    "href": "lessons/python_lesson_4.html#challenge-2-1",
+    "title": "7  Lesson 4: Repeating Code with Loops",
+    "section": "17.22 Challenge 2",
+    "text": "17.22 Challenge 2\nanswer = 0\ntries = 0\n\nwhile answer != 56:\n    answer = int(input(\"What is 7 x 8? \"))\n    tries = tries + 1\n\nprint(\"Correct! You needed\", tries, \"tries.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lesson 4: Repeating Code with Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html",
+    "href": "lessons/python_lesson_5.html",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "",
+    "text": "9 Learning goals\nBy the end of this lesson you should be able to:\nEstimated time: 45–60 minutes",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#mistake-1-forgetting-the-colon",
+    "href": "lessons/python_lesson_5.html#mistake-1-forgetting-the-colon",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "17.1 Mistake 1: Forgetting the colon",
+    "text": "17.1 Mistake 1: Forgetting the colon\nWrong:\nfor name in names\n    print(name)\nCorrect:\nfor name in names:\n    print(name)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#mistake-2-forgetting-indentation",
+    "href": "lessons/python_lesson_5.html#mistake-2-forgetting-indentation",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "17.2 Mistake 2: Forgetting indentation",
+    "text": "17.2 Mistake 2: Forgetting indentation\nWrong:\nfor name in names:\nprint(name)\nCorrect:\nfor name in names:\n    print(name)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#mistake-3-expecting-range5-to-include-5",
+    "href": "lessons/python_lesson_5.html#mistake-3-expecting-range5-to-include-5",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "17.3 Mistake 3: Expecting range(5) to include 5",
+    "text": "17.3 Mistake 3: Expecting range(5) to include 5\nfor number in range(5):\n    print(number)\nThis prints 0 to 4, not 1 to 5.\nUse:\nfor number in range(1, 6):\n    print(number)\nif you want 1 to 5.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-1",
+    "href": "lessons/python_lesson_5.html#exercise-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.1 Exercise 1",
+    "text": "18.1 Exercise 1\nCreate a list of three names.\nUse a for loop to print each name.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-2",
+    "href": "lessons/python_lesson_5.html#exercise-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.2 Exercise 2",
+    "text": "18.2 Exercise 2\nCreate a list of three foods.\nUse a for loop to print:\nI like ...\nfor each food.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-3",
+    "href": "lessons/python_lesson_5.html#exercise-3",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.3 Exercise 3",
+    "text": "18.3 Exercise 3\nCreate a list of numbers:\nnumbers = [2, 4, 6, 8]\nUse a for loop to print each number doubled.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-4",
+    "href": "lessons/python_lesson_5.html#exercise-4",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.4 Exercise 4",
+    "text": "18.4 Exercise 4\nUse range() to print the numbers from 1 to 10.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-5",
+    "href": "lessons/python_lesson_5.html#exercise-5",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.5 Exercise 5",
+    "text": "18.5 Exercise 5\nUse range() to print:\nPractise makes progress.\nfive times.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-6",
+    "href": "lessons/python_lesson_5.html#exercise-6",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.6 Exercise 6",
+    "text": "18.6 Exercise 6\nCreate a list of test marks.\nUse a loop to calculate the total.\nPrint the total.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-7",
+    "href": "lessons/python_lesson_5.html#exercise-7",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.7 Exercise 7",
+    "text": "18.7 Exercise 7\nCreate a list of test marks.\nUse a loop to calculate the average.\nHint: if there are 4 marks, divide the total by 4.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-8",
+    "href": "lessons/python_lesson_5.html#exercise-8",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "18.8 Exercise 8",
+    "text": "18.8 Exercise 8\nCreate a shopping list.\nUse a for loop to print each item with a dash in front.\nExample:\n- Milk\n- Bread\n- Eggs",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-1-class-quiz-scores",
+    "href": "lessons/python_lesson_5.html#challenge-1-class-quiz-scores",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.1 Challenge 1: Class quiz scores",
+    "text": "19.1 Challenge 1: Class quiz scores\nCreate a list of five quiz scores.\nUse a for loop to calculate the total and the average.\nThen print:\nTotal score: ...\nAverage score: ...",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-2-compliment-generator",
+    "href": "lessons/python_lesson_5.html#challenge-2-compliment-generator",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.2 Challenge 2: Compliment generator",
+    "text": "19.2 Challenge 2: Compliment generator\nCreate a list of names.\nFor each name, print a different-looking compliment using the name.\nExample:\nAlex is becoming a strong Python programmer.\nBen writes careful code.\nChloe is great at debugging.\nYou can use the same sentence structure for each name if you want.\n\n\nClick to reveal hints",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-1-1",
+    "href": "lessons/python_lesson_5.html#exercise-1-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.3 Exercise 1",
+    "text": "19.3 Exercise 1\nA list looks like this:\nnames = [\"Alex\", \"Ben\", \"Chloe\"]",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-2-1",
+    "href": "lessons/python_lesson_5.html#exercise-2-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.4 Exercise 2",
+    "text": "19.4 Exercise 2\nUse:\nfor food in foods:",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-3-1",
+    "href": "lessons/python_lesson_5.html#exercise-3-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.5 Exercise 3",
+    "text": "19.5 Exercise 3\nInside the loop, print:\nnumber * 2",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-4-1",
+    "href": "lessons/python_lesson_5.html#exercise-4-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.6 Exercise 4",
+    "text": "19.6 Exercise 4\nUse:\nrange(1, 11)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-5-1",
+    "href": "lessons/python_lesson_5.html#exercise-5-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.7 Exercise 5",
+    "text": "19.7 Exercise 5\nUse:\nrange(5)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-6-1",
+    "href": "lessons/python_lesson_5.html#exercise-6-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.8 Exercise 6",
+    "text": "19.8 Exercise 6\nStart with:\ntotal = 0\nThen add each mark to the total.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-7-1",
+    "href": "lessons/python_lesson_5.html#exercise-7-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.9 Exercise 7",
+    "text": "19.9 Exercise 7\nCalculate the total first. Then divide by the number of marks.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-8-1",
+    "href": "lessons/python_lesson_5.html#exercise-8-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.10 Exercise 8",
+    "text": "19.10 Exercise 8\nPrint \"-\" before the item.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-1",
+    "href": "lessons/python_lesson_5.html#challenge-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.11 Challenge 1",
+    "text": "19.11 Challenge 1\nThis is like Exercises 6 and 7 combined.",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-2",
+    "href": "lessons/python_lesson_5.html#challenge-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.12 Challenge 2",
+    "text": "19.12 Challenge 2\nThe simplest version uses one sentence pattern for all names.\n\n\n\nClick to reveal full solutions",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-1-2",
+    "href": "lessons/python_lesson_5.html#exercise-1-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.13 Exercise 1",
+    "text": "19.13 Exercise 1\nnames = [\"Alex\", \"Ben\", \"Chloe\"]\n\nfor name in names:\n    print(name)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-2-2",
+    "href": "lessons/python_lesson_5.html#exercise-2-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.14 Exercise 2",
+    "text": "19.14 Exercise 2\nfoods = [\"pizza\", \"burgers\", \"pasta\"]\n\nfor food in foods:\n    print(\"I like\", food)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-3-2",
+    "href": "lessons/python_lesson_5.html#exercise-3-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.15 Exercise 3",
+    "text": "19.15 Exercise 3\nnumbers = [2, 4, 6, 8]\n\nfor number in numbers:\n    print(number * 2)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-4-2",
+    "href": "lessons/python_lesson_5.html#exercise-4-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.16 Exercise 4",
+    "text": "19.16 Exercise 4\nfor number in range(1, 11):\n    print(number)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-5-2",
+    "href": "lessons/python_lesson_5.html#exercise-5-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.17 Exercise 5",
+    "text": "19.17 Exercise 5\nfor count in range(5):\n    print(\"Practise makes progress.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-6-2",
+    "href": "lessons/python_lesson_5.html#exercise-6-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.18 Exercise 6",
+    "text": "19.18 Exercise 6\nmarks = [70, 85, 62, 90]\n\ntotal = 0\n\nfor mark in marks:\n    total = total + mark\n\nprint(total)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-7-2",
+    "href": "lessons/python_lesson_5.html#exercise-7-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.19 Exercise 7",
+    "text": "19.19 Exercise 7\nmarks = [70, 85, 62, 90]\n\ntotal = 0\n\nfor mark in marks:\n    total = total + mark\n\naverage = total / 4\n\nprint(average)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#exercise-8-2",
+    "href": "lessons/python_lesson_5.html#exercise-8-2",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.20 Exercise 8",
+    "text": "19.20 Exercise 8\nshopping = [\"Milk\", \"Bread\", \"Eggs\"]\n\nfor item in shopping:\n    print(\"-\", item)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-1-1",
+    "href": "lessons/python_lesson_5.html#challenge-1-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.21 Challenge 1",
+    "text": "19.21 Challenge 1\nscores = [8, 9, 7, 10, 6]\n\ntotal = 0\n\nfor score in scores:\n    total = total + score\n\naverage = total / 5\n\nprint(\"Total score:\", total)\nprint(\"Average score:\", average)",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "lessons/python_lesson_5.html#challenge-2-1",
+    "href": "lessons/python_lesson_5.html#challenge-2-1",
+    "title": "8  Lesson 5: Lists and For Loops",
+    "section": "19.22 Challenge 2",
+    "text": "19.22 Challenge 2\nnames = [\"Alex\", \"Ben\", \"Chloe\"]\n\nfor name in names:\n    print(name, \"is becoming a strong Python programmer.\")",
+    "crumbs": [
+      "Core Lessons",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Lesson 5: Lists and For Loops</span>"
+    ]
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "9  Projects",
+    "section": "",
+    "text": "10 Projects\nProjects are larger programs that combine several ideas from the lessons.",
+    "crumbs": [
+      "Projects",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Projects</span>"
+    ]
+  },
+  {
+    "objectID": "projects/index.html#project-ideas",
+    "href": "projects/index.html#project-ideas",
+    "title": "9  Projects",
+    "section": "10.1 Project ideas",
+    "text": "10.1 Project ideas\n\n10.1.1 Guess the Number\nThe computer chooses a secret number. The player guesses until they get it right.\nSkills used:\n\nvariables,\ninput(),\nif,\nwhile.\n\n\n\n10.1.2 Quiz Game\nAsk several questions and keep score.\nSkills used:\n\nstrings,\nvariables,\nif,\nloops.\n\n\n\n10.1.3 Shopping Receipt\nAsk for item prices and quantities. Print a neat receipt.\nSkills used:\n\narithmetic,\nvariables,\ninput,\nformatting.\n\n\n\n10.1.4 Mini Adventure Game\nThe player chooses what to do next and the story changes.\nSkills used:\n\nif,\nelif,\nnested decisions,\nstrings.",
+    "crumbs": [
+      "Projects",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Projects</span>"
+    ]
+  },
+  {
+    "objectID": "projects/index.html#project-template",
+    "href": "projects/index.html#project-template",
+    "title": "9  Projects",
+    "section": "10.2 Project template",
+    "text": "10.2 Project template\nUse this structure for new projects:\n# Project name\n\n## Goal\n\nWhat should the program do?\n\n## Skills used\n\n- Skill 1\n- Skill 2\n\n## Basic version\n\nWhat is the smallest working version?\n\n## Extensions\n\nHow can you make it better?\n\n## Solution\n\nPut a full solution here, preferably hidden in a details block.",
+    "crumbs": [
+      "Projects",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Projects</span>"
+    ]
+  },
+  {
+    "objectID": "challenges/index.html",
+    "href": "challenges/index.html",
+    "title": "10  Extra Challenges",
+    "section": "",
+    "text": "11 Extra Challenges\nUse these challenges when you want more practice.",
+    "crumbs": [
+      "Extra Challenges",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Challenges</span>"
+    ]
+  },
+  {
+    "objectID": "challenges/index.html#beginner-challenges",
+    "href": "challenges/index.html#beginner-challenges",
+    "title": "10  Extra Challenges",
+    "section": "11.1 Beginner challenges",
+    "text": "11.1 Beginner challenges\n\n11.1.1 1. Three-line introduction\nAsk the user for their name, age and favourite hobby. Print a short introduction.\n\n\n11.1.2 2. Age calculator\nAsk the user for their age. Print how old they will be in 5 years.\n\n\n11.1.3 3. Score checker\nAsk for a test mark and print whether the person passed.",
+    "crumbs": [
+      "Extra Challenges",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Challenges</span>"
+    ]
+  },
+  {
+    "objectID": "challenges/index.html#loop-challenges",
+    "href": "challenges/index.html#loop-challenges",
+    "title": "10  Extra Challenges",
+    "section": "11.2 Loop challenges",
+    "text": "11.2 Loop challenges\n\n11.2.1 4. Countdown\nAsk the user for a starting number and count down to 1.\n\n\n11.2.2 5. Repeated password\nKeep asking for a password until the user gets it right.\n\n\n11.2.3 6. Times table\nAsk the user for a number and print its times table from 1 to 12.",
+    "crumbs": [
+      "Extra Challenges",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Challenges</span>"
+    ]
+  },
+  {
+    "objectID": "challenges/index.html#list-challenges",
+    "href": "challenges/index.html#list-challenges",
+    "title": "10  Extra Challenges",
+    "section": "11.3 List challenges",
+    "text": "11.3 List challenges\n\n11.3.1 7. Favourite foods\nCreate a list of favourite foods and print one sentence for each food.\n\n\n11.3.2 8. Total marks\nCreate a list of marks and calculate the total.\n\n\n11.3.3 9. Average marks\nCalculate the average of a list of marks.",
+    "crumbs": [
+      "Extra Challenges",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Challenges</span>"
+    ]
+  },
+  {
+    "objectID": "challenges/index.html#design-your-own-challenge",
+    "href": "challenges/index.html#design-your-own-challenge",
+    "title": "10  Extra Challenges",
+    "section": "11.4 Design your own challenge",
+    "text": "11.4 Design your own challenge\nChoose something you like:\n\nsport,\nmusic,\nanimals,\ngames,\nschool subjects,\nweather,\nmoney,\nfood.\n\nThen design a small program around it.",
+    "crumbs": [
+      "Extra Challenges",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Challenges</span>"
+    ]
+  }
+]
