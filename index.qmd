@@ -96,4 +96,4 @@ For each lesson:
 
 ## Ready?
 
-Start with @sec-setup.
+Start with [Setup](setup.qmd).
