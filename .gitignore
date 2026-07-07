@@ -3,3 +3,5 @@ _book/
 *_files/
 archived/
 *.html
+/.quarto/
+site_libs/
