@@ -1,0 +1,537 @@
+---
+title: "Lesson 5: Lists and For Loops"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-copy: true
+    code-overflow: wrap
+execute:
+  eval: false
+---
+
+# Learning goals
+
+By the end of this lesson you should be able to:
+
+- create a list of values
+- use a `for` loop to repeat code for each item in a list
+- understand the difference between `while` loops and `for` loops
+- use `range()` to repeat code a fixed number of times
+- build small programs using lists of names, scores, and items
+
+Estimated time: **45–60 minutes**
+
+# Part 1: Review from Lesson 4
+
+In Lesson 4, you learned how to repeat code using a `while` loop.
+
+```python
+count = 1
+
+while count <= 5:
+    print(count)
+    count = count + 1
+```
+
+A `while` loop is useful when we want to repeat code while a condition remains true.
+
+Today we learn another kind of loop: the `for` loop.
+
+# Part 2: What is a list?
+
+A list stores several values in one variable.
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+```
+
+The variable `names` contains three pieces of text.
+
+You can print the whole list:
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+
+print(names)
+```
+
+Output:
+
+```text
+['Alex', 'Ben', 'Chloe']
+```
+
+# Part 3: A first `for` loop
+
+A `for` loop lets us do something with each item in a list.
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+
+for name in names:
+    print("Hello,", name)
+```
+
+Output:
+
+```text
+Hello, Alex
+Hello, Ben
+Hello, Chloe
+```
+
+Read this as:
+
+> For each `name` in the list called `names`, print a greeting.
+
+# Part 4: Lists of numbers
+
+Lists can also contain numbers.
+
+```python
+scores = [8, 10, 7, 9]
+
+for score in scores:
+    print(score)
+```
+
+You can do calculations inside the loop.
+
+```python
+scores = [8, 10, 7, 9]
+
+for score in scores:
+    print("Double score:", score * 2)
+```
+
+# Part 5: Adding up numbers in a list
+
+A common pattern is to start with a total of 0 and then add each value.
+
+```python
+scores = [8, 10, 7, 9]
+
+total = 0
+
+for score in scores:
+    total = total + score
+
+print("Total:", total)
+```
+
+Output:
+
+```text
+Total: 34
+```
+
+# Part 6: Using `range()`
+
+Sometimes we want to repeat code a fixed number of times.
+
+```python
+for count in range(5):
+    print("Python")
+```
+
+This prints `"Python"` five times.
+
+Important: `range(5)` gives the numbers 0, 1, 2, 3, and 4.
+
+```python
+for number in range(5):
+    print(number)
+```
+
+Output:
+
+```text
+0
+1
+2
+3
+4
+```
+
+If you want to count from 1 to 5, use:
+
+```python
+for number in range(1, 6):
+    print(number)
+```
+
+Output:
+
+```text
+1
+2
+3
+4
+5
+```
+
+# Part 7: `while` loop or `for` loop?
+
+Use a `while` loop when you do not know in advance how many times the loop must run.
+
+Example: keep asking for a password until it is correct.
+
+```python
+password = ""
+
+while password != "letmein":
+    password = input("Enter the password: ")
+```
+
+Use a `for` loop when you want to go through a list, or repeat something a known number of times.
+
+Example: greet every name in a list.
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+
+for name in names:
+    print("Hello,", name)
+```
+
+# Part 8: Common mistakes
+
+## Mistake 1: Forgetting the colon
+
+Wrong:
+
+```python
+for name in names
+    print(name)
+```
+
+Correct:
+
+```python
+for name in names:
+    print(name)
+```
+
+## Mistake 2: Forgetting indentation
+
+Wrong:
+
+```python
+for name in names:
+print(name)
+```
+
+Correct:
+
+```python
+for name in names:
+    print(name)
+```
+
+## Mistake 3: Expecting `range(5)` to include 5
+
+```python
+for number in range(5):
+    print(number)
+```
+
+This prints 0 to 4, not 1 to 5.
+
+Use:
+
+```python
+for number in range(1, 6):
+    print(number)
+```
+
+if you want 1 to 5.
+
+# Exercises
+
+## Exercise 1
+
+Create a list of three names.
+
+Use a `for` loop to print each name.
+
+## Exercise 2
+
+Create a list of three foods.
+
+Use a `for` loop to print:
+
+```text
+I like ...
+```
+
+for each food.
+
+## Exercise 3
+
+Create a list of numbers:
+
+```python
+numbers = [2, 4, 6, 8]
+```
+
+Use a `for` loop to print each number doubled.
+
+## Exercise 4
+
+Use `range()` to print the numbers from 1 to 10.
+
+## Exercise 5
+
+Use `range()` to print:
+
+```text
+Practise makes progress.
+```
+
+five times.
+
+## Exercise 6
+
+Create a list of test marks.
+
+Use a loop to calculate the total.
+
+Print the total.
+
+## Exercise 7
+
+Create a list of test marks.
+
+Use a loop to calculate the average.
+
+Hint: if there are 4 marks, divide the total by 4.
+
+## Exercise 8
+
+Create a shopping list.
+
+Use a `for` loop to print each item with a dash in front.
+
+Example:
+
+```text
+- Milk
+- Bread
+- Eggs
+```
+
+# Challenges
+
+## Challenge 1: Class quiz scores
+
+Create a list of five quiz scores.
+
+Use a `for` loop to calculate the total and the average.
+
+Then print:
+
+```text
+Total score: ...
+Average score: ...
+```
+
+## Challenge 2: Compliment generator
+
+Create a list of names.
+
+For each name, print a different-looking compliment using the name.
+
+Example:
+
+```text
+Alex is becoming a strong Python programmer.
+Ben writes careful code.
+Chloe is great at debugging.
+```
+
+You can use the same sentence structure for each name if you want.
+
+<details>
+<summary>Click to reveal hints</summary>
+
+## Exercise 1
+
+A list looks like this:
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+```
+
+## Exercise 2
+
+Use:
+
+```python
+for food in foods:
+```
+
+## Exercise 3
+
+Inside the loop, print:
+
+```python
+number * 2
+```
+
+## Exercise 4
+
+Use:
+
+```python
+range(1, 11)
+```
+
+## Exercise 5
+
+Use:
+
+```python
+range(5)
+```
+
+## Exercise 6
+
+Start with:
+
+```python
+total = 0
+```
+
+Then add each mark to the total.
+
+## Exercise 7
+
+Calculate the total first. Then divide by the number of marks.
+
+## Exercise 8
+
+Print `"-"` before the item.
+
+## Challenge 1
+
+This is like Exercises 6 and 7 combined.
+
+## Challenge 2
+
+The simplest version uses one sentence pattern for all names.
+
+</details>
+
+<details>
+<summary>Click to reveal full solutions</summary>
+
+## Exercise 1
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+
+for name in names:
+    print(name)
+```
+
+## Exercise 2
+
+```python
+foods = ["pizza", "burgers", "pasta"]
+
+for food in foods:
+    print("I like", food)
+```
+
+## Exercise 3
+
+```python
+numbers = [2, 4, 6, 8]
+
+for number in numbers:
+    print(number * 2)
+```
+
+## Exercise 4
+
+```python
+for number in range(1, 11):
+    print(number)
+```
+
+## Exercise 5
+
+```python
+for count in range(5):
+    print("Practise makes progress.")
+```
+
+## Exercise 6
+
+```python
+marks = [70, 85, 62, 90]
+
+total = 0
+
+for mark in marks:
+    total = total + mark
+
+print(total)
+```
+
+## Exercise 7
+
+```python
+marks = [70, 85, 62, 90]
+
+total = 0
+
+for mark in marks:
+    total = total + mark
+
+average = total / 4
+
+print(average)
+```
+
+## Exercise 8
+
+```python
+shopping = ["Milk", "Bread", "Eggs"]
+
+for item in shopping:
+    print("-", item)
+```
+
+## Challenge 1
+
+```python
+scores = [8, 9, 7, 10, 6]
+
+total = 0
+
+for score in scores:
+    total = total + score
+
+average = total / 5
+
+print("Total score:", total)
+print("Average score:", average)
+```
+
+## Challenge 2
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+
+for name in names:
+    print(name, "is becoming a strong Python programmer.")
+```
+
+</details>
+
+# Looking ahead
+
+The next lesson will introduce strings in more detail, including how to change case, join text neatly, and check what a user typed.

@@ -1,0 +1,64 @@
+---
+title: "Extra Challenges"
+---
+
+# Extra Challenges
+
+Use these challenges when you want more practice.
+
+## Beginner challenges
+
+### 1. Three-line introduction
+
+Ask the user for their name, age and favourite hobby. Print a short introduction.
+
+### 2. Age calculator
+
+Ask the user for their age. Print how old they will be in 5 years.
+
+### 3. Score checker
+
+Ask for a test mark and print whether the person passed.
+
+## Loop challenges
+
+### 4. Countdown
+
+Ask the user for a starting number and count down to 1.
+
+### 5. Repeated password
+
+Keep asking for a password until the user gets it right.
+
+### 6. Times table
+
+Ask the user for a number and print its times table from 1 to 12.
+
+## List challenges
+
+### 7. Favourite foods
+
+Create a list of favourite foods and print one sentence for each food.
+
+### 8. Total marks
+
+Create a list of marks and calculate the total.
+
+### 9. Average marks
+
+Calculate the average of a list of marks.
+
+## Design your own challenge
+
+Choose something you like:
+
+- sport,
+- music,
+- animals,
+- games,
+- school subjects,
+- weather,
+- money,
+- food.
+
+Then design a small program around it.

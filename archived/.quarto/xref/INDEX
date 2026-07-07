@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "9b5f60d9"
+  },
+  "positron_intro.qmd": {
+    "positron_intro.html": "bbe5dfd1"
+  },
+  "python_lesson_1.qmd": {
+    "python_lesson_1.html": "66b01c7f"
+  },
+  "python_lesson_2.qmd": {
+    "python_lesson_2.html": "f2a7eca2"
+  },
+  "python_lesson_3.qmd": {
+    "python_lesson_3.html": "4fa14366"
+  },
+  "python_lesson_4.qmd": {
+    "python_lesson_4.html": "89d5b74b"
+  },
+  "python_lesson_5.qmd": {
+    "python_lesson_5.html": "358cb475"
+  }
+}

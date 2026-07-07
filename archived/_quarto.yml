@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Python for Beginners"
+  author: "Rulof Burger"
+  chapters:
+    - index.qmd
+    - positron_intro.qmd
+    - python_lesson_1.qmd
+    - python_lesson_2.qmd
+    - python_lesson_3.qmd
+    - python_lesson_4.qmd
+    - python_lesson_5.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    number-sections: true
+
+execute:
+  eval: false

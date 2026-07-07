@@ -1,0 +1,482 @@
+---
+title: "Lesson 1: Your First Python Program"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-copy: true
+    code-overflow: wrap
+execute:
+  eval: false
+---
+
+# Learning goals
+
+By the end of this lesson you should be able to:
+
+- write and run a Python program in Positron
+- use `print()` to display information
+- store information in variables
+- perform simple calculations
+- combine text and numbers to create useful output
+
+Estimated time: **45–60 minutes**
+
+# Part 1: Running your first program
+
+Open **Positron**.
+
+Create a new file called:
+
+```text
+lesson1.py
+```
+
+Type:
+
+```python
+print("Hello, world!")
+```
+
+Click **Run**.
+
+You should see:
+
+```text
+Hello, world!
+```
+
+Congratulations! You have written your first Python program.
+
+# Part 2: The `print()` function
+
+A function is a command that tells Python to do something.
+
+The `print()` function tells Python to display something on the screen.
+
+Examples:
+
+```python
+print("Python is fun!")
+print(27)
+print(3 + 4)
+```
+
+Notice the difference:
+
+```python
+print("3 + 4")
+```
+
+prints:
+
+```text
+3 + 4
+```
+
+while:
+
+```python
+print(3 + 4)
+```
+
+prints:
+
+```text
+7
+```
+
+The quotation marks tell Python: treat this as text.
+
+Without quotation marks, Python treats it as mathematics.
+
+# Part 3: Variables
+
+Imagine you have a labelled box.
+
+```text
+Age
+┌───────┐
+│ 15    │
+└───────┘
+```
+
+The label is the **variable name**.
+
+The value inside is the **value**.
+
+Example:
+
+```python
+age = 15
+print(age)
+```
+
+Output:
+
+```text
+15
+```
+
+Variables can also store text.
+
+```python
+name = "Emma"
+print(name)
+```
+
+# Part 4: Using variables
+
+Variables make programs much easier to change.
+
+Instead of:
+
+```python
+print("Emma is 15 years old.")
+```
+
+we can write:
+
+```python
+name = "Emma"
+age = 15
+
+print(name, "is", age, "years old.")
+```
+
+Output:
+
+```text
+Emma is 15 years old.
+```
+
+Notice that `print()` automatically puts spaces between the different things you ask it to print.
+
+# Part 5: Doing calculations
+
+Python is an excellent calculator.
+
+```python
+print(8 + 4)
+print(20 - 5)
+print(6 * 7)
+print(18 / 3)
+```
+
+You can also calculate using variables.
+
+```python
+apples = 12
+friends = 4
+
+print(apples / friends)
+```
+
+Output:
+
+```text
+3.0
+```
+
+# Part 6: Updating variables
+
+Variables can change.
+
+```python
+score = 10
+
+print(score)
+
+score = score + 5
+
+print(score)
+```
+
+Output:
+
+```text
+10
+15
+```
+
+The second assignment means: take the old score and add five.
+
+# Exercises
+
+## Exercise 1
+
+Write a program that prints:
+
+```text
+Welcome to Python!
+```
+
+## Exercise 2
+
+Create a variable called `name`.
+
+Store your own name in it.
+
+Print the variable.
+
+## Exercise 3
+
+Create variables:
+
+```text
+age
+school
+```
+
+Print both.
+
+## Exercise 4
+
+Calculate:
+
+```text
+25 + 17
+```
+
+using `print()`.
+
+## Exercise 5
+
+Create:
+
+```python
+cats = 3
+dogs = 5
+```
+
+Print the total number of pets.
+
+## Exercise 6
+
+A chocolate costs R18.
+
+You buy 4.
+
+Create variables and calculate the total cost.
+
+## Exercise 7
+
+Create a variable called:
+
+```text
+temperature
+```
+
+Give it today's temperature.
+
+Print:
+
+```text
+Today's temperature is ...
+```
+
+## Exercise 8
+
+Create:
+
+```python
+money = 100
+```
+
+Spend R35.
+
+Print how much money remains.
+
+# Challenges
+
+## Challenge 1: Football commentator
+
+Create variables:
+
+```python
+team1
+team2
+score1
+score2
+```
+
+Print something like:
+
+```text
+Pirates 2 - 1 Chiefs
+```
+
+## Challenge 2: Build a receipt
+
+Produce something like:
+
+```text
+SHOP RECEIPT
+
+Milk        R24
+Bread       R18
+Eggs        R52
+
+Total:      R94
+```
+
+Choose your own products and prices.
+
+<details>
+<summary>Click to reveal hints</summary>
+
+## Exercise 1
+
+Use `print()`.
+
+## Exercise 2
+
+Remember that names are text. Text goes inside quotation marks.
+
+## Exercise 3
+
+Variables are created using:
+
+```python
+variable = value
+```
+
+## Exercise 4
+
+Do not put quotation marks around the calculation.
+
+## Exercise 5
+
+You can add variables together.
+
+## Exercise 6
+
+Use multiplication.
+
+## Exercise 7
+
+You can print several things together.
+
+```python
+print("Today's temperature is", temperature)
+```
+
+## Exercise 8
+
+Subtract 35 from the variable.
+
+## Challenge 1
+
+Create four variables first. Then print them all together.
+
+## Challenge 2
+
+Use several `print()` statements. Do not worry about making everything line up perfectly yet.
+
+</details>
+
+<details>
+<summary>Click to reveal full solutions</summary>
+
+## Exercise 1
+
+```python
+print("Welcome to Python!")
+```
+
+## Exercise 2
+
+```python
+name = "Emma"
+
+print(name)
+```
+
+## Exercise 3
+
+```python
+age = 15
+school = "Springfield High"
+
+print(age)
+print(school)
+```
+
+## Exercise 4
+
+```python
+print(25 + 17)
+```
+
+## Exercise 5
+
+```python
+cats = 3
+dogs = 5
+
+print(cats + dogs)
+```
+
+## Exercise 6
+
+```python
+price = 18
+number = 4
+
+print(price * number)
+```
+
+## Exercise 7
+
+```python
+temperature = 18
+
+print("Today's temperature is", temperature)
+```
+
+## Exercise 8
+
+```python
+money = 100
+
+money = money - 35
+
+print(money)
+```
+
+## Challenge 1
+
+```python
+team1 = "Pirates"
+team2 = "Chiefs"
+
+score1 = 2
+score2 = 1
+
+print(team1, score1, "-", score2, team2)
+```
+
+## Challenge 2
+
+```python
+milk = 24
+bread = 18
+eggs = 52
+
+total = milk + bread + eggs
+
+print("SHOP RECEIPT")
+print()
+print("Milk  R", milk)
+print("Bread R", bread)
+print("Eggs  R", eggs)
+print()
+print("Total R", total)
+```
+
+</details>
+
+# Looking ahead
+
+The next lesson introduces `input()`, allowing your programs to ask the user questions and respond to their answers.

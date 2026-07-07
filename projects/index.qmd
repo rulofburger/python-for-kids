@@ -1,0 +1,88 @@
+---
+title: "Projects"
+---
+
+# Projects
+
+Projects are larger programs that combine several ideas from the lessons.
+
+::: {.callout-tip}
+## How to use projects
+
+Try to build the first version yourself. Then improve it by adding your own features.
+:::
+
+## Project ideas
+
+### Guess the Number
+
+The computer chooses a secret number. The player guesses until they get it right.
+
+Skills used:
+
+- variables,
+- `input()`,
+- `if`,
+- `while`.
+
+### Quiz Game
+
+Ask several questions and keep score.
+
+Skills used:
+
+- strings,
+- variables,
+- `if`,
+- loops.
+
+### Shopping Receipt
+
+Ask for item prices and quantities. Print a neat receipt.
+
+Skills used:
+
+- arithmetic,
+- variables,
+- input,
+- formatting.
+
+### Mini Adventure Game
+
+The player chooses what to do next and the story changes.
+
+Skills used:
+
+- `if`,
+- `elif`,
+- nested decisions,
+- strings.
+
+## Project template
+
+Use this structure for new projects:
+
+```markdown
+# Project name
+
+## Goal
+
+What should the program do?
+
+## Skills used
+
+- Skill 1
+- Skill 2
+
+## Basic version
+
+What is the smallest working version?
+
+## Extensions
+
+How can you make it better?
+
+## Solution
+
+Put a full solution here, preferably hidden in a details block.
+```

@@ -1,0 +1,91 @@
+---
+title: "Setup"
+---
+
+Before starting the lessons, make sure the computer has the tools needed to run Python.
+
+## What you need
+
+You need:
+
+- **Python**: the programming language.
+- **Positron**: the coding environment where you write and run Python programs.
+- **Quarto**: only needed if you want to render this course website yourself.
+
+## Folder structure
+
+Create a folder for your course work, for example:
+
+```text
+PythonCourseWork/
+├── lesson1.py
+├── lesson2.py
+├── games/
+└── experiments/
+```
+
+Put your Python files in this folder.
+
+## Check that Python works
+
+Open a terminal in Positron and type:
+
+```bash
+python --version
+```
+
+You should see a Python version number.
+
+Then create a file called:
+
+```text
+hello.py
+```
+
+with this code:
+
+```python
+print("Hello, Python!")
+```
+
+Run it from the terminal:
+
+```bash
+python hello.py
+```
+
+If you see:
+
+```text
+Hello, Python!
+```
+
+then Python is working.
+
+::: {.callout-note}
+## On some Windows computers
+
+You may need to type `py hello.py` instead of `python hello.py`.
+:::
+
+## How to use this course locally
+
+To build the full website, open this folder in Positron and run:
+
+```bash
+quarto render
+```
+
+The finished website will appear in:
+
+```text
+_book/
+```
+
+Open:
+
+```text
+_book/index.html
+```
+
+in your browser.

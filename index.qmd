@@ -1,0 +1,99 @@
+---
+title: "Welcome"
+---
+
+::: {.hero-banner}
+# Python for Beginners
+
+A friendly, practical course for learning real Python by building small programs, solving exercises, and making fun projects.
+:::
+
+## Start here
+
+This course is designed for complete beginners. You do not need to know any coding before you begin.
+
+You will learn by:
+
+- reading short explanations,
+- typing code yourself,
+- solving exercises,
+- opening hints only when needed,
+- checking full solutions only after trying properly,
+- and building small projects.
+
+::: {.callout-tip}
+## Best way to learn
+
+Type the examples yourself instead of copying and pasting. Programming is learned through practice.
+:::
+
+## What you will learn
+
+By the end of the first five lessons, you will be able to:
+
+- write and run Python programs,
+- print text and numbers,
+- use variables,
+- ask the user for input,
+- make decisions with `if`,
+- repeat code with loops,
+- and work with lists.
+
+## Course map
+
+::: {.course-grid}
+
+::: {.course-card}
+### 1. Setup
+
+Install Python, open Positron, and learn the main parts of the coding window.
+:::
+
+::: {.course-card}
+### 2. First programs
+
+Use `print()`, variables, strings and arithmetic.
+:::
+
+::: {.course-card}
+### 3. Interactive programs
+
+Use `input()` to ask questions and respond to the user's answers.
+:::
+
+::: {.course-card}
+### 4. Decisions
+
+Use `if`, `else` and `elif` to make your programs choose between options.
+:::
+
+::: {.course-card}
+### 5. Loops
+
+Use `while` and `for` loops so your programs can repeat actions.
+:::
+
+::: {.course-card}
+### 6. Projects
+
+Build games, calculators, quizzes and other small programs.
+:::
+
+:::
+
+## Suggested pace
+
+A good pace is **one lesson per session**, with 45–60 minutes per lesson.
+
+For each lesson:
+
+1. Read the explanation.
+2. Run the examples.
+3. Try the exercises.
+4. Open hints only when needed.
+5. Check the solutions at the end.
+6. Try at least one challenge.
+
+## Ready?
+
+Start with @sec-setup.

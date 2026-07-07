@@ -1,0 +1,49 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Python for Beginners"
+  subtitle: "A hands-on coding course for curious learners"
+  author: "Rulof Burger"
+  search: true
+  page-navigation: true
+  reader-mode: true
+  repo-url: "https://github.com/YOUR-USERNAME/YOUR-REPO"
+  repo-actions: [source, issue]
+  chapters:
+    - index.qmd
+    - setup.qmd
+    - lessons/positron_intro.qmd
+    - part: "Core Lessons"
+      chapters:
+        - lessons/python_lesson_1.qmd
+        - lessons/python_lesson_2.qmd
+        - lessons/python_lesson_3.qmd
+        - lessons/python_lesson_4.qmd
+        - lessons/python_lesson_5.qmd
+    - part: "Projects"
+      chapters:
+        - projects/index.qmd
+    - part: "Extra Challenges"
+      chapters:
+        - challenges/index.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    number-sections: true
+    smooth-scroll: true
+
+execute:
+  eval: false
+  echo: true
+  warning: false
+  message: false

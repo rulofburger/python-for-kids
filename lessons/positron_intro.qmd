@@ -1,0 +1,143 @@
+---
+title: "Getting Started with Positron"
+format:
+  html:
+    toc: true
+    theme: cosmo
+    code-copy: true
+execute:
+  eval: false
+---
+
+# Welcome to Positron
+
+Positron is a modern programming environment (called an **IDE**, or Integrated Development Environment). It provides everything you need to write, run and organise your Python programs.
+
+Don't worry about learning every feature immediately. In this course, you will mainly use five parts of the window.
+
+# 1. Explorer (left-hand panel)
+
+The **Explorer** shows the files and folders in your project.
+
+For example:
+
+```text
+Python Course
+│
+├── lesson1.py
+├── lesson2.py
+├── guessing_game.py
+└── notes.txt
+```
+
+Use the Explorer to:
+
+- open an existing program
+- create a new file
+- organise your work into folders
+
+# 2. Editor (centre)
+
+The large area in the middle is the **Editor**.
+
+This is where you write your Python code.
+
+Example:
+
+```python
+name = input("What is your name? ")
+
+print("Hello,", name)
+```
+
+You can have several files open at once. Each file appears as a tab across the top of the Editor.
+
+# 3. Terminal (bottom)
+
+The **Terminal** lets you type commands directly.
+
+For example:
+
+```text
+python lesson1.py
+```
+
+runs your program.
+
+You can also create folders, move files and install packages from the Terminal.
+
+# 4. Console
+
+If you are using Python, you can also open a **Python Console**.
+
+Unlike the Editor, the Console lets you try small pieces of code immediately.
+
+For example:
+
+```python
+3 + 4
+```
+
+or
+
+```python
+print("Hello")
+```
+
+This is useful for experimenting.
+
+# 5. Problems and Output
+
+If your program contains an error, Positron may show it in the **Problems** or **Output** panel.
+
+Read the error message carefully. It usually tells you:
+
+- where the error happened
+- what Python did not understand
+
+Even experienced programmers make mistakes. Learning to read error messages is an important programming skill.
+
+# Running your first program
+
+1. Open the Explorer.
+2. Create a new file called `lesson1.py`.
+3. Type:
+
+```python
+print("Hello, world!")
+```
+
+4. Save the file.
+5. Click the **Run** button, or open the Terminal and type:
+
+```text
+python lesson1.py
+```
+
+If everything works, you should see:
+
+```text
+Hello, world!
+```
+
+# Keyboard shortcuts
+
+| Shortcut | What it does |
+|-----------|--------------|
+| Ctrl+S | Save the current file |
+| Ctrl+Z | Undo |
+| Ctrl+Shift+P | Open the Command Palette |
+| Ctrl+` | Open or close the Terminal |
+| Ctrl+/ | Comment or uncomment selected lines |
+
+# Good habits
+
+- Save your work often.
+- Give your files meaningful names.
+- Read error messages carefully.
+- Change only one thing at a time when fixing a bug.
+- Experiment! The best way to learn programming is by trying ideas yourself.
+
+# Looking ahead
+
+After you are comfortable moving around Positron, you're ready to begin Lesson 1 and write your first Python program.

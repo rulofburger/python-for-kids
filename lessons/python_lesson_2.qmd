@@ -1,0 +1,465 @@
+---
+title: "Lesson 2: Making Python Interactive"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-copy: true
+    code-overflow: wrap
+execute:
+  eval: false
+---
+
+# Learning goals
+
+By the end of this lesson you should be able to:
+
+- use `input()` to ask the user questions
+- store answers in variables
+- combine input with `print()`
+- convert text input into numbers using `int()`
+- build a simple interactive calculator
+
+Estimated time: **45–60 minutes**
+
+# Part 1: Review from Lesson 1
+
+In Lesson 1, you learned that Python can print text and do calculations.
+
+```python
+name = "Emma"
+age = 15
+
+print(name, "is", age, "years old.")
+```
+
+Output:
+
+```text
+Emma is 15 years old.
+```
+
+But so far, the program only knows what *you* wrote into the code.
+
+Today we make programs that ask the user questions.
+
+# Part 2: The `input()` function
+
+The `input()` function asks the user to type something.
+
+```python
+name = input("What is your name? ")
+
+print("Hello,", name)
+```
+
+When you run it, Python asks:
+
+```text
+What is your name?
+```
+
+The user types an answer.
+
+Then Python stores the answer in the variable `name`.
+
+# Part 3: Input is always text
+
+This is very important.
+
+When Python uses `input()`, it stores the answer as **text**, even if the user types a number.
+
+Try this:
+
+```python
+age = input("How old are you? ")
+
+print(age)
+```
+
+This works.
+
+But this does **not** work properly:
+
+```python
+age = input("How old are you? ")
+
+next_year = age + 1
+
+print(next_year)
+```
+
+Python gets confused because `age` is text, not a number.
+
+# Part 4: Converting input into a number
+
+To turn text into a whole number, use `int()`.
+
+```python
+age = input("How old are you? ")
+
+age = int(age)
+
+next_year = age + 1
+
+print("Next year you will be", next_year)
+```
+
+You can also write it more shortly:
+
+```python
+age = int(input("How old are you? "))
+
+print("Next year you will be", age + 1)
+```
+
+# Part 5: A simple calculator
+
+Now we can build interactive programs.
+
+```python
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+
+total = number1 + number2
+
+print("The total is", total)
+```
+
+Try running it with different numbers.
+
+# Part 6: Common mistakes
+
+## Mistake 1: Forgetting quotation marks
+
+Wrong:
+
+```python
+name = input(What is your name?)
+```
+
+Correct:
+
+```python
+name = input("What is your name? ")
+```
+
+## Mistake 2: Forgetting `int()`
+
+Wrong:
+
+```python
+age = input("How old are you? ")
+print(age + 1)
+```
+
+Correct:
+
+```python
+age = int(input("How old are you? "))
+print(age + 1)
+```
+
+## Mistake 3: Typing words when Python expects a number
+
+This will crash if the user types `"twelve"`:
+
+```python
+age = int(input("How old are you? "))
+```
+
+For now, type numbers using digits, like:
+
+```text
+12
+15
+42
+```
+
+# Exercises
+
+## Exercise 1
+
+Ask the user for their name.
+
+Print:
+
+```text
+Hello, ...
+```
+
+## Exercise 2
+
+Ask the user for their favourite food.
+
+Print a sentence using their answer.
+
+Example:
+
+```text
+Pizza sounds delicious.
+```
+
+## Exercise 3
+
+Ask the user for their age.
+
+Print how old they will be next year.
+
+## Exercise 4
+
+Ask the user for two numbers.
+
+Print their sum.
+
+## Exercise 5
+
+Ask the user for the price of one chocolate.
+
+Ask how many chocolates they want to buy.
+
+Print the total cost.
+
+## Exercise 6
+
+Ask the user how many goals Team A scored.
+
+Ask how many goals Team B scored.
+
+Print the scoreline.
+
+Example:
+
+```text
+Final score: 3 - 2
+```
+
+## Exercise 7
+
+Ask the user for a temperature in Celsius.
+
+Convert it to Fahrenheit using:
+
+```text
+Fahrenheit = Celsius × 9 / 5 + 32
+```
+
+Print the answer.
+
+## Exercise 8
+
+Ask the user how much money they have.
+
+Ask how much they spend.
+
+Print how much money they have left.
+
+# Challenges
+
+## Challenge 1: Personal introduction generator
+
+Ask the user for:
+
+- name
+- age
+- favourite hobby
+- favourite food
+
+Then print a short introduction.
+
+Example:
+
+```text
+This is Alex.
+Alex is 15 years old.
+Alex likes mountain biking.
+Alex's favourite food is burgers.
+```
+
+## Challenge 2: Mini shop calculator
+
+Ask the user for:
+
+- the price of item 1
+- the quantity of item 1
+- the price of item 2
+- the quantity of item 2
+
+Print a receipt showing the two totals and the final total.
+
+Example:
+
+```text
+Item 1 total: R60
+Item 2 total: R45
+Final total: R105
+```
+
+<details>
+<summary>Click to reveal hints</summary>
+
+## Exercise 1
+
+Use `input()` and store the answer in a variable.
+
+## Exercise 2
+
+The answer is text, so you do not need `int()`.
+
+## Exercise 3
+
+Use `int()` because age is a number.
+
+## Exercise 4
+
+Both inputs must be converted to integers.
+
+## Exercise 5
+
+Use multiplication:
+
+```python
+total = price * quantity
+```
+
+## Exercise 6
+
+The scores are numbers, so use `int()`.
+
+## Exercise 7
+
+Use this formula:
+
+```python
+fahrenheit = celsius * 9 / 5 + 32
+```
+
+## Exercise 8
+
+Subtract spending from money.
+
+## Challenge 1
+
+Use four `input()` lines and four `print()` lines.
+
+## Challenge 2
+
+Calculate each item total first, then add them together.
+
+</details>
+
+<details>
+<summary>Click to reveal full solutions</summary>
+
+## Exercise 1
+
+```python
+name = input("What is your name? ")
+
+print("Hello,", name)
+```
+
+## Exercise 2
+
+```python
+food = input("What is your favourite food? ")
+
+print(food, "sounds delicious.")
+```
+
+## Exercise 3
+
+```python
+age = int(input("How old are you? "))
+
+print("Next year you will be", age + 1)
+```
+
+## Exercise 4
+
+```python
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+
+print("The sum is", number1 + number2)
+```
+
+## Exercise 5
+
+```python
+price = int(input("What is the price of one chocolate? "))
+quantity = int(input("How many chocolates do you want? "))
+
+total = price * quantity
+
+print("The total cost is R", total)
+```
+
+## Exercise 6
+
+```python
+team_a = int(input("How many goals did Team A score? "))
+team_b = int(input("How many goals did Team B score? "))
+
+print("Final score:", team_a, "-", team_b)
+```
+
+## Exercise 7
+
+```python
+celsius = int(input("Enter the temperature in Celsius: "))
+
+fahrenheit = celsius * 9 / 5 + 32
+
+print("The temperature in Fahrenheit is", fahrenheit)
+```
+
+## Exercise 8
+
+```python
+money = int(input("How much money do you have? "))
+spending = int(input("How much did you spend? "))
+
+left = money - spending
+
+print("You have R", left, "left.")
+```
+
+## Challenge 1
+
+```python
+name = input("What is your name? ")
+age = int(input("How old are you? "))
+hobby = input("What is your favourite hobby? ")
+food = input("What is your favourite food? ")
+
+print("This is", name)
+print(name, "is", age, "years old.")
+print(name, "likes", hobby)
+print(name + "'s favourite food is", food)
+```
+
+## Challenge 2
+
+```python
+price1 = int(input("Price of item 1: "))
+quantity1 = int(input("Quantity of item 1: "))
+
+price2 = int(input("Price of item 2: "))
+quantity2 = int(input("Quantity of item 2: "))
+
+total1 = price1 * quantity1
+total2 = price2 * quantity2
+final_total = total1 + total2
+
+print("Item 1 total: R", total1)
+print("Item 2 total: R", total2)
+print("Final total: R", final_total)
+```
+
+</details>
+
+# Looking ahead
+
+The next lesson introduces `if` statements, so your programs can make decisions.
