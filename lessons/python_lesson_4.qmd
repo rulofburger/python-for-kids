@@ -1,17 +1,8 @@
 ---
 title: "Lesson 4: Repeating Code with Loops"
-format:
-  html:
-    toc: true
-    toc-depth: 2
-    theme: cosmo
-    code-copy: true
-    code-overflow: wrap
-execute:
-  eval: false
 ---
 
-# Learning goals
+## Learning goals
 
 By the end of this lesson you should be able to:
 
@@ -23,7 +14,7 @@ By the end of this lesson you should be able to:
 
 Estimated time: **45–60 minutes**
 
-# Part 1: Review from Lesson 3
+## Review from Lesson 3
 
 In Lesson 3, you learned how to make Python choose between different options.
 
@@ -40,7 +31,7 @@ Today we make Python repeat actions.
 
 This is one of the most powerful ideas in programming.
 
-# Part 2: Why loops are useful
+## Why loops are useful
 
 Suppose you want to print this:
 
@@ -66,7 +57,7 @@ But that is boring and repetitive.
 
 A loop lets us write the instruction once and repeat it.
 
-# Part 3: A first `while` loop
+## A first `while` loop
 
 A `while` loop repeats code while a condition is true.
 
@@ -96,7 +87,7 @@ Eventually `count` becomes 6, so `count <= 5` is no longer true.
 
 Then the loop stops.
 
-# Part 4: Printing the counter
+## Printing the counter
 
 It is often useful to print the counter while the loop runs.
 
@@ -118,7 +109,7 @@ Count is 4
 Count is 5
 ```
 
-# Part 5: Counting down
+## Counting down
 
 Loops can also count down.
 
@@ -143,7 +134,7 @@ Output:
 Blast off!
 ```
 
-# Part 6: Loops with user input
+## Loops with user input
 
 Loops are useful when we want to keep asking the user something.
 
@@ -160,9 +151,9 @@ The loop keeps running while the password is not equal to `"python123"`.
 
 When the user finally types the correct password, the loop stops.
 
-# Part 7: Common mistakes
+## Common mistakes
 
-## Mistake 1: Forgetting to update the variable
+### Mistake 1: Forgetting to update the variable
 
 Wrong:
 
@@ -185,7 +176,7 @@ while count <= 5:
     count = count + 1
 ```
 
-## Mistake 2: Indenting too much
+### Mistake 2: Indenting too much
 
 Wrong:
 
@@ -214,7 +205,7 @@ print("Done")
 
 This prints `"Done"` once, after the loop has finished.
 
-## Mistake 3: Using the wrong condition
+### Mistake 3: Using the wrong condition
 
 This loop does not run at all:
 
@@ -228,9 +219,9 @@ while count > 5:
 
 Why? Because `count > 5` is already false at the start.
 
-# Exercises
+## Exercises
 
-## Exercise 1
+### Exercise 1
 
 Use a `while` loop to print:
 
@@ -240,11 +231,11 @@ Hello
 Hello
 ```
 
-## Exercise 2
+### Exercise 2
 
 Use a `while` loop to print the numbers from 1 to 5.
 
-## Exercise 3
+### Exercise 3
 
 Use a `while` loop to print the numbers from 10 down to 1.
 
@@ -254,7 +245,7 @@ Then print:
 Go!
 ```
 
-## Exercise 4
+### Exercise 4
 
 Ask the user for a number.
 
@@ -270,7 +261,7 @@ Enter a number: 4
 4
 ```
 
-## Exercise 5
+### Exercise 5
 
 Create a variable called `total`.
 
@@ -284,7 +275,7 @@ The answer should be:
 15
 ```
 
-## Exercise 6
+### Exercise 6
 
 Ask the user to guess a secret number.
 
@@ -292,7 +283,7 @@ Keep asking until they guess correctly.
 
 Use any secret number you like.
 
-## Exercise 7
+### Exercise 7
 
 Ask the user for a password.
 
@@ -308,7 +299,7 @@ Then print:
 Welcome.
 ```
 
-## Exercise 8
+### Exercise 8
 
 Ask the user how many times they want to practise.
 
@@ -320,9 +311,9 @@ Practise makes progress.
 
 that many times.
 
-# Challenges
+## Challenges
 
-## Challenge 1: Guess the number with hints
+### Challenge 1: Guess the number with hints
 
 Create a secret number.
 
@@ -348,7 +339,7 @@ Then print:
 Correct!
 ```
 
-## Challenge 2: Multiplication practice
+### Challenge 2: Multiplication practice
 
 Ask the user:
 
@@ -366,11 +357,23 @@ At the end, print something like:
 Correct! You needed 3 tries.
 ```
 
-<details>
-<summary>Click to reveal hints</summary>
+## Debugging practice
 
-## Exercise 1
+The following code has a mistake. Fix it.
 
+```python
+count = 1
+
+while count <= 5:
+    print(count)
+```
+
+The program should print the numbers 1 to 5 and then stop.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
 Start with:
 
 ```python
@@ -383,20 +386,16 @@ Then use:
 while count <= 3:
 ```
 
-## Exercise 2
-
+**Exercise 2**
 Print the counter inside the loop.
 
-## Exercise 3
-
+**Exercise 3**
 Start at 10 and subtract 1 each time.
 
-## Exercise 4
-
+**Exercise 4**
 The final number comes from `input()`, so convert it using `int()`.
 
-## Exercise 5
-
+**Exercise 5**
 Start with:
 
 ```python
@@ -406,8 +405,7 @@ count = 1
 
 Inside the loop, add `count` to `total`.
 
-## Exercise 6
-
+**Exercise 6**
 Use a loop condition like:
 
 ```python
@@ -416,20 +414,16 @@ while guess != secret:
 
 You need to give `guess` a starting value before the loop.
 
-## Exercise 7
-
+**Exercise 7**
 This is similar to the password example in the lesson.
 
-## Exercise 8
-
+**Exercise 8**
 Use the number from the user as the stopping point.
 
-## Challenge 1
-
+**Challenge 1**
 Use `if`, `elif`, and `else` inside the loop.
 
-## Challenge 2
-
+**Challenge 2**
 Start with:
 
 ```python
@@ -438,13 +432,16 @@ tries = 0
 
 Add 1 to `tries` every time the user guesses.
 
-</details>
+**Debugging practice**
 
-<details>
-<summary>Click to reveal full solutions</summary>
+The loop needs to change `count` each time it runs.
 
-## Exercise 1
+:::
 
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
 ```python
 count = 1
 
@@ -453,8 +450,7 @@ while count <= 3:
     count = count + 1
 ```
 
-## Exercise 2
-
+**Exercise 2**
 ```python
 count = 1
 
@@ -463,8 +459,7 @@ while count <= 5:
     count = count + 1
 ```
 
-## Exercise 3
-
+**Exercise 3**
 ```python
 count = 10
 
@@ -475,8 +470,7 @@ while count > 0:
 print("Go!")
 ```
 
-## Exercise 4
-
+**Exercise 4**
 ```python
 number = int(input("Enter a number: "))
 
@@ -487,8 +481,7 @@ while count <= number:
     count = count + 1
 ```
 
-## Exercise 5
-
+**Exercise 5**
 ```python
 total = 0
 count = 1
@@ -500,8 +493,7 @@ while count <= 5:
 print(total)
 ```
 
-## Exercise 6
-
+**Exercise 6**
 ```python
 secret = 7
 guess = 0
@@ -512,8 +504,7 @@ while guess != secret:
 print("Correct!")
 ```
 
-## Exercise 7
-
+**Exercise 7**
 ```python
 password = ""
 
@@ -523,8 +514,7 @@ while password != "letmein":
 print("Welcome.")
 ```
 
-## Exercise 8
-
+**Exercise 8**
 ```python
 times = int(input("How many times do you want to practise? "))
 
@@ -535,8 +525,7 @@ while count <= times:
     count = count + 1
 ```
 
-## Challenge 1
-
+**Challenge 1**
 ```python
 secret = 12
 guess = 0
@@ -552,8 +541,7 @@ while guess != secret:
         print("Correct!")
 ```
 
-## Challenge 2
-
+**Challenge 2**
 ```python
 answer = 0
 tries = 0
@@ -565,8 +553,28 @@ while answer != 56:
 print("Correct! You needed", tries, "tries.")
 ```
 
-</details>
+**Debugging practice**
 
-# Looking ahead
+```python
+count = 1
+
+while count <= 5:
+    print(count)
+    count = count + 1
+```
+
+:::
+
+## What you learned
+
+You can now:
+
+- use a `while` loop to repeat code;
+- update a counter inside a loop;
+- count up and count down;
+- keep asking for input until the user gives the right answer;
+- avoid infinite loops by making sure the loop condition can eventually become false.
+
+## Looking ahead
 
 The next lesson introduces `for` loops and lists, which make it easier to repeat actions over a collection of items.

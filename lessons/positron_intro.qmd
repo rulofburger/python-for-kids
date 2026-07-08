@@ -220,11 +220,11 @@ Hello, Alex
 
 | Shortcut | What it does |
 |---|---|
-| `Ctrl + S` | Save the current file |
-| `Ctrl + Z` | Undo |
-| `Ctrl + Shift + P` | Open the Command Palette |
-| <kbd>Ctrl</kbd> + <kbd>`</kbd> | Open or close the Terminal |
-| `Ctrl + /` | Comment or uncomment selected lines |
+| <kbd>Ctrl</kbd> + <kbd>S</kbd> | Save the current file |
+| <kbd>Ctrl</kbd> + <kbd>Z</kbd> | Undo |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> | Open the Command Palette |
+| <kbd>Ctrl</kbd> + <kbd>&#96;</kbd> | Open or close the Terminal |
+| <kbd>Ctrl</kbd> + <kbd>/</kbd> | Comment or uncomment selected lines |
 
 ## Mini practice
 
@@ -262,14 +262,14 @@ score = 10
 
 Run the code and check whether you can see `score` in the Variables pane.
 
-<details>
-<summary>Click to reveal help</summary>
+::: {.callout-tip collapse="true"}
+## Click to reveal help
 
 If you cannot see a variable, try running the file again.
 
 Also check that you are using the Python session selected at the top right of Positron.
 
-</details>
+:::
 
 ## Good habits
 
@@ -282,9 +282,4 @@ Also check that you are using the Python session selected at the top right of Po
 
 ## Ready for Lesson 1
 
-Once you can find the Editor, Console and Explorer, you are ready to begin Lesson 1.
-
-
-# Looking ahead
-
-After you are comfortable moving around Positron, you're ready to begin Lesson 1 and write your first Python program.
+Once you can find the Editor, Console and Explorer, you are ready to begin Lesson 1 and write your first Python program.

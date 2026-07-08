@@ -1,17 +1,8 @@
 ---
 title: "Lesson 3: Making Decisions with if"
-format:
-  html:
-    toc: true
-    toc-depth: 2
-    theme: cosmo
-    code-copy: true
-    code-overflow: wrap
-execute:
-  eval: false
 ---
 
-# Learning goals
+## Learning goals
 
 By the end of this lesson you should be able to:
 
@@ -23,7 +14,7 @@ By the end of this lesson you should be able to:
 
 Estimated time: **45–60 minutes**
 
-# Part 1: Review from Lesson 2
+## Review from Lesson 2
 
 In Lesson 2, you learned how to ask the user for information.
 
@@ -43,7 +34,7 @@ print("Next year you will be", age + 1)
 
 Today we make programs that can make decisions.
 
-# Part 2: The `if` statement
+## The `if` statement
 
 An `if` statement lets Python decide whether to run some code.
 
@@ -66,7 +57,7 @@ means:
 
 The spaces before `print()` are important. They show Python which code belongs inside the `if`.
 
-# Part 3: Comparison operators
+## Comparison operators
 
 Python can compare values.
 
@@ -94,7 +85,14 @@ Do not use `=` here.
 
 `==` compares two values.
 
-# Part 4: Using `else`
+::: {.callout-note title="Text comparisons are exact"}
+
+For now, type text answers exactly as shown. For example, `Python` and `python` are different answers.
+
+Later we will learn how to make programs accept different capitalisation.
+:::
+
+## Using `else`
 
 Sometimes we want one thing to happen if the condition is true, and another thing to happen if it is false.
 
@@ -111,7 +109,7 @@ The `else` means:
 
 > Otherwise, do this.
 
-# Part 5: Using `elif`
+## Using `elif`
 
 Sometimes there are more than two possibilities.
 
@@ -132,9 +130,9 @@ Python checks the conditions from top to bottom.
 
 As soon as one condition is true, Python runs that block and skips the rest.
 
-# Part 6: Common mistakes
+## Common mistakes
 
-## Mistake 1: Forgetting the colon
+### Mistake 1: Forgetting the colon
 
 Wrong:
 
@@ -150,7 +148,7 @@ if age >= 13:
     print("Old enough")
 ```
 
-## Mistake 2: Forgetting indentation
+### Mistake 2: Forgetting indentation
 
 Wrong:
 
@@ -166,7 +164,7 @@ if age >= 13:
     print("Old enough")
 ```
 
-## Mistake 3: Using `=` instead of `==`
+### Mistake 3: Using `=` instead of `==`
 
 Wrong:
 
@@ -182,9 +180,9 @@ if answer == "Paris":
     print("Correct")
 ```
 
-# Exercises
+## Exercises
 
-## Exercise 1
+### Exercise 1
 
 Ask the user for their age.
 
@@ -194,7 +192,7 @@ If they are 13 or older, print:
 You can join the coding club.
 ```
 
-## Exercise 2
+### Exercise 2
 
 Ask the user for a number.
 
@@ -210,7 +208,7 @@ Otherwise, print:
 That is a small number.
 ```
 
-## Exercise 3
+### Exercise 3
 
 Ask:
 
@@ -230,7 +228,7 @@ Otherwise, print:
 Try again next time.
 ```
 
-## Exercise 4
+### Exercise 4
 
 Ask the user for a password.
 
@@ -252,7 +250,7 @@ Otherwise print:
 Access denied.
 ```
 
-## Exercise 5
+### Exercise 5
 
 Ask the user for a test mark.
 
@@ -263,7 +261,7 @@ Print:
 - `Pass` if the mark is 50 or above
 - `Not yet passed` otherwise
 
-## Exercise 6
+### Exercise 6
 
 Ask the user for the temperature.
 
@@ -273,7 +271,7 @@ Print:
 - `Warm` if it is 20 or above
 - `Cold` otherwise
 
-## Exercise 7
+### Exercise 7
 
 Ask the user for two numbers.
 
@@ -285,7 +283,7 @@ If they are equal, print:
 The numbers are equal.
 ```
 
-## Exercise 8
+### Exercise 8
 
 Ask the user for their favourite colour.
 
@@ -307,9 +305,9 @@ Otherwise, print:
 Nice choice.
 ```
 
-# Challenges
+## Challenges
 
-## Challenge 1: Mini quiz
+### Challenge 1: Mini quiz
 
 Create a three-question quiz.
 
@@ -327,7 +325,7 @@ Example:
 Your final score is 2 out of 3.
 ```
 
-## Challenge 2: Adventure choice game
+### Challenge 2: Adventure choice game
 
 Create a tiny adventure game.
 
@@ -348,53 +346,56 @@ You are standing at a fork in the road.
 Do you go left or right?
 ```
 
-<details>
-<summary>Click to reveal hints</summary>
+## Debugging practice
 
-## Exercise 1
+The following code has a mistake. Fix it.
 
+```python
+age = int(input("How old are you? "))
+
+if age >= 13
+    print("You can join.")
+```
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
 Use:
 
 ```python
 if age >= 13:
 ```
 
-## Exercise 2
-
+**Exercise 2**
 Use `if` and `else`.
 
-## Exercise 3
-
+**Exercise 3**
 Convert the answer to an integer.
 
-## Exercise 4
-
+**Exercise 4**
 The password is text, so do not use `int()`.
 
-## Exercise 5
-
+**Exercise 5**
 Use `if`, `elif`, `elif`, and `else`.
 
 Start with the highest mark.
 
-## Exercise 6
-
+**Exercise 6**
 Check the hottest category first.
 
-## Exercise 7
-
+**Exercise 7**
 You need three cases:
 
 - first number bigger
 - second number bigger
 - equal
 
-## Exercise 8
+#### Exercise 8
 
 Use `==` to compare the colour.
 
-## Challenge 1
-
+**Challenge 1**
 Start with:
 
 ```python
@@ -407,17 +408,19 @@ Then add 1 for each correct answer:
 score = score + 1
 ```
 
-## Challenge 2
-
+**Challenge 2**
 Use nested `if` statements if you want the second question to depend on the first answer.
 
-</details>
+**Debugging practice**
 
-<details>
-<summary>Click to reveal full solutions</summary>
+Look carefully at the end of the `if` line.
 
-## Exercise 1
+:::
 
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
 ```python
 age = int(input("How old are you? "))
 
@@ -425,8 +428,7 @@ if age >= 13:
     print("You can join the coding club.")
 ```
 
-## Exercise 2
-
+**Exercise 2**
 ```python
 number = int(input("Enter a number: "))
 
@@ -436,8 +438,7 @@ else:
     print("That is a small number.")
 ```
 
-## Exercise 3
-
+**Exercise 3**
 ```python
 answer = int(input("What is 7 + 5? "))
 
@@ -447,8 +448,7 @@ else:
     print("Try again next time.")
 ```
 
-## Exercise 4
-
+**Exercise 4**
 ```python
 password = input("Enter the password: ")
 
@@ -458,8 +458,7 @@ else:
     print("Access denied.")
 ```
 
-## Exercise 5
-
+**Exercise 5**
 ```python
 mark = int(input("Enter your test mark: "))
 
@@ -473,8 +472,7 @@ else:
     print("Not yet passed")
 ```
 
-## Exercise 6
-
+**Exercise 6**
 ```python
 temperature = int(input("Enter the temperature: "))
 
@@ -486,8 +484,7 @@ else:
     print("Cold")
 ```
 
-## Exercise 7
-
+**Exercise 7**
 ```python
 number1 = int(input("Enter the first number: "))
 number2 = int(input("Enter the second number: "))
@@ -500,8 +497,7 @@ else:
     print("The numbers are equal.")
 ```
 
-## Exercise 8
-
+**Exercise 8**
 ```python
 colour = input("What is your favourite colour? ")
 
@@ -513,8 +509,7 @@ else:
     print("Nice choice.")
 ```
 
-## Challenge 1
-
+**Challenge 1**
 ```python
 score = 0
 
@@ -536,8 +531,7 @@ if answer3 == "Earth":
 print("Your final score is", score, "out of 3.")
 ```
 
-## Challenge 2
-
+**Challenge 2**
 ```python
 print("You are standing at a fork in the road.")
 choice1 = input("Do you go left or right? ")
@@ -564,8 +558,27 @@ else:
     print("You stand still and a friendly dog joins you.")
 ```
 
-</details>
+**Debugging practice**
 
-# Looking ahead
+```python
+age = int(input("How old are you? "))
+
+if age >= 13:
+    print("You can join.")
+```
+
+:::
+
+## What you learned
+
+You can now:
+
+- use `if` to run code only when a condition is true;
+- use `else` for the alternative case;
+- use `elif` when there are several possibilities;
+- compare values using operators such as `>`, `<`, `==` and `!=`;
+- build simple quizzes and choice-based programs.
+
+## Looking ahead
 
 The next lesson will introduce **loops**, so your programs can repeat actions without writing the same code again and again.
