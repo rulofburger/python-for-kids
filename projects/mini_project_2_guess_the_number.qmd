@@ -1,0 +1,267 @@
+---
+title: "Mini Project 2: Guess the Number"
+---
+
+## Goal
+
+Build a game where the player tries to guess a secret number.
+
+The program should say whether each guess is too low or too high, and it should count how many guesses the player needed.
+
+This project combines what you learned in Lessons 1–5:
+
+- variables
+- `input()`
+- `int()`
+- `if`, `elif`, and `else`
+- `while` loops
+- counting attempts
+- optional lists of messages
+
+## What your program should do
+
+Example game:
+
+```text
+Welcome to Guess the Number!
+
+Guess the secret number: 5
+Too low.
+
+Guess the secret number: 12
+Too high.
+
+Guess the secret number: 9
+Correct! You needed 3 guesses.
+```
+
+## Step 1: Create a secret number
+
+Create a file called:
+
+```text
+mini_project_2_guess_the_number.py
+```
+
+Start by choosing a secret number.
+
+```python
+secret = 9
+```
+
+Print a welcome message.
+
+## Step 2: Ask for one guess
+
+Ask the player to guess the number.
+
+Remember to use `int()` because the answer is a number.
+
+```python
+guess = int(input("Guess the secret number: "))
+```
+
+## Step 3: Check the guess
+
+Use `if`, `elif`, and `else`.
+
+Your program should say:
+
+- `Too low.` if the guess is smaller than the secret number;
+- `Too high.` if the guess is bigger than the secret number;
+- `Correct!` if the guess is right.
+
+## Step 4: Keep guessing
+
+Use a `while` loop so the player can keep guessing until they are correct.
+
+## Step 5: Count the guesses
+
+Create a variable called `guesses`.
+
+Start it at 0.
+
+Each time the player guesses, add 1.
+
+At the end, print something like:
+
+```text
+Correct! You needed 4 guesses.
+```
+
+## Step 6: Add a list of encouragement messages
+
+Create a list like this:
+
+```python
+messages = ["Keep going!", "Try again!", "You can do it!"]
+```
+
+After a wrong guess, print one of the messages.
+
+For now, you can choose a fixed message from the list:
+
+```python
+print(messages[0])
+```
+
+We will learn better ways to choose randomly in a later lesson.
+
+## Debugging practice
+
+This code has mistakes. Fix it.
+
+```python
+secret = 9
+guess = 0
+
+while guess = secret:
+    guess = input("Guess the number: ")
+
+    if guess < secret:
+        print("Too low.")
+    elif guess > secret
+        print("Too high.")
+    else:
+        print("Correct!")
+```
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Step 2**
+
+Use `int(input(...))`, not just `input()`.
+
+**Step 4**
+
+A useful loop condition is:
+
+```python
+while guess != secret:
+```
+
+**Step 5**
+
+Start with:
+
+```python
+guesses = 0
+```
+
+Then inside the loop:
+
+```python
+guesses = guesses + 1
+```
+
+**Step 6**
+
+Lists start counting at 0. The first item is:
+
+```python
+messages[0]
+```
+
+**Debugging practice**
+
+Look for:
+
+- `=` where you need `!=` or `==`;
+- missing `int()`;
+- a missing colon.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution
+
+```python
+print("Welcome to Guess the Number!")
+print()
+
+secret = 9
+guess = 0
+guesses = 0
+
+while guess != secret:
+    guess = int(input("Guess the secret number: "))
+    guesses = guesses + 1
+
+    if guess < secret:
+        print("Too low.")
+        print()
+    elif guess > secret:
+        print("Too high.")
+        print()
+    else:
+        print("Correct! You needed", guesses, "guesses.")
+```
+
+**Version with encouragement messages**
+
+```python
+print("Welcome to Guess the Number!")
+print()
+
+secret = 9
+guess = 0
+guesses = 0
+
+messages = ["Keep going!", "Try again!", "You can do it!"]
+
+while guess != secret:
+    guess = int(input("Guess the secret number: "))
+    guesses = guesses + 1
+
+    if guess < secret:
+        print("Too low.")
+        print(messages[0])
+        print()
+    elif guess > secret:
+        print("Too high.")
+        print(messages[1])
+        print()
+    else:
+        print("Correct! You needed", guesses, "guesses.")
+```
+
+**Debugging practice solution**
+
+```python
+secret = 9
+guess = 0
+
+while guess != secret:
+    guess = int(input("Guess the number: "))
+
+    if guess < secret:
+        print("Too low.")
+    elif guess > secret:
+        print("Too high.")
+    else:
+        print("Correct!")
+```
+
+:::
+
+## Challenge extensions
+
+Try one or more of these.
+
+1. Let the player choose the largest possible number.
+2. Limit the player to 5 guesses.
+3. Print a special message if the player gets it on the first try.
+4. Add a `play again` question.
+5. Create different difficulty levels.
+6. Change the secret number and test whether the program still works.
+
+## What you practised
+
+You practised how to:
+
+- use a `while` loop;
+- compare numbers;
+- use `if`, `elif`, and `else`;
+- count how many times something happens;
+- build a real game from small programming ideas.

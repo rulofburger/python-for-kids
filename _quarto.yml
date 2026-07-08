@@ -9,25 +9,38 @@ book:
   search: true
   page-navigation: true
   reader-mode: true
-  repo-url: "https://github.com/YOUR-USERNAME/YOUR-REPO"
-  repo-actions: [source, issue]
   chapters:
     - index.qmd
     - setup.qmd
     - lessons/positron_intro.qmd
+
     - part: "Core Lessons"
       chapters:
         - lessons/python_lesson_1.qmd
         - lessons/python_lesson_2.qmd
         - lessons/python_lesson_3.qmd
+
+    - part: "Mini Projects"
+      chapters:
+        - projects/mini_project_1_quiz_game.qmd
+
+    - part: "More Core Lessons"
+      chapters:
         - lessons/python_lesson_4.qmd
         - lessons/python_lesson_5.qmd
-    - part: "Projects"
+
+    - part: "More Mini Projects"
+      chapters:
+        - projects/mini_project_2_guess_the_number.qmd
+
+    - part: "Project Library"
       chapters:
         - projects/index.qmd
+
     - part: "Extra Challenges"
       chapters:
         - challenges/index.qmd
+
 
 format:
   html:

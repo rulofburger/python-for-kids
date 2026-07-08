@@ -1,0 +1,279 @@
+---
+title: "Mini Project 1: Quiz Game"
+---
+
+## Goal
+
+Build a small quiz game that asks questions, checks the answers, keeps score, and prints the final result.
+
+This project combines what you learned in the first three lessons:
+
+- `print()`
+- variables
+- `input()`
+- `int()`
+- `if`, `else`, and `elif`
+- updating a score variable
+
+::: {.callout-tip}
+## Project rule
+
+Try to build each step before opening the hints or solution. It is fine if your code looks different from the example solution.
+:::
+
+## What your program should do
+
+Your quiz should:
+
+1. Ask the player three questions.
+2. Check whether each answer is correct.
+3. Add 1 point for each correct answer.
+4. Print the final score.
+
+Example output:
+
+```text
+Welcome to the quiz!
+
+Question 1: What language are we learning? Python
+Correct!
+
+Question 2: What is 6 * 7? 42
+Correct!
+
+Question 3: Which planet do we live on? Earth
+Correct!
+
+Your final score is 3 out of 3.
+```
+
+## Step 1: Print a welcome message
+
+Create a file called:
+
+```text
+mini_project_1_quiz_game.py
+```
+
+Start with a welcome message:
+
+```python
+print("Welcome to the quiz!")
+```
+
+Run the file and check that it works.
+
+## Step 2: Ask one question
+
+Ask the player:
+
+```text
+What language are we learning?
+```
+
+Store the answer in a variable.
+
+Check whether the answer is:
+
+```text
+Python
+```
+
+If it is correct, print:
+
+```text
+Correct!
+```
+
+Otherwise, print:
+
+```text
+Not quite.
+```
+
+## Step 3: Add a score
+
+Create a variable called `score`.
+
+Start it at 0.
+
+If the player gives the correct answer, add 1 to the score.
+
+At the end, print the score.
+
+## Step 4: Add two more questions
+
+Add two more questions.
+
+Use at least:
+
+- one text question;
+- one maths question.
+
+Remember: a maths answer needs `int()`.
+
+## Step 5: Print the final score
+
+At the end, print something like:
+
+```text
+Your final score is 2 out of 3.
+```
+
+## Step 6: Add a final message
+
+Use `if`, `elif`, and `else` to print a final message.
+
+For example:
+
+- if the score is 3, print `Excellent!`;
+- if the score is 2, print `Good work!`;
+- otherwise, print `Keep practising!`.
+
+## Debugging practice
+
+This code has mistakes. Fix it.
+
+```python
+score = 0
+
+answer = input("What language are we learning? ")
+
+if answer = "Python":
+    print("Correct!")
+    score = score + 1
+
+print("Your score is" score)
+```
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Step 2**
+
+Use `input()`.
+
+```python
+answer = input("Question text here: ")
+```
+
+**Step 3**
+
+Start with:
+
+```python
+score = 0
+```
+
+Then add 1 when an answer is correct:
+
+```python
+score = score + 1
+```
+
+**Step 4**
+
+Use `int()` for a maths answer:
+
+```python
+answer = int(input("What is 6 * 7? "))
+```
+
+**Step 6**
+
+Check the highest score first.
+
+**Debugging practice**
+
+There are two main mistakes:
+
+- use `==` to compare values;
+- separate different things in `print()` using commas.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution
+
+```python
+print("Welcome to the quiz!")
+print()
+
+score = 0
+
+answer1 = input("Question 1: What language are we learning? ")
+
+if answer1 == "Python":
+    print("Correct!")
+    score = score + 1
+else:
+    print("Not quite.")
+
+print()
+
+answer2 = int(input("Question 2: What is 6 * 7? "))
+
+if answer2 == 42:
+    print("Correct!")
+    score = score + 1
+else:
+    print("Not quite.")
+
+print()
+
+answer3 = input("Question 3: Which planet do we live on? ")
+
+if answer3 == "Earth":
+    print("Correct!")
+    score = score + 1
+else:
+    print("Not quite.")
+
+print()
+print("Your final score is", score, "out of 3.")
+
+if score == 3:
+    print("Excellent!")
+elif score == 2:
+    print("Good work!")
+else:
+    print("Keep practising!")
+```
+
+**Debugging practice solution**
+
+```python
+score = 0
+
+answer = input("What language are we learning? ")
+
+if answer == "Python":
+    print("Correct!")
+    score = score + 1
+
+print("Your score is", score)
+```
+
+:::
+
+## Challenge extensions
+
+Try one or more of these.
+
+1. Add five questions instead of three.
+2. Make the quiz about sport, music, animals, gaming, geography, or movies.
+3. Add a question where the answer is a number.
+4. Add a question where the answer is text.
+5. Print a different final message for every possible score.
+6. Ask the player for their name at the start and use it in the final message.
+
+## What you practised
+
+You practised how to:
+
+- ask the user questions;
+- store answers in variables;
+- compare answers using `==`;
+- use `if`, `elif`, and `else`;
+- keep score by updating a variable;
+- combine several ideas into one working program.

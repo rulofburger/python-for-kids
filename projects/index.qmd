@@ -2,7 +2,7 @@
 title: "Projects"
 ---
 
-# Projects
+## Project library
 
 Projects are larger programs that combine several ideas from the lessons.
 
@@ -12,77 +12,114 @@ Projects are larger programs that combine several ideas from the lessons.
 Try to build the first version yourself. Then improve it by adding your own features.
 :::
 
-## Project ideas
+## Mini projects in this course
 
-### Guess the Number
+::: {.lesson-grid}
 
-The computer chooses a secret number. The player guesses until they get it right.
+::: {.lesson-card}
+### Mini Project 1: Quiz Game
 
-Skills used:
-
-- variables,
-- `input()`,
-- `if`,
-- `while`.
-
-### Quiz Game
-
-Ask several questions and keep score.
+Build a three-question quiz that checks answers and keeps score.
 
 Skills used:
 
-- strings,
-- variables,
-- `if`,
-- loops.
+- variables
+- `input()`
+- `int()`
+- `if`, `else`, and `elif`
+
+[Open Mini Project 1](mini_project_1_quiz_game.qmd)
+:::
+
+::: {.lesson-card}
+### Mini Project 2: Guess the Number
+
+Build a guessing game that uses a loop and counts guesses.
+
+Skills used:
+
+- variables
+- `input()`
+- `int()`
+- `while`
+- `if`, `elif`, and `else`
+
+[Open Mini Project 2](mini_project_2_guess_the_number.qmd)
+:::
+
+:::
+
+## Future project ideas
 
 ### Shopping Receipt
 
 Ask for item prices and quantities. Print a neat receipt.
 
-Skills used:
-
-- arithmetic,
-- variables,
-- input,
-- formatting.
-
 ### Mini Adventure Game
 
 The player chooses what to do next and the story changes.
 
-Skills used:
+### Flashcard Trainer
 
-- `if`,
-- `elif`,
-- nested decisions,
-- strings.
+Ask repeated practice questions and keep track of correct answers.
+
+### Dice Game
+
+Use randomness to simulate dice rolls.
+
+### High Score Table
+
+Save scores to a file and load them again later.
 
 ## Project template
 
 Use this structure for new projects:
 
 ```markdown
-# Project name
+---
+title: "Project name"
+---
 
 ## Goal
 
 What should the program do?
 
-## Skills used
+## Skills you will use
 
 - Skill 1
 - Skill 2
 
-## Basic version
+## What the program should do
 
-What is the smallest working version?
+Describe the target behaviour.
 
-## Extensions
+## Step 1
 
-How can you make it better?
+Build the smallest working version.
 
-## Solution
+## Step 2
 
-Put a full solution here, preferably hidden in a details block.
+Add one feature.
+
+## Challenge extensions
+
+Add optional improvements.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+Put hints here.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution
+
+Put a full solution here.
+
+:::
+
+## What you practised
+
+Summarise what the learner practised.
 ```

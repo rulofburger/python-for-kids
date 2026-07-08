@@ -1,89 +1,184 @@
 ---
-title: "Welcome"
+title: "Python for Beginners"
+number-sections: false
 ---
 
-::: {.hero-banner}
+::: {.hero}
 # Python for Beginners
 
-A friendly, practical course for learning real Python by building small programs, solving exercises, and making fun projects.
-:::
+A hands-on Python course for curious beginners.
 
-## Start here
+Learn by writing real code, solving short exercises, opening hints only when needed, and building small projects.
 
-This course is designed for complete beginners. You do not need to know any coding before you begin.
-
-You will learn by:
-
-- reading short explanations,
-- typing code yourself,
-- solving exercises,
-- opening hints only when needed,
-- checking full solutions only after trying properly,
-- and building small projects.
-
-::: {.callout-tip}
-## Best way to learn
-
-Type the examples yourself instead of copying and pasting. Programming is learned through practice.
+[Start the course →](setup.qmd){.btn .btn-primary}
+[Go to Lesson 1](lessons/python_lesson_1.qmd){.btn .btn-secondary}
 :::
 
 ## What you will learn
 
-By the end of the first five lessons, you will be able to:
+::: {.feature-grid}
 
-- write and run Python programs,
-- print text and numbers,
-- use variables,
-- ask the user for input,
-- make decisions with `if`,
-- repeat code with loops,
-- and work with lists.
+::: {.feature-card}
+### Write real Python
 
-## Course map
-
-::: {.course-grid}
-
-::: {.course-card}
-### 1. Setup
-
-Install Python, open Positron, and learn the main parts of the coding window.
+Create and run `.py` files in Positron.
 :::
 
-::: {.course-card}
-### 2. First programs
+::: {.feature-card}
+### Build interactive programs
 
-Use `print()`, variables, strings and arithmetic.
+Use `input()`, variables and `print()` to make programs respond to the user.
 :::
 
-::: {.course-card}
-### 3. Interactive programs
+::: {.feature-card}
+### Make decisions
 
-Use `input()` to ask questions and respond to the user's answers.
+Use `if`, `else` and `elif` to make programs choose between options.
 :::
 
-::: {.course-card}
-### 4. Decisions
+::: {.feature-card}
+### Repeat actions
 
-Use `if`, `else` and `elif` to make your programs choose between options.
+Use loops to build quizzes, games and practice tools.
 :::
 
-::: {.course-card}
-### 5. Loops
+::: {.feature-card}
+### Work with lists
 
-Use `while` and `for` loops so your programs can repeat actions.
+Store names, scores, shopping items and other collections.
 :::
 
-::: {.course-card}
-### 6. Projects
+::: {.feature-card}
+### Build projects
 
-Build games, calculators, quizzes and other small programs.
+Make games, calculators, quizzes and small apps.
+:::
+
+::: {.lesson-card}
+### Mini Project 1
+
+Build a quiz game using variables, input and `if`.
+
+[Open Mini Project 1](projects/mini_project_1_quiz_game.qmd)
+:::
+
+::: {.lesson-card}
+### Mini Project 2
+
+Build a guess-the-number game using loops.
+
+[Open Mini Project 2](projects/mini_project_2_guess_the_number.qmd)
+:::
+
+
+:::
+
+## How to use the course
+
+::: {.steps}
+
+**1. Read the short explanation**  
+Each lesson introduces only one or two new ideas.
+
+**2. Type the examples yourself**  
+Do not just copy and paste. Typing helps you notice how code works.
+
+**3. Try the exercises before opening hints**  
+The hints are there to help, not to replace thinking.
+
+**4. Check the solution only at the end**  
+There are many ways to solve a coding problem. Compare your solution with the example.
+
+**5. Try the challenge**  
+The challenges are where the lesson turns into real programming.
+
+:::
+
+## Course path
+
+::: {.lesson-grid}
+
+::: {.lesson-card}
+### Setup
+
+Install the tools and learn how to move around Positron.
+
+[Open setup](setup.qmd)
+:::
+
+::: {.lesson-card}
+### Getting Started with Positron
+
+Learn the editor, console, terminal, explorer, variables and plots panes.
+
+[Open Positron intro](lessons/positron_intro.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 1
+
+Your first Python program: `print()`, variables, strings and arithmetic.
+
+[Open Lesson 1](lessons/python_lesson_1.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 2
+
+Make Python interactive with `input()`.
+
+[Open Lesson 2](lessons/python_lesson_2.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 3
+
+Use `if`, `else` and `elif`.
+
+[Open Lesson 3](lessons/python_lesson_3.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 4
+
+Repeat code with `while` loops.
+
+[Open Lesson 4](lessons/python_lesson_4.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 5
+
+Use lists and `for` loops.
+
+[Open Lesson 5](lessons/python_lesson_5.qmd)
+:::
+
+::: {.lesson-card}
+### Projects
+
+Build larger programs using everything you have learned.
+
+[Open projects](projects/index.qmd)
 :::
 
 :::
 
 ## Suggested pace
 
-A good pace is **one lesson per session**, with 45–60 minutes per lesson.
+One lesson per session works well.
+
+A good session is about **45–60 minutes**:
+
+- 10–15 minutes reading and trying examples,
+- 20–30 minutes on exercises,
+- 10–15 minutes on challenges or debugging.
+
+::: {.callout-tip}
+## Best rule
+
+Do not worry about finishing quickly. The goal is to understand what your code is doing.
+:::
 
 For each lesson:
 
