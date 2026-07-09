@@ -1,0 +1,605 @@
+---
+title: "Lesson 10: Dictionaries"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- create a dictionary;
+- use keys and values;
+- look up values in a dictionary;
+- add and update dictionary entries;
+- loop through a dictionary;
+- use dictionaries for quizzes and simple records.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You have already used lists.
+
+```python
+foods = ["pizza", "burgers", "pasta"]
+
+print(foods[0])
+```
+
+Lists use positions:
+
+```text
+0, 1, 2, ...
+```
+
+A **dictionary** uses labels called **keys**.
+
+## Part 1: A first dictionary
+
+A dictionary stores pairs of information.
+
+```python
+person = {
+    "name": "Alex",
+    "age": 15,
+    "hobby": "cycling"
+}
+```
+
+The keys are:
+
+```text
+name
+age
+hobby
+```
+
+The values are:
+
+```text
+Alex
+15
+cycling
+```
+
+## Part 2: Looking up values
+
+Use square brackets and the key.
+
+```python
+person = {
+    "name": "Alex",
+    "age": 15,
+    "hobby": "cycling"
+}
+
+print(person["name"])
+print(person["age"])
+```
+
+Output:
+
+```text
+Alex
+15
+```
+
+## Part 3: Adding and changing values
+
+You can add a new key.
+
+```python
+person = {
+    "name": "Alex",
+    "age": 15
+}
+
+person["city"] = "Cape Town"
+
+print(person)
+```
+
+You can also update an existing value.
+
+```python
+person["age"] = 16
+```
+
+## Part 4: A dictionary of scores
+
+Dictionaries are useful when each value has a label.
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+print(scores["Alex"])
+```
+
+Output:
+
+```text
+10
+```
+
+## Part 5: Looping through a dictionary
+
+You can loop through the keys.
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+for name in scores:
+    print(name, scores[name])
+```
+
+Output:
+
+```text
+Alex 10
+Ben 8
+Chloe 9
+```
+
+You can also use `.items()`.
+
+```python
+for name, score in scores.items():
+    print(f"{name}: {score}")
+```
+
+This is often easier to read.
+
+## Part 6: A dictionary for a quiz
+
+Dictionaries are useful for storing questions and answers.
+
+```python
+questions = {
+    "What language are we learning?": "python",
+    "What is 6 * 7?": "42",
+    "Which planet do we live on?": "earth"
+}
+```
+
+Then you can loop through the dictionary.
+
+```python
+score = 0
+
+for question, correct_answer in questions.items():
+    answer = input(question + " ")
+    answer = answer.strip().lower()
+
+    if answer == correct_answer:
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Not quite.")
+
+print("Score:", score)
+```
+
+## Part 7: Checking whether a key exists
+
+Use `in` to check whether a key exists.
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8
+}
+
+name = input("Whose score do you want? ")
+
+if name in scores:
+    print(scores[name])
+else:
+    print("I do not have that score.")
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting quotation marks around string keys
+
+Wrong:
+
+```python
+person = {
+    name: "Alex"
+}
+```
+
+Correct:
+
+```python
+person = {
+    "name": "Alex"
+}
+```
+
+### Mistake 2: Looking up a key that does not exist
+
+```python
+person = {
+    "name": "Alex"
+}
+
+print(person["age"])
+```
+
+This gives an error because there is no `"age"` key.
+
+### Mistake 3: Confusing lists and dictionaries
+
+Lists use positions:
+
+```python
+foods[0]
+```
+
+Dictionaries use keys:
+
+```python
+person["name"]
+```
+
+## Exercises
+
+### Exercise 1
+
+Create a dictionary called `person` with keys:
+
+```text
+name
+age
+favourite_food
+```
+
+Print each value.
+
+### Exercise 2
+
+Create a dictionary of three people and their scores.
+
+Print one person's score.
+
+### Exercise 3
+
+Add a new person to the scores dictionary.
+
+Print the whole dictionary.
+
+### Exercise 4
+
+Update one person's score.
+
+Print the updated score.
+
+### Exercise 5
+
+Loop through the scores dictionary and print each name and score.
+
+### Exercise 6
+
+Create a dictionary of three countries and their capital cities.
+
+Ask the user for a country.
+
+If the country is in the dictionary, print the capital.
+
+Otherwise, print:
+
+```text
+I do not know that country.
+```
+
+### Exercise 7
+
+Create a dictionary of three quiz questions and answers.
+
+Loop through the questions and keep score.
+
+### Exercise 8
+
+Create a small dictionary for a pet.
+
+Use keys like:
+
+```text
+name
+animal
+age
+```
+
+Print a sentence describing the pet.
+
+## Debugging practice
+
+The following code has mistakes. Fix it.
+
+```python
+person = {
+    name: "Alex",
+    "age" = 15
+}
+
+print(person[name])
+```
+
+## Challenges
+
+### Challenge 1: Phone book
+
+Create a dictionary of names and phone numbers.
+
+Ask the user for a name.
+
+Print the phone number if the name exists.
+
+### Challenge 2: Quiz dictionary
+
+Create a quiz using a dictionary.
+
+Use at least five questions.
+
+Clean the user's answer with `.strip().lower()` before checking it.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+A dictionary uses curly brackets:
+
+```python
+person = {
+    "name": "Alex"
+}
+```
+
+**Exercise 2**
+
+Use names as keys and scores as values.
+
+**Exercise 3**
+
+Add a new key like this:
+
+```python
+scores["New name"] = 7
+```
+
+**Exercise 4**
+
+Updating looks the same as adding.
+
+**Exercise 5**
+
+Use `.items()`.
+
+**Exercise 6**
+
+Use:
+
+```python
+if country in capitals:
+```
+
+**Exercise 7**
+
+Use the quiz example in the lesson.
+
+**Exercise 8**
+
+Use an f-string.
+
+**Debugging practice**
+
+Look for:
+
+- missing quotation marks;
+- `=` where a colon `:` is needed;
+- a key used without quotation marks.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+person = {
+    "name": "Alex",
+    "age": 15,
+    "favourite_food": "pizza"
+}
+
+print(person["name"])
+print(person["age"])
+print(person["favourite_food"])
+```
+
+**Exercise 2**
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+print(scores["Ben"])
+```
+
+**Exercise 3**
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+scores["Dana"] = 7
+
+print(scores)
+```
+
+**Exercise 4**
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+scores["Ben"] = 9
+
+print(scores["Ben"])
+```
+
+**Exercise 5**
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8,
+    "Chloe": 9
+}
+
+for name, score in scores.items():
+    print(f"{name}: {score}")
+```
+
+**Exercise 6**
+
+```python
+capitals = {
+    "South Africa": "Pretoria",
+    "France": "Paris",
+    "Japan": "Tokyo"
+}
+
+country = input("Enter a country: ")
+
+if country in capitals:
+    print(capitals[country])
+else:
+    print("I do not know that country.")
+```
+
+**Exercise 7**
+
+```python
+questions = {
+    "What language are we learning?": "python",
+    "What is 6 * 7?": "42",
+    "Which planet do we live on?": "earth"
+}
+
+score = 0
+
+for question, correct_answer in questions.items():
+    answer = input(question + " ")
+    answer = answer.strip().lower()
+
+    if answer == correct_answer:
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Not quite.")
+
+print("Score:", score)
+```
+
+**Exercise 8**
+
+```python
+pet = {
+    "name": "Milo",
+    "animal": "dog",
+    "age": 4
+}
+
+print(f"{pet['name']} is a {pet['age']}-year-old {pet['animal']}.")
+```
+
+**Debugging practice solution**
+
+```python
+person = {
+    "name": "Alex",
+    "age": 15
+}
+
+print(person["name"])
+```
+
+**Challenge 1**
+
+```python
+phone_book = {
+    "Alex": "071 123 4567",
+    "Ben": "072 222 3333",
+    "Chloe": "073 444 5555"
+}
+
+name = input("Whose number do you want? ")
+
+if name in phone_book:
+    print(phone_book[name])
+else:
+    print("I do not have that number.")
+```
+
+**Challenge 2**
+
+```python
+questions = {
+    "What language are we learning?": "python",
+    "What is 8 * 7?": "56",
+    "Which planet do we live on?": "earth",
+    "What colour is grass?": "green",
+    "How many days are in a week?": "7"
+}
+
+score = 0
+
+for question, correct_answer in questions.items():
+    answer = input(question + " ")
+    answer = answer.strip().lower()
+
+    if answer == correct_answer:
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Not quite.")
+
+print("Final score:", score, "out of", len(questions))
+```
+
+:::
+
+## What you learned
+
+You can now:
+
+- create dictionaries;
+- use keys to look up values;
+- add and update dictionary entries;
+- loop through dictionaries;
+- check whether a key exists;
+- use dictionaries for quizzes and records.
+
+## Looking ahead
+
+The next lesson introduces **errors and debugging**, which will help you fix programs more confidently.

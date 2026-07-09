@@ -1,0 +1,549 @@
+---
+title: "Lesson 11: Errors and Debugging"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- understand common Python error messages;
+- recognise syntax errors, name errors, type errors and value errors;
+- fix bugs step by step;
+- use `try` and `except` to handle invalid input;
+- debug programs more calmly and systematically.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+Everyone who writes code creates errors.
+
+That does not mean you are bad at coding. It means you are coding.
+
+A bug is a mistake in a program.
+
+Debugging means:
+
+> Finding and fixing the mistake.
+
+## Part 1: Syntax errors
+
+A **syntax error** means Python could not understand the structure of your code.
+
+Example:
+
+```python
+if age >= 13
+    print("You can join.")
+```
+
+This is missing a colon.
+
+Correct:
+
+```python
+if age >= 13:
+    print("You can join.")
+```
+
+Common syntax errors:
+
+- missing colon;
+- missing quotation mark;
+- missing closing bracket;
+- incorrect indentation.
+
+## Part 2: Name errors
+
+A **name error** happens when you use a variable name that does not exist.
+
+```python
+name = "Alex"
+
+print(nmae)
+```
+
+Python does not know what `nmae` means.
+
+Correct:
+
+```python
+name = "Alex"
+
+print(name)
+```
+
+Name errors are often spelling mistakes.
+
+## Part 3: Type errors
+
+A **type error** happens when Python is asked to combine things that do not fit together.
+
+```python
+age = input("How old are you? ")
+
+print(age + 1)
+```
+
+`input()` gives text, but `1` is a number.
+
+Correct:
+
+```python
+age = int(input("How old are you? "))
+
+print(age + 1)
+```
+
+## Part 4: Value errors
+
+A **value error** happens when the type is right, but the value cannot be used.
+
+```python
+age = int(input("How old are you? "))
+```
+
+If the user types:
+
+```text
+twelve
+```
+
+Python cannot turn that into an integer.
+
+This gives a value error.
+
+## Part 5: Using `try` and `except`
+
+You can use `try` and `except` to stop a program from crashing.
+
+```python
+try:
+    age = int(input("How old are you? "))
+    print("Next year you will be", age + 1)
+except ValueError:
+    print("Please type a number using digits.")
+```
+
+Read this as:
+
+> Try this code. If there is a `ValueError`, do this instead.
+
+## Part 6: Repeating until input is valid
+
+You can combine `try`, `except`, and a loop.
+
+```python
+age = None
+
+while age is None:
+    try:
+        age = int(input("How old are you? "))
+    except ValueError:
+        print("Please type a number using digits.")
+
+print("Next year you will be", age + 1)
+```
+
+For now, understand `None` as meaning:
+
+> No valid answer yet.
+
+## Part 7: A debugging routine
+
+When your code breaks, use this routine.
+
+1. Read the error message.
+2. Find the line number.
+3. Look at that line and the line above it.
+4. Check punctuation: colons, brackets, quotation marks.
+5. Check spelling of variable names.
+6. Print important variables to see their values.
+7. Change one thing at a time.
+8. Run the code again.
+
+::: {.callout-tip}
+## Debugging rule
+
+Do not change five things at once. Change one thing, then run the program again.
+:::
+
+## Part 8: Using `print()` to inspect values
+
+If a program is not doing what you expect, print important variables.
+
+```python
+score = 0
+
+answer = input("What language are we learning? ")
+answer = answer.strip().lower()
+
+print("DEBUG answer is:", answer)
+
+if answer == "python":
+    score = score + 1
+
+print("Score:", score)
+```
+
+Later, you can remove the debug print lines.
+
+## Common mistakes
+
+### Mistake 1: Not reading the error message
+
+Error messages look scary, but they often tell you exactly where to look.
+
+Always look for:
+
+- the line number;
+- the error type;
+- the final line of the error message.
+
+### Mistake 2: Fixing the wrong line
+
+Sometimes the problem is on the line before the error.
+
+Example:
+
+```python
+print("Hello"
+print("World")
+```
+
+Python may complain about the second line, but the missing bracket is on the first line.
+
+### Mistake 3: Trying to fix everything at once
+
+Change one thing at a time.
+
+If the error changes, you have learned something.
+
+## Exercises
+
+### Exercise 1
+
+Fix the syntax error.
+
+```python
+age = 15
+
+if age >= 13
+    print("You can join.")
+```
+
+### Exercise 2
+
+Fix the name error.
+
+```python
+name = "Alex"
+
+print(namme)
+```
+
+### Exercise 3
+
+Fix the type error.
+
+```python
+age = input("How old are you? ")
+
+print(age + 1)
+```
+
+### Exercise 4
+
+Write a program that asks for a number.
+
+Use `try` and `except` to print:
+
+```text
+Please type a number.
+```
+
+if the user types something invalid.
+
+### Exercise 5
+
+Ask the user for two numbers.
+
+Use `try` and `except` to handle invalid input.
+
+Print their sum if both inputs are valid.
+
+### Exercise 6
+
+Create a loop that keeps asking for a number until the user types a valid number.
+
+Then print the number doubled.
+
+### Exercise 7
+
+Add debug print lines to this code to work out why the score is not increasing.
+
+```python
+score = 0
+
+answer = input("What language are we learning? ")
+
+if answer == "python":
+    score = score + 1
+
+print(score)
+```
+
+### Exercise 8
+
+Fix this program.
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8
+}
+
+name = input("Whose score do you want? ")
+
+print(scores[name])
+```
+
+If the name is not in the dictionary, print:
+
+```text
+I do not have that score.
+```
+
+## Debugging practice
+
+The following code has several mistakes. Fix it.
+
+```python
+def double(number)
+    return number * 2
+
+answer = input("Enter a number: ")
+
+print(double(answer))
+```
+
+## Challenges
+
+### Challenge 1: Safe age calculator
+
+Ask the user for their age.
+
+Keep asking until they type a valid number.
+
+Then print how old they will be next year.
+
+### Challenge 2: Safe quiz question
+
+Ask a maths question.
+
+If the user types something that is not a number, print:
+
+```text
+That was not a valid number.
+```
+
+If they type a number, check whether it is correct.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+The `if` line needs a colon.
+
+**Exercise 2**
+
+Check the spelling of the variable name.
+
+**Exercise 3**
+
+Use `int()`.
+
+**Exercise 4**
+
+Put the conversion to `int()` inside the `try` block.
+
+**Exercise 5**
+
+You can put both inputs inside one `try` block.
+
+**Exercise 6**
+
+Use `None` to mean “no valid number yet”.
+
+**Exercise 7**
+
+Print the cleaned answer. You may need `.strip().lower()`.
+
+**Exercise 8**
+
+Use:
+
+```python
+if name in scores:
+```
+
+**Debugging practice**
+
+There are two main issues:
+
+- a missing colon;
+- `input()` gives text, so convert it to a number.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+age = 15
+
+if age >= 13:
+    print("You can join.")
+```
+
+**Exercise 2**
+
+```python
+name = "Alex"
+
+print(name)
+```
+
+**Exercise 3**
+
+```python
+age = int(input("How old are you? "))
+
+print(age + 1)
+```
+
+**Exercise 4**
+
+```python
+try:
+    number = int(input("Enter a number: "))
+    print("You typed", number)
+except ValueError:
+    print("Please type a number.")
+```
+
+**Exercise 5**
+
+```python
+try:
+    number1 = int(input("Enter the first number: "))
+    number2 = int(input("Enter the second number: "))
+
+    print("Sum:", number1 + number2)
+except ValueError:
+    print("Please type numbers using digits.")
+```
+
+**Exercise 6**
+
+```python
+number = None
+
+while number is None:
+    try:
+        number = int(input("Enter a number: "))
+    except ValueError:
+        print("Please type a number.")
+
+print("Double:", number * 2)
+```
+
+**Exercise 7**
+
+```python
+score = 0
+
+answer = input("What language are we learning? ")
+answer = answer.strip().lower()
+
+print("DEBUG answer:", answer)
+
+if answer == "python":
+    score = score + 1
+
+print(score)
+```
+
+**Exercise 8**
+
+```python
+scores = {
+    "Alex": 10,
+    "Ben": 8
+}
+
+name = input("Whose score do you want? ")
+
+if name in scores:
+    print(scores[name])
+else:
+    print("I do not have that score.")
+```
+
+**Debugging practice solution**
+
+```python
+def double(number):
+    return number * 2
+
+answer = int(input("Enter a number: "))
+
+print(double(answer))
+```
+
+**Challenge 1**
+
+```python
+age = None
+
+while age is None:
+    try:
+        age = int(input("How old are you? "))
+    except ValueError:
+        print("Please type your age using digits.")
+
+print("Next year you will be", age + 1)
+```
+
+**Challenge 2**
+
+```python
+try:
+    answer = int(input("What is 8 * 7? "))
+
+    if answer == 56:
+        print("Correct!")
+    else:
+        print("Not quite.")
+except ValueError:
+    print("That was not a valid number.")
+```
+
+:::
+
+## What you learned
+
+You can now:
+
+- recognise several common error types;
+- use error messages to find problems;
+- use `try` and `except` for invalid input;
+- debug one step at a time;
+- use `print()` to inspect variables.
+
+## Looking ahead
+
+The next mini-project uses files, dictionaries and error handling to build a flashcard trainer.

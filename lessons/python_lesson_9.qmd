@@ -1,0 +1,499 @@
+---
+title: "Lesson 9: Saving and Reading Files"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- understand why files are useful;
+- write text to a file;
+- read text from a file;
+- add new lines to a file;
+- use `with open(...)` safely;
+- build programs that remember information after they stop running.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+So far, your programs forget everything when they stop.
+
+For example:
+
+```python
+score = 10
+
+print(score)
+```
+
+When the program ends, the score disappears.
+
+Files let your program save information.
+
+Examples:
+
+- a high score;
+- a list of names;
+- quiz results;
+- notes;
+- settings.
+
+## Part 1: Writing to a file
+
+To write text to a file, use `open()` with `"w"`.
+
+```python
+with open("message.txt", "w") as file:
+    file.write("Hello from Python!")
+```
+
+This creates a file called:
+
+```text
+message.txt
+```
+
+and writes:
+
+```text
+Hello from Python!
+```
+
+The `"w"` means **write**.
+
+If the file already exists, `"w"` replaces the old contents.
+
+## Part 2: Reading from a file
+
+To read a file, use `"r"`.
+
+```python
+with open("message.txt", "r") as file:
+    text = file.read()
+
+print(text)
+```
+
+The `"r"` means **read**.
+
+The line:
+
+```python
+text = file.read()
+```
+
+reads the whole file and stores it in the variable `text`.
+
+## Part 3: Why use `with`?
+
+You will often see this pattern:
+
+```python
+with open("message.txt", "r") as file:
+    text = file.read()
+```
+
+The word `with` helps Python open the file, use it, and close it safely afterwards.
+
+For now, use this pattern whenever you work with files.
+
+## Part 4: Writing more than one line
+
+You can use `\n` to add a new line.
+
+```python
+with open("shopping.txt", "w") as file:
+    file.write("Milk\n")
+    file.write("Bread\n")
+    file.write("Eggs\n")
+```
+
+The file will contain:
+
+```text
+Milk
+Bread
+Eggs
+```
+
+The `\n` means “new line”.
+
+## Part 5: Adding to a file
+
+Use `"a"` to append to a file.
+
+Append means:
+
+> Add to the end without deleting what is already there.
+
+```python
+with open("scores.txt", "a") as file:
+    file.write("Alex: 10\n")
+```
+
+If you run that code several times, it keeps adding new lines.
+
+The `"a"` means **append**.
+
+## Part 6: Reading lines
+
+Sometimes you want each line separately.
+
+```python
+with open("shopping.txt", "r") as file:
+    lines = file.readlines()
+
+print(lines)
+```
+
+This gives a list of lines.
+
+You can loop through the lines:
+
+```python
+with open("shopping.txt", "r") as file:
+    lines = file.readlines()
+
+for line in lines:
+    print(line.strip())
+```
+
+The `.strip()` removes the extra newline at the end of each line.
+
+## Part 7: File not found
+
+This code will crash if the file does not exist:
+
+```python
+with open("missing.txt", "r") as file:
+    text = file.read()
+```
+
+For now, avoid this by making sure you create the file before reading it.
+
+In a later lesson, you will learn how to handle this kind of error more carefully.
+
+## Common mistakes
+
+### Mistake 1: Forgetting quotation marks around the filename
+
+Wrong:
+
+```python
+with open(message.txt, "w") as file:
+    file.write("Hello")
+```
+
+Correct:
+
+```python
+with open("message.txt", "w") as file:
+    file.write("Hello")
+```
+
+### Mistake 2: Forgetting `\n`
+
+```python
+with open("shopping.txt", "w") as file:
+    file.write("Milk")
+    file.write("Bread")
+```
+
+This creates:
+
+```text
+MilkBread
+```
+
+Better:
+
+```python
+with open("shopping.txt", "w") as file:
+    file.write("Milk\n")
+    file.write("Bread\n")
+```
+
+### Mistake 3: Using `"w"` when you meant `"a"`
+
+This replaces the file:
+
+```python
+with open("scores.txt", "w") as file:
+    file.write("Alex: 10\n")
+```
+
+This adds to the file:
+
+```python
+with open("scores.txt", "a") as file:
+    file.write("Alex: 10\n")
+```
+
+## Exercises
+
+### Exercise 1
+
+Create a file called `hello_file.txt`.
+
+Write:
+
+```text
+Hello from Python!
+```
+
+to the file.
+
+### Exercise 2
+
+Read `hello_file.txt` and print its contents.
+
+### Exercise 3
+
+Create a file called `shopping.txt`.
+
+Write three shopping items, each on a new line.
+
+### Exercise 4
+
+Read `shopping.txt`.
+
+Print each line without the extra newline.
+
+### Exercise 5
+
+Ask the user for their name.
+
+Save it to a file called `name.txt`.
+
+### Exercise 6
+
+Read the name from `name.txt`.
+
+Print:
+
+```text
+Welcome back, NAME!
+```
+
+### Exercise 7
+
+Ask the user for a score.
+
+Append the score to a file called `scores.txt`.
+
+### Exercise 8
+
+Create a simple notes program.
+
+Ask the user to type one note.
+
+Append the note to a file called `notes.txt`.
+
+## Debugging practice
+
+The following code has mistakes. Fix it.
+
+```python
+with open(notes.txt, "w") as file:
+file.write("Remember to practise")
+
+with open("notes.txt", "r") as file:
+    text = file.read
+
+print(text)
+```
+
+## Challenges
+
+### Challenge 1: Daily journal
+
+Ask the user to type one sentence about their day.
+
+Append it to a file called `journal.txt`.
+
+Then print:
+
+```text
+Journal saved.
+```
+
+### Challenge 2: Show all notes
+
+Create a program that reads `notes.txt` and prints every note with a dash in front.
+
+Example:
+
+```text
+- Learn Python
+- Practise loops
+- Try the project
+```
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Use `"w"` to write to the file.
+
+**Exercise 2**
+
+Use `"r"` to read from the file.
+
+**Exercise 3**
+
+Remember to add `\n` after each item.
+
+**Exercise 4**
+
+Use `.readlines()` and loop through the lines.
+
+**Exercise 5**
+
+Use `input()` first, then write to the file.
+
+**Exercise 6**
+
+Read the file and use an f-string.
+
+**Exercise 7**
+
+Use `"a"` to append.
+
+**Exercise 8**
+
+This is like Exercise 7, but with notes instead of scores.
+
+**Debugging practice**
+
+Look for:
+
+- missing quotation marks around the filename;
+- missing indentation;
+- missing parentheses after `.read`.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+with open("hello_file.txt", "w") as file:
+    file.write("Hello from Python!")
+```
+
+**Exercise 2**
+
+```python
+with open("hello_file.txt", "r") as file:
+    text = file.read()
+
+print(text)
+```
+
+**Exercise 3**
+
+```python
+with open("shopping.txt", "w") as file:
+    file.write("Milk\n")
+    file.write("Bread\n")
+    file.write("Eggs\n")
+```
+
+**Exercise 4**
+
+```python
+with open("shopping.txt", "r") as file:
+    lines = file.readlines()
+
+for line in lines:
+    print(line.strip())
+```
+
+**Exercise 5**
+
+```python
+name = input("What is your name? ")
+
+with open("name.txt", "w") as file:
+    file.write(name)
+```
+
+**Exercise 6**
+
+```python
+with open("name.txt", "r") as file:
+    name = file.read()
+
+print(f"Welcome back, {name}!")
+```
+
+**Exercise 7**
+
+```python
+score = input("Enter your score: ")
+
+with open("scores.txt", "a") as file:
+    file.write(score + "\n")
+```
+
+**Exercise 8**
+
+```python
+note = input("Type a note: ")
+
+with open("notes.txt", "a") as file:
+    file.write(note + "\n")
+```
+
+**Debugging practice solution**
+
+```python
+with open("notes.txt", "w") as file:
+    file.write("Remember to practise")
+
+with open("notes.txt", "r") as file:
+    text = file.read()
+
+print(text)
+```
+
+**Challenge 1**
+
+```python
+entry = input("Write one sentence about your day: ")
+
+with open("journal.txt", "a") as file:
+    file.write(entry + "\n")
+
+print("Journal saved.")
+```
+
+**Challenge 2**
+
+```python
+with open("notes.txt", "r") as file:
+    notes = file.readlines()
+
+for note in notes:
+    print("-", note.strip())
+```
+
+:::
+
+## What you learned
+
+You can now:
+
+- write text to a file;
+- read text from a file;
+- add new lines using `\n`;
+- append new information to an existing file;
+- use files to make programs remember information.
+
+## Looking ahead
+
+The next lesson introduces **dictionaries**, which let you store information using names or labels instead of positions.
