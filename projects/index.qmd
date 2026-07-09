@@ -47,6 +47,39 @@ Skills used:
 [Open Mini Project 2](mini_project_2_guess_the_number.qmd)
 :::
 
+::: {.lesson-card}
+### Mini Project 3: Dice Game
+
+Build a dice battle game using randomness, functions and loops.
+
+Skills used:
+
+- `random.randint()`
+- functions
+- loops
+- scorekeeping
+- `if`, `elif`, and `else`
+
+[Open Mini Project 3](mini_project_3_dice_game.qmd)
+:::
+
+::: {.lesson-card}
+### Mini Project 4: Flashcard Trainer
+
+Build a study tool that asks questions, checks answers and saves scores.
+
+Skills used:
+
+- dictionaries
+- files
+- functions
+- loops
+- randomness
+- debugging
+
+[Open Mini Project 4](mini_project_4_flashcard_trainer.qmd)
+:::
+
 :::
 
 ## Future project ideas
@@ -59,17 +92,17 @@ Ask for item prices and quantities. Print a neat receipt.
 
 The player chooses what to do next and the story changes.
 
-### Flashcard Trainer
+### Calculator Toolkit
 
-Ask repeated practice questions and keep track of correct answers.
-
-### Dice Game
-
-Use randomness to simulate dice rolls.
+Use functions to create a reusable calculator.
 
 ### High Score Table
 
 Save scores to a file and load them again later.
+
+### Word Guessing Game
+
+Use strings, lists, loops and randomness to build a word game.
 
 ## Project template
 

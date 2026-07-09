@@ -1,0 +1,247 @@
+---
+title: "Mini Project 3: Dice Game"
+---
+
+## Goal
+
+Build a dice game using randomness, functions, loops and `if` statements.
+
+The player and the computer each roll dice. The program decides who wins.
+
+## What your program should do
+
+The basic version should:
+
+1. welcome the player;
+2. roll one die for the player;
+3. roll one die for the computer;
+4. print both rolls;
+5. say who won.
+
+Example:
+
+```text
+Welcome to Dice Battle!
+
+You rolled 5.
+The computer rolled 3.
+
+You win!
+```
+
+## Step 1: Create the file
+
+Create a file called:
+
+```text
+mini_project_3_dice_game.py
+```
+
+Start with:
+
+```python
+import random
+print("Welcome to Dice Battle!")
+```
+
+## Step 2: Roll one die
+
+Use `random.randint(1, 6)` to create `player_roll` and `computer_roll`.
+
+## Step 3: Decide who wins
+
+Use `if`, `elif`, and `else`.
+
+Rules:
+
+- if the player's roll is higher, the player wins;
+- if the computer's roll is higher, the computer wins;
+- otherwise, it is a draw.
+
+## Step 4: Create a function
+
+Create a function called `roll_die()`.
+
+It should return a random number from 1 to 6.
+
+Use it for both the player and the computer.
+
+## Step 5: Best of three
+
+Make the game last three rounds.
+
+Keep two scores:
+
+```python
+player_score = 0
+computer_score = 0
+```
+
+After each round, add 1 to the winner's score.
+
+At the end, print the final winner.
+
+## Step 6: Add a play-again option
+
+Ask the player:
+
+```text
+Do you want to play again? yes or no?
+```
+
+If they type `yes`, play another game. If they type `no`, stop.
+
+## Debugging practice
+
+Fix the code.
+
+```python
+import random
+
+def roll_die()
+    return random.randint(1, 6)
+
+player_roll = roll_die
+computer_roll = roll_die()
+
+if player_roll > computer_roll:
+    print("You win!")
+elif computer_roll > player_roll
+    print("Computer wins!")
+else:
+    print("Draw!")
+```
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Step 2**
+
+```python
+player_roll = random.randint(1, 6)
+computer_roll = random.randint(1, 6)
+```
+
+**Step 4**
+
+Remember to call the function with parentheses: `roll_die()`.
+
+**Step 5**
+
+Since the game lasts exactly three rounds, a `for` loop is neat.
+
+```python
+for round_number in range(1, 4):
+```
+
+**Debugging practice**
+
+Look for two missing colons and one function name without parentheses.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution
+
+**Basic version**
+
+```python
+import random
+
+print("Welcome to Dice Battle!")
+print()
+
+player_roll = random.randint(1, 6)
+computer_roll = random.randint(1, 6)
+
+print("You rolled", player_roll)
+print("The computer rolled", computer_roll)
+print()
+
+if player_roll > computer_roll:
+    print("You win!")
+elif computer_roll > player_roll:
+    print("The computer wins!")
+else:
+    print("It is a draw!")
+```
+
+**Best of three version**
+
+```python
+import random
+
+def roll_die():
+    return random.randint(1, 6)
+
+print("Welcome to Dice Battle!")
+print()
+
+player_score = 0
+computer_score = 0
+
+for round_number in range(1, 4):
+    print("Round", round_number)
+
+    player_roll = roll_die()
+    computer_roll = roll_die()
+
+    print("You rolled", player_roll)
+    print("The computer rolled", computer_roll)
+
+    if player_roll > computer_roll:
+        print("You win this round!")
+        player_score = player_score + 1
+    elif computer_roll > player_roll:
+        print("The computer wins this round!")
+        computer_score = computer_score + 1
+    else:
+        print("This round is a draw!")
+
+    print()
+
+print("Final score")
+print("You:", player_score)
+print("Computer:", computer_score)
+
+if player_score > computer_score:
+    print("You win the game!")
+elif computer_score > player_score:
+    print("The computer wins the game!")
+else:
+    print("The game is a draw!")
+```
+
+**Debugging practice solution**
+
+```python
+import random
+
+def roll_die():
+    return random.randint(1, 6)
+
+player_roll = roll_die()
+computer_roll = roll_die()
+
+if player_roll > computer_roll:
+    print("You win!")
+elif computer_roll > player_roll:
+    print("Computer wins!")
+else:
+    print("Draw!")
+```
+
+:::
+
+## Challenge extensions
+
+1. Let the player choose how many rounds to play.
+2. Roll two dice for each player.
+3. Add special rules for rolling a 6.
+4. Add a list of random victory messages.
+5. Ask for the player's name and use it in the messages.
+6. Add a rematch option.
+
+## What you practised
+
+You practised generating random dice rolls, using functions, comparing numbers, keeping score, and combining several lessons into one game.

@@ -1,0 +1,433 @@
+---
+title: "Lesson 6: Working with Strings"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- use strings to store text;
+- use f-strings to create neat messages;
+- use `.lower()`, `.upper()`, `.title()` and `.strip()`;
+- compare user input more fairly;
+- use `in` and `len()` with strings.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+A **string** is text inside quotation marks.
+
+```python
+name = "Alex"
+print("Hello,", name)
+```
+
+You also get strings from `input()`.
+
+```python
+answer = input("What is your name? ")
+```
+
+Today we learn how to clean, compare and format text.
+
+## Part 1: Joining strings
+
+You can print several pieces of text together using commas.
+
+```python
+name = "Alex"
+print("Hello,", name)
+```
+
+You can also join strings using `+`.
+
+```python
+name = "Alex"
+message = "Hello, " + name
+print(message)
+```
+
+When you use `+`, Python does not add spaces automatically.
+
+```python
+first = "Python"
+second = "rocks"
+print(first + second)
+```
+
+Output:
+
+```text
+Pythonrocks
+```
+
+Better:
+
+```python
+print(first + " " + second)
+```
+
+## Part 2: F-strings
+
+An **f-string** is a neat way to put variables inside a sentence.
+
+```python
+name = "Alex"
+age = 15
+print(f"{name} is {age} years old.")
+```
+
+Output:
+
+```text
+Alex is 15 years old.
+```
+
+The `f` before the quotation mark tells Python to look for variables inside curly brackets.
+
+## Part 3: Changing case
+
+Python treats `Python`, `python`, and `PYTHON` as different strings.
+
+```python
+answer = input("What language are we learning? ")
+
+if answer == "Python":
+    print("Correct!")
+else:
+    print("Not quite.")
+```
+
+If the user types `python`, this says `Not quite`.
+
+Use `.lower()` to make the comparison more forgiving.
+
+```python
+answer = input("What language are we learning? ")
+answer = answer.lower()
+
+if answer == "python":
+    print("Correct!")
+```
+
+Useful methods:
+
+| Method | What it does |
+|---|---|
+| `.lower()` | changes text to lowercase |
+| `.upper()` | changes text to uppercase |
+| `.title()` | changes text to title case |
+
+## Part 4: Removing extra spaces
+
+Users sometimes type extra spaces.
+
+```text
+  python  
+```
+
+Use `.strip()` to remove spaces from the beginning and end.
+
+```python
+answer = input("What language are we learning? ")
+answer = answer.strip().lower()
+
+if answer == "python":
+    print("Correct!")
+```
+
+## Part 5: Checking whether text contains something
+
+Use `in` to check whether text contains a letter or word.
+
+```python
+email = input("Enter your email address: ")
+
+if "@" in email:
+    print("That might be an email address.")
+else:
+    print("That does not look like an email address.")
+```
+
+## Part 6: String length
+
+Use `len()` to count characters.
+
+```python
+password = "abc123"
+print(len(password))
+```
+
+Output:
+
+```text
+6
+```
+
+This is useful for checking passwords.
+
+```python
+password = input("Create a password: ")
+
+if len(password) >= 8:
+    print("Long enough.")
+else:
+    print("Too short.")
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting spaces when using `+`
+
+```python
+print("Hello" + "Alex")
+```
+
+prints:
+
+```text
+HelloAlex
+```
+
+### Mistake 2: Forgetting parentheses
+
+Wrong:
+
+```python
+answer = answer.lower
+```
+
+Correct:
+
+```python
+answer = answer.lower()
+```
+
+### Mistake 3: Comparing before cleaning
+
+Clean the user's answer before comparing it.
+
+```python
+answer = input("Answer: ")
+answer = answer.strip().lower()
+```
+
+## Exercises
+
+### Exercise 1
+
+Ask the user for their name. Print `Hello, NAME!` using an f-string.
+
+### Exercise 2
+
+Ask the user for their favourite food. Print the food in uppercase.
+
+### Exercise 3
+
+Ask `What language are we learning?` Accept `Python`, `python`, `PYTHON`, and answers with extra spaces.
+
+### Exercise 4
+
+Ask the user to create a password. If it has at least 8 characters, print `Long enough.` Otherwise, print `Too short.`
+
+### Exercise 5
+
+Ask the user for an email address. If it contains `@`, print `This might be an email address.`
+
+### Exercise 6
+
+Ask the user for their first name and surname. Print the full name using an f-string.
+
+### Exercise 7
+
+Ask the user for a sentence. If it contains the word `python`, print `You mentioned Python.` Make the check case-insensitive.
+
+### Exercise 8
+
+Ask the user for a word. Print it in lowercase, uppercase, title case, and print the number of characters.
+
+## Debugging practice
+
+Fix the code.
+
+```python
+name = input("What is your name? ")
+print(f"Hello, name!")
+
+answer = input("What language are we learning? ")
+answer = answer.lower
+
+if answer == "python":
+    print("Correct!")
+```
+
+## Challenges
+
+### Challenge 1: Username cleaner
+
+Ask the user to enter a username. Clean it by removing extra spaces and converting it to lowercase.
+
+### Challenge 2: Simple password checker
+
+Ask the user to create a password. Check whether it has at least 8 characters and contains the letter `a` or `A`.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Use:
+
+```python
+print(f"Hello, {name}!")
+```
+
+**Exercise 2**
+
+Use `.upper()`.
+
+**Exercise 3**
+
+Use `.strip().lower()`.
+
+**Exercise 4**
+
+Use `len(password)`.
+
+**Exercise 5**
+
+Use `if "@" in email:`.
+
+**Exercise 7**
+
+Clean the sentence using `.lower()` before checking.
+
+**Debugging practice**
+
+Use `{name}` inside the f-string, and remember that `.lower()` needs parentheses.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+name = input("What is your name? ")
+print(f"Hello, {name}!")
+```
+
+**Exercise 2**
+
+```python
+food = input("What is your favourite food? ")
+print(food.upper())
+```
+
+**Exercise 3**
+
+```python
+answer = input("What language are we learning? ")
+answer = answer.strip().lower()
+
+if answer == "python":
+    print("Correct!")
+else:
+    print("Not quite.")
+```
+
+**Exercise 4**
+
+```python
+password = input("Create a password: ")
+
+if len(password) >= 8:
+    print("Long enough.")
+else:
+    print("Too short.")
+```
+
+**Exercise 5**
+
+```python
+email = input("Enter your email address: ")
+
+if "@" in email:
+    print("This might be an email address.")
+else:
+    print("This does not look like an email address.")
+```
+
+**Exercise 6**
+
+```python
+first_name = input("What is your first name? ")
+surname = input("What is your surname? ")
+print(f"Your full name is {first_name} {surname}.")
+```
+
+**Exercise 7**
+
+```python
+sentence = input("Enter a sentence: ")
+
+if "python" in sentence.lower():
+    print("You mentioned Python.")
+else:
+    print("You did not mention Python.")
+```
+
+**Exercise 8**
+
+```python
+word = input("Enter a word: ")
+print(word.lower())
+print(word.upper())
+print(word.title())
+print(len(word))
+```
+
+**Debugging practice solution**
+
+```python
+name = input("What is your name? ")
+print(f"Hello, {name}!")
+
+answer = input("What language are we learning? ")
+answer = answer.lower()
+
+if answer == "python":
+    print("Correct!")
+```
+
+**Challenge 1**
+
+```python
+username = input("Enter a username: ")
+username = username.strip().lower()
+print(f"Your username is {username}")
+```
+
+**Challenge 2**
+
+```python
+password = input("Create a password: ")
+clean_password = password.lower()
+
+if len(password) >= 8 and "a" in clean_password:
+    print("Password passes.")
+else:
+    print("Password does not pass yet.")
+```
+
+:::
+
+## What you learned
+
+You can now clean and format text, compare user input more fairly, and use strings to build better quizzes and password checks.
+
+## Looking ahead
+
+The next lesson introduces **functions**, which package code into reusable building blocks.

@@ -70,6 +70,69 @@ Build a guess-the-number game using loops.
 [Open Mini Project 2](projects/mini_project_2_guess_the_number.qmd)
 :::
 
+::: {.lesson-card}
+### Lesson 6
+
+Work with strings using f-strings, `.lower()`, `.strip()` and `len()`.
+
+[Open Lesson 6](lessons/python_lesson_6.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 7
+
+Create reusable code using functions.
+
+[Open Lesson 7](lessons/python_lesson_7.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 8
+
+Use randomness to create dice rolls, random choices and games.
+
+[Open Lesson 8](lessons/python_lesson_8.qmd)
+:::
+
+::: {.lesson-card}
+### Mini Project 3
+
+Build a dice game using functions, loops and randomness.
+
+[Open Mini Project 3](projects/mini_project_3_dice_game.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 9
+
+Save and read information using text files.
+
+[Open Lesson 9](lessons/python_lesson_9.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 10
+
+Use dictionaries to store labelled information.
+
+[Open Lesson 10](lessons/python_lesson_10.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 11
+
+Read errors, debug calmly and handle invalid input.
+
+[Open Lesson 11](lessons/python_lesson_11.qmd)
+:::
+
+::: {.lesson-card}
+### Mini Project 4
+
+Build a flashcard trainer that checks answers and saves scores.
+
+[Open Mini Project 4](projects/mini_project_4_flashcard_trainer.qmd)
+:::
 
 :::
 

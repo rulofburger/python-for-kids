@@ -1,0 +1,355 @@
+---
+title: "Lesson 8: Randomness"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- import the `random` module;
+- generate random integers with `random.randint()`;
+- choose a random item from a list with `random.choice()`;
+- use randomness in games;
+- combine randomness with loops and functions.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+So far, your programs have used numbers that you typed into the code.
+
+```python
+secret = 7
+```
+
+Randomness lets the computer choose.
+
+## Part 1: Importing `random`
+
+Python has extra tools called **modules**. To use random numbers, import the `random` module.
+
+```python
+import random
+```
+
+Put this at the top of your Python file.
+
+## Part 2: Random integers
+
+Use `random.randint()` to generate a random whole number.
+
+```python
+import random
+
+number = random.randint(1, 6)
+print(number)
+```
+
+This gives a random number from 1 to 6, including both 1 and 6.
+
+## Part 3: Simulating dice
+
+```python
+import random
+
+roll = random.randint(1, 6)
+print("You rolled", roll)
+```
+
+Two dice:
+
+```python
+import random
+
+die1 = random.randint(1, 6)
+die2 = random.randint(1, 6)
+total = die1 + die2
+
+print("Die 1:", die1)
+print("Die 2:", die2)
+print("Total:", total)
+```
+
+## Part 4: Choosing from a list
+
+Use `random.choice()` to choose one item from a list.
+
+```python
+import random
+
+foods = ["pizza", "burgers", "pasta", "sushi"]
+choice = random.choice(foods)
+
+print("Tonight we should eat", choice)
+```
+
+## Part 5: Randomness and functions
+
+```python
+import random
+
+def roll_die():
+    return random.randint(1, 6)
+
+print(roll_die())
+print(roll_die())
+```
+
+## Part 6: Random guessing game
+
+```python
+import random
+
+secret = random.randint(1, 20)
+guess = int(input("Guess the secret number: "))
+
+if guess == secret:
+    print("Correct!")
+else:
+    print("Not quite. The secret number was", secret)
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting to import `random`
+
+```python
+number = random.randint(1, 6)
+```
+
+### Mistake 2: Forgetting the dot
+
+Wrong:
+
+```python
+number = random randint(1, 6)
+```
+
+Correct:
+
+```python
+number = random.randint(1, 6)
+```
+
+### Mistake 3: Thinking the top number is excluded
+
+`random.randint(1, 6)` can produce 1, 2, 3, 4, 5, or 6.
+
+## Exercises
+
+### Exercise 1
+
+Generate a random number from 1 to 10 and print it.
+
+### Exercise 2
+
+Simulate rolling one die. Print `You rolled ...`.
+
+### Exercise 3
+
+Simulate rolling two dice. Print both dice and the total.
+
+### Exercise 4
+
+Create a list of three foods. Choose one randomly and print it.
+
+### Exercise 5
+
+Create a list of five compliments. Ask the user for their name. Print a random compliment using their name.
+
+### Exercise 6
+
+Create a function called `roll_die()` that returns a random number from 1 to 6. Call it three times.
+
+### Exercise 7
+
+Create a random secret number from 1 to 5. Ask the user to guess once. Tell them whether they were correct.
+
+### Exercise 8
+
+Create a list of possible activities. Print a random activity.
+
+## Debugging practice
+
+Fix the code.
+
+```python
+number = random.randint(1, 6)
+print("You rolled" number)
+
+foods = ["pizza", "pasta", "burgers"]
+choice = random.choice[foods]
+print(choice)
+```
+
+## Challenges
+
+### Challenge 1: Random quiz question
+
+Use `random.randint(1, 3)` to choose one of three quiz questions.
+
+### Challenge 2: Random encouragement
+
+Create a list of encouragement messages. If the user gets a maths question wrong, print one random message.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Start with `import random`.
+
+**Exercise 2**
+
+Use `random.randint(1, 6)`.
+
+**Exercise 4**
+
+Use `random.choice(foods)`.
+
+**Exercise 5**
+
+Use an f-string to include the user's name.
+
+**Exercise 6**
+
+Put the random number inside the function.
+
+**Debugging practice**
+
+Look for missing `import random`, a missing comma in `print()`, and square brackets used instead of parentheses.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+import random
+number = random.randint(1, 10)
+print(number)
+```
+
+**Exercise 2**
+
+```python
+import random
+roll = random.randint(1, 6)
+print("You rolled", roll)
+```
+
+**Exercise 3**
+
+```python
+import random
+
+die1 = random.randint(1, 6)
+die2 = random.randint(1, 6)
+total = die1 + die2
+
+print("Die 1:", die1)
+print("Die 2:", die2)
+print("Total:", total)
+```
+
+**Exercise 4**
+
+```python
+import random
+foods = ["pizza", "burgers", "pasta"]
+choice = random.choice(foods)
+print(choice)
+```
+
+**Exercise 5**
+
+```python
+import random
+
+compliments = [
+    "is becoming a great Python programmer.",
+    "writes careful code.",
+    "is good at solving problems.",
+    "keeps improving.",
+    "has excellent debugging skills."
+]
+
+name = input("What is your name? ")
+compliment = random.choice(compliments)
+print(f"{name} {compliment}")
+```
+
+**Exercise 6**
+
+```python
+import random
+
+def roll_die():
+    return random.randint(1, 6)
+
+print(roll_die())
+print(roll_die())
+print(roll_die())
+```
+
+**Exercise 7**
+
+```python
+import random
+
+secret = random.randint(1, 5)
+guess = int(input("Guess the secret number: "))
+
+if guess == secret:
+    print("Correct!")
+else:
+    print("Not quite. The secret number was", secret)
+```
+
+**Exercise 8**
+
+```python
+import random
+activities = ["ride bikes", "play chess", "watch a movie", "make pancakes"]
+choice = random.choice(activities)
+print("We should", choice)
+```
+
+**Debugging practice solution**
+
+```python
+import random
+
+number = random.randint(1, 6)
+print("You rolled", number)
+
+foods = ["pizza", "pasta", "burgers"]
+choice = random.choice(foods)
+print(choice)
+```
+
+**Challenge 2**
+
+```python
+import random
+
+messages = ["Keep going!", "Try again!", "Mistakes help you learn."]
+answer = int(input("What is 8 * 7? "))
+
+if answer == 56:
+    print("Correct!")
+else:
+    print(random.choice(messages))
+```
+
+:::
+
+## What you learned
+
+You can now generate random numbers, choose random items from lists, and use randomness in games.
+
+## Looking ahead
+
+The next mini-project uses randomness to build a dice game.

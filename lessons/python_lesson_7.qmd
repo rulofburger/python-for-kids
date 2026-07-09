@@ -1,0 +1,417 @@
+---
+title: "Lesson 7: Functions"
+---
+
+## Learning goals
+
+By the end of this lesson you should be able to:
+
+- define your own functions using `def`;
+- call a function;
+- use parameters;
+- return a value;
+- understand the difference between `print()` and `return`;
+- use functions to organise programs.
+
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You have already used built-in functions.
+
+```python
+print("Hello")
+name = input("What is your name? ")
+length = len(name)
+```
+
+Today you learn how to create your own functions.
+
+## Part 1: Why functions are useful
+
+A function lets us give a block of code a name.
+
+```python
+def greet():
+    print("Hello!")
+    print("Welcome to Python.")
+
+greet()
+greet()
+```
+
+The function is defined once, then called many times.
+
+## Part 2: Defining and calling a function
+
+A function definition starts with `def`.
+
+```python
+def say_hello():
+    print("Hello!")
+```
+
+This teaches Python what the function means. To run it, call it.
+
+```python
+say_hello()
+```
+
+## Part 3: Parameters
+
+A **parameter** lets a function receive information.
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alex")
+greet("Ben")
+```
+
+Output:
+
+```text
+Hello, Alex!
+Hello, Ben!
+```
+
+## Part 4: More than one parameter
+
+```python
+def introduce(name, age):
+    print(f"{name} is {age} years old.")
+
+introduce("Alex", 15)
+```
+
+## Part 5: Returning a value
+
+Some functions calculate something and send the answer back.
+
+```python
+def double(number):
+    return number * 2
+
+answer = double(5)
+print(answer)
+```
+
+Output:
+
+```text
+10
+```
+
+## Part 6: `print()` versus `return`
+
+This prints an answer:
+
+```python
+def double_print(number):
+    print(number * 2)
+```
+
+This returns an answer:
+
+```python
+def double_return(number):
+    return number * 2
+```
+
+Returning is more flexible because you can store and reuse the result.
+
+```python
+answer = double_return(5)
+total = answer + 10
+print(total)
+```
+
+## Part 7: Functions with cleaned input
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+answer = input("What language are we learning? ")
+answer = clean_text(answer)
+
+if answer == "python":
+    print("Correct!")
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting the colon
+
+```python
+def say_hello()
+    print("Hello")
+```
+
+### Mistake 2: Forgetting to call the function
+
+This defines the function but does not run it:
+
+```python
+def say_hello():
+    print("Hello")
+```
+
+You still need:
+
+```python
+say_hello()
+```
+
+### Mistake 3: Confusing `print()` and `return`
+
+If you want to store the answer, use `return`.
+
+```python
+def add(a, b):
+    return a + b
+
+total = add(3, 4)
+```
+
+## Exercises
+
+### Exercise 1
+
+Create a function called `say_hello()`. It should print `Hello!`. Call it three times.
+
+### Exercise 2
+
+Create a function called `greet(name)` that prints `Hello, NAME!`.
+
+### Exercise 3
+
+Create a function called `double(number)` that returns the number doubled.
+
+### Exercise 4
+
+Create a function called `add(a, b)` that returns the sum of `a` and `b`.
+
+### Exercise 5
+
+Create a function called `celsius_to_fahrenheit(celsius)` using `Fahrenheit = Celsius × 9 / 5 + 32`.
+
+### Exercise 6
+
+Create a function called `is_long_enough(password)` that returns `True` if the password has at least 8 characters.
+
+### Exercise 7
+
+Create a function called `clean_text(text)` that removes extra spaces and makes the text lowercase.
+
+### Exercise 8
+
+Use your `clean_text()` function in a quiz question.
+
+## Debugging practice
+
+Fix the code.
+
+```python
+def add(a, b)
+    return a + b
+
+answer = add(3)
+print(answer)
+```
+
+## Challenges
+
+### Challenge 1: Reusable quiz checker
+
+Create `check_answer(user_answer, correct_answer)`. It should clean both answers and return `True` if they match.
+
+### Challenge 2: Calculator functions
+
+Create functions for `add`, `subtract`, `multiply`, and `divide`. Ask the user for two numbers and print the result of each function.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Define the function first, then call it.
+
+**Exercise 2**
+
+The parameter goes inside the parentheses.
+
+```python
+def greet(name):
+```
+
+**Exercise 3**
+
+Use `return`, not only `print()`.
+
+**Exercise 5**
+
+Put the formula after `return`.
+
+**Exercise 6**
+
+Use `len(password)`.
+
+**Exercise 7**
+
+Use `text.strip().lower()`.
+
+**Debugging practice**
+
+The definition needs a colon, and `add(a, b)` needs two arguments.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+def say_hello():
+    print("Hello!")
+
+say_hello()
+say_hello()
+say_hello()
+```
+
+**Exercise 2**
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alex")
+greet("Chloe")
+```
+
+**Exercise 3**
+
+```python
+def double(number):
+    return number * 2
+
+print(double(8))
+```
+
+**Exercise 4**
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(3, 4))
+```
+
+**Exercise 5**
+
+```python
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+print(celsius_to_fahrenheit(20))
+```
+
+**Exercise 6**
+
+```python
+def is_long_enough(password):
+    return len(password) >= 8
+
+print(is_long_enough("abc12345"))
+```
+
+**Exercise 7**
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+print(clean_text("  PYTHON  "))
+```
+
+**Exercise 8**
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+answer = input("What language are we learning? ")
+answer = clean_text(answer)
+
+if answer == "python":
+    print("Correct!")
+else:
+    print("Not quite.")
+```
+
+**Debugging practice solution**
+
+```python
+def add(a, b):
+    return a + b
+
+answer = add(3, 4)
+print(answer)
+```
+
+**Challenge 1**
+
+```python
+def check_answer(user_answer, correct_answer):
+    user_answer = user_answer.strip().lower()
+    correct_answer = correct_answer.strip().lower()
+    return user_answer == correct_answer
+
+score = 0
+answer = input("What language are we learning? ")
+
+if check_answer(answer, "Python"):
+    print("Correct!")
+    score = score + 1
+else:
+    print("Not quite.")
+
+print("Score:", score)
+```
+
+**Challenge 2**
+
+```python
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+
+print("Add:", add(number1, number2))
+print("Subtract:", subtract(number1, number2))
+print("Multiply:", multiply(number1, number2))
+print("Divide:", divide(number1, number2))
+```
+
+:::
+
+## What you learned
+
+You can now create reusable functions, pass information into them, return values, and use them to organise your programs.
+
+## Looking ahead
+
+The next lesson introduces **randomness**, which lets your programs create surprises and games.

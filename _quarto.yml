@@ -33,6 +33,26 @@ book:
       chapters:
         - projects/mini_project_2_guess_the_number.qmd
 
+    - part: "Strings, Functions and Randomness"
+      chapters:
+        - lessons/python_lesson_6.qmd
+        - lessons/python_lesson_7.qmd
+        - lessons/python_lesson_8.qmd
+
+    - part: "Game Project"
+      chapters:
+        - projects/mini_project_3_dice_game.qmd
+
+    - part: "Files, Dictionaries and Debugging"
+      chapters:
+        - lessons/python_lesson_9.qmd
+        - lessons/python_lesson_10.qmd
+        - lessons/python_lesson_11.qmd
+
+    - part: "Study Tool Project"
+      chapters:
+        - projects/mini_project_4_flashcard_trainer.qmd
+
     - part: "Project Library"
       chapters:
         - projects/index.qmd
