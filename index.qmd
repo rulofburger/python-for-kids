@@ -43,15 +43,82 @@ Use loops to build quizzes, games and practice tools.
 :::
 
 ::: {.feature-card}
-### Work with lists
+### Work with data structures
 
-Store names, scores, shopping items and other collections.
+Use lists and dictionaries to store related information.
 :::
 
 ::: {.feature-card}
 ### Build projects
 
-Make games, calculators, quizzes and small apps.
+Make games, calculators, quizzes and small study tools.
+:::
+
+:::
+
+## How to use the course
+
+::: {.steps}
+
+**1. Read the short explanation**  
+Each lesson introduces only one or two new ideas.
+
+**2. Type the examples yourself**  
+Do not just copy and paste. Typing helps you notice how code works.
+
+**3. Try the exercises before opening hints**  
+The hints are there to help, not to replace thinking.
+
+**4. Check the solution only at the end**  
+There are many ways to solve a coding problem. Compare your solution with the example.
+
+**5. Try the challenge**  
+The challenges are where the lesson turns into real programming.
+
+:::
+
+## Course path
+
+::: {.lesson-grid}
+
+::: {.lesson-card}
+### Setup
+
+Install the tools and learn how to move around the course.
+
+[Open Setup](setup.qmd)
+:::
+
+::: {.lesson-card}
+### Getting Started with Positron
+
+Learn the editor, console, terminal, explorer, variables and plots panes.
+
+[Open Positron intro](lessons/positron_intro.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 1
+
+Your first Python program: `print()`, variables, strings and arithmetic.
+
+[Open Lesson 1](lessons/python_lesson_1.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 2
+
+Make Python interactive with `input()`.
+
+[Open Lesson 2](lessons/python_lesson_2.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 3
+
+Use `if`, `else` and `elif`.
+
+[Open Lesson 3](lessons/python_lesson_3.qmd)
 :::
 
 ::: {.lesson-card}
@@ -60,6 +127,22 @@ Make games, calculators, quizzes and small apps.
 Build a quiz game using variables, input and `if`.
 
 [Open Mini Project 1](projects/mini_project_1_quiz_game.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 4
+
+Repeat code with `while` loops.
+
+[Open Lesson 4](lessons/python_lesson_4.qmd)
+:::
+
+::: {.lesson-card}
+### Lesson 5
+
+Use lists and `for` loops.
+
+[Open Lesson 5](lessons/python_lesson_5.qmd)
 :::
 
 ::: {.lesson-card}
@@ -134,95 +217,20 @@ Build a flashcard trainer that checks answers and saves scores.
 [Open Mini Project 4](projects/mini_project_4_flashcard_trainer.qmd)
 :::
 
-:::
-
-## How to use the course
-
-::: {.steps}
-
-**1. Read the short explanation**  
-Each lesson introduces only one or two new ideas.
-
-**2. Type the examples yourself**  
-Do not just copy and paste. Typing helps you notice how code works.
-
-**3. Try the exercises before opening hints**  
-The hints are there to help, not to replace thinking.
-
-**4. Check the solution only at the end**  
-There are many ways to solve a coding problem. Compare your solution with the example.
-
-**5. Try the challenge**  
-The challenges are where the lesson turns into real programming.
-
-:::
-
-## Course path
-
-::: {.lesson-grid}
-
 ::: {.lesson-card}
-### Setup
+### Project Library
 
-Install the tools and learn how to move around Positron.
+Browse all mini projects and future project ideas.
 
-[Open setup](setup.qmd)
+[Open Projects](projects/index.qmd)
 :::
 
 ::: {.lesson-card}
-### Getting Started with Positron
+### Extra Challenges
 
-Learn the editor, console, terminal, explorer, variables and plots panes.
+Practise with additional coding problems.
 
-[Open Positron intro](lessons/positron_intro.qmd)
-:::
-
-::: {.lesson-card}
-### Lesson 1
-
-Your first Python program: `print()`, variables, strings and arithmetic.
-
-[Open Lesson 1](lessons/python_lesson_1.qmd)
-:::
-
-::: {.lesson-card}
-### Lesson 2
-
-Make Python interactive with `input()`.
-
-[Open Lesson 2](lessons/python_lesson_2.qmd)
-:::
-
-::: {.lesson-card}
-### Lesson 3
-
-Use `if`, `else` and `elif`.
-
-[Open Lesson 3](lessons/python_lesson_3.qmd)
-:::
-
-::: {.lesson-card}
-### Lesson 4
-
-Repeat code with `while` loops.
-
-[Open Lesson 4](lessons/python_lesson_4.qmd)
-:::
-
-::: {.lesson-card}
-### Lesson 5
-
-Use lists and `for` loops.
-
-[Open Lesson 5](lessons/python_lesson_5.qmd)
-:::
-
-::: {.lesson-card}
-### Projects
-
-Build larger programs using everything you have learned.
-
-[Open projects](projects/index.qmd)
+[Open Challenges](challenges/index.qmd)
 :::
 
 :::
@@ -237,21 +245,31 @@ A good session is about **45–60 minutes**:
 - 20–30 minutes on exercises,
 - 10–15 minutes on challenges or debugging.
 
+After every few lessons, try the mini-project before moving on.
+
 ::: {.callout-tip}
 ## Best rule
 
 Do not worry about finishing quickly. The goal is to understand what your code is doing.
 :::
 
-For each lesson:
+## Current course sequence
 
-1. Read the explanation.
-2. Run the examples.
-3. Try the exercises.
-4. Open hints only when needed.
-5. Check the solutions at the end.
-6. Try at least one challenge.
-
-## Ready?
-
-Start with [Setup](setup.qmd).
+| Stage | Topic | Main ideas |
+|---|---|---|
+| Setup | Positron and course tools | Editor, console, terminal, files |
+| Lesson 1 | First programs | `print()`, variables, arithmetic |
+| Lesson 2 | Interactive programs | `input()`, `int()` |
+| Lesson 3 | Decisions | `if`, `else`, `elif` |
+| Mini Project 1 | Quiz Game | Scorekeeping and answer checking |
+| Lesson 4 | Loops | `while` loops |
+| Lesson 5 | Lists and `for` loops | Lists, `for`, `range()`, `len()` |
+| Mini Project 2 | Guess the Number | Loops and game logic |
+| Lesson 6 | Strings | f-strings, `.lower()`, `.strip()` |
+| Lesson 7 | Functions | `def`, parameters, `return` |
+| Lesson 8 | Randomness | `random.randint()`, `random.choice()` |
+| Mini Project 3 | Dice Game | Functions, loops and random dice |
+| Lesson 9 | Files | Read, write and append |
+| Lesson 10 | Dictionaries | Keys, values and records |
+| Lesson 11 | Debugging | Errors, `try`, `except` |
+| Mini Project 4 | Flashcard Trainer | Dictionaries, files and functions |
