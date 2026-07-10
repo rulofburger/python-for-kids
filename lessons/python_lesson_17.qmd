@@ -4,17 +4,45 @@ title: "Lesson 17: Simple Graphs"
 
 ## Learning goals
 
-Create simple line charts and bar charts using `matplotlib`.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- install and import `matplotlib`;
+- create a simple line chart and a simple bar chart;
+- add a title and axis labels to a chart;
+- plot data that came from a list of dictionaries or a CSV file;
+- show more than one line on the same chart;
+- save a chart to an image file.
 
-Install matplotlib if needed.
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You can already store and calculate summaries from data, using lists of dictionaries and CSV files. Numbers in a list are useful, but a picture often makes a pattern much easier to see. This lesson turns your data into charts.
+
+## Installing matplotlib
+
+`matplotlib` is not built into Python, so it needs to be installed once per computer.
 
 ```bash
 python -m pip install matplotlib
 ```
 
-Create a line chart.
+## A first line chart
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.show()
+```
+
+`plt.plot()` draws a line connecting each value in the list, in order. `plt.show()` opens a window with the chart. Without it, nothing appears.
+
+## Titles and axis labels
+
+A chart without labels can be hard to understand later. Always describe what it shows.
 
 ```python
 import matplotlib.pyplot as plt
@@ -28,60 +56,7 @@ plt.ylabel("Score")
 plt.show()
 ```
 
-Create a bar chart.
-
-```python
-names = ["Alex", "Ben", "Chloe"]
-scores = [8, 10, 7]
-
-plt.bar(names, scores)
-plt.show()
-```
-
-## Exercises
-
-### Exercise 1
-
-Plot a list of scores as a line chart.
-
-### Exercise 2
-
-Add a title and axis labels.
-
-### Exercise 3
-
-Create a bar chart of three names and scores.
-
-### Exercise 4
-
-Plot practice minutes over five days.
-
-## Debugging practice
-
-Fix this deliberately broken code, then explain what was wrong.
-
-```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
-```
-
-## Challenge
-
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
-
-::: {.callout-tip collapse="true"}
-## Click to reveal hints
-
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
-
-:::
-
-::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## A bar chart
 
 ```python
 import matplotlib.pyplot as plt
@@ -96,12 +71,423 @@ plt.ylabel("Score")
 plt.show()
 ```
 
+`plt.bar()` needs two lists of the same length: the labels, and the matching values.
+
+## Plotting data from a list of dictionaries
+
+Charts need two separate lists: one for labels, one for values. If your data is a list of dictionaries, build the two lists first.
+
+```python
+import matplotlib.pyplot as plt
+
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10},
+    {"name": "Chloe", "score": 7}
+]
+
+names = []
+scores = []
+
+for student in students:
+    names.append(student["name"])
+    scores.append(student["score"])
+
+plt.bar(names, scores)
+plt.title("Quiz Scores")
+plt.show()
+```
+
+## Plotting data from a CSV file
+
+You can combine this with Lesson 16 to plot data straight from a file.
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+names = []
+scores = []
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        names.append(row["name"])
+        scores.append(int(row["score"]))
+
+plt.bar(names, scores)
+plt.title("Quiz Scores")
+plt.show()
+```
+
+Remember to convert each score with `int()`, since everything read from a CSV file is text.
+
+## More than one line on the same chart
+
+Call `plt.plot()` more than once before `plt.show()` to draw several lines together. Use `label=` and `plt.legend()` so viewers know which line is which.
+
+```python
+import matplotlib.pyplot as plt
+
+alex_scores = [5, 6, 7, 8]
+ben_scores = [4, 6, 8, 9]
+
+plt.plot(alex_scores, label="Alex")
+plt.plot(ben_scores, label="Ben")
+plt.title("Progress Over Time")
+plt.xlabel("Attempt")
+plt.ylabel("Score")
+plt.legend()
+plt.show()
+```
+
+## Saving a chart to a file
+
+Instead of, or as well as, showing a chart on screen, you can save it as an image.
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.title("Score Progress")
+plt.savefig("score_progress.png")
+plt.show()
+```
+
+`plt.savefig()` must be called before `plt.show()`. Once a chart has been shown, matplotlib clears it from memory.
+
+## Common mistakes
+
+### Mistake 1: Forgetting `plt.show()`
+
+Without `plt.show()`, the chart is created but never displayed.
+
+### Mistake 2: Mismatched list lengths
+
+```python
+plt.bar(names, scores)
+```
+
+If `names` and `scores` have different lengths, matplotlib raises an error. Check that every label has a matching value.
+
+### Mistake 3: Passing the arguments in the wrong order
+
+```python
+plt.bar(scores, names)
+```
+
+The first list is the labels, the second is the values. Swapping them will either cause an error or produce a chart that does not make sense.
+
+### Mistake 4: Plotting text values instead of numbers
+
+```python
+plt.plot(row["score"])
+```
+
+Values read from a CSV file are strings. Convert them with `int()` or `float()` before plotting.
+
+## Exercises
+
+### Exercise 1
+
+Plot a list of five scores as a line chart.
+
+### Exercise 2
+
+Add a title and axis labels to the chart from Exercise 1.
+
+### Exercise 3
+
+Create a bar chart of three names and their scores.
+
+### Exercise 4
+
+Plot practice minutes for five days as a line chart, with a title and axis labels.
+
+### Exercise 5
+
+Read `scores.csv` (from Lesson 16) and plot the scores as a bar chart, with names as labels.
+
+### Exercise 6
+
+Plot two students' scores over four attempts on the same chart, with a legend showing each student's name.
+
+### Exercise 7
+
+Create any chart, and save it to a file called `chart.png` instead of only showing it.
+
+### Exercise 8
+
+Given a list of dictionaries with `name` and `age` for four pets, build two lists from it and create a bar chart of pet ages.
+
+## Debugging practice
+
+The following code raises an error. Fix it, then explain what was wrong.
+
+```python
+import matplotlib.pyplot as plt
+
+names = ["Alex", "Ben", "Chloe"]
+scores = [8, 10, 7]
+
+plt.bar(scores, names)
+plt.show()
+```
+
+## Challenges
+
+### Challenge 1: Score file chart
+
+Read `scores.csv`, plot the scores as a line chart in the order they appear in the file, add a title and axis labels, and save the chart to `scores_chart.png`.
+
+### Challenge 2: Weekly activity chart
+
+Create a list of dictionaries, one per day of the week, each with `day` and `minutes` (time spent practising). Build a bar chart with the day names as labels and minutes as the values, with a title and axis labels.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Use `plt.plot(scores)` then `plt.show()`.
+
+**Exercise 2**
+
+Add `plt.title()`, `plt.xlabel()`, and `plt.ylabel()` before `plt.show()`.
+
+**Exercise 3**
+
+Use `plt.bar(names, scores)`.
+
+**Exercise 4**
+
+The list of days can just be a list of numbers, like `[1, 2, 3, 4, 5]`, used as the x-axis automatically.
+
+**Exercise 5**
+
+Reuse the CSV-reading pattern from Lesson 16, building two lists as you go.
+
+**Exercise 6**
+
+Call `plt.plot()` twice, each with a `label=`, then call `plt.legend()`.
+
+**Exercise 7**
+
+Call `plt.savefig("chart.png")` before `plt.show()`.
+
+**Exercise 8**
+
+Loop through the list of dictionaries, appending to two separate lists.
+
+**Debugging practice**
+
+The first argument to `plt.bar()` should be the labels, and the second should be the values.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.show()
+```
+
+**Exercise 2**
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.title("Score Progress")
+plt.xlabel("Attempt")
+plt.ylabel("Score")
+plt.show()
+```
+
+**Exercise 3**
+
+```python
+import matplotlib.pyplot as plt
+
+names = ["Alex", "Ben", "Chloe"]
+scores = [8, 10, 7]
+
+plt.bar(names, scores)
+plt.show()
+```
+
+**Exercise 4**
+
+```python
+import matplotlib.pyplot as plt
+
+minutes = [20, 30, 25, 40, 35]
+
+plt.plot(minutes)
+plt.title("Practice Minutes")
+plt.xlabel("Day")
+plt.ylabel("Minutes")
+plt.show()
+```
+
+**Exercise 5**
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+names = []
+scores = []
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        names.append(row["name"])
+        scores.append(int(row["score"]))
+
+plt.bar(names, scores)
+plt.show()
+```
+
+**Exercise 6**
+
+```python
+import matplotlib.pyplot as plt
+
+alex_scores = [5, 6, 7, 8]
+ben_scores = [4, 6, 8, 9]
+
+plt.plot(alex_scores, label="Alex")
+plt.plot(ben_scores, label="Ben")
+plt.legend()
+plt.show()
+```
+
+**Exercise 7**
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.savefig("chart.png")
+plt.show()
+```
+
+**Exercise 8**
+
+```python
+import matplotlib.pyplot as plt
+
+pets = [
+    {"name": "Milo", "age": 4},
+    {"name": "Whiskers", "age": 2},
+    {"name": "Rex", "age": 6},
+    {"name": "Buddy", "age": 3}
+]
+
+names = []
+ages = []
+
+for pet in pets:
+    names.append(pet["name"])
+    ages.append(pet["age"])
+
+plt.bar(names, ages)
+plt.title("Pet Ages")
+plt.show()
+```
+
+**Debugging practice solution**
+
+```python
+import matplotlib.pyplot as plt
+
+names = ["Alex", "Ben", "Chloe"]
+scores = [8, 10, 7]
+
+plt.bar(names, scores)
+plt.show()
+```
+
+`plt.bar()` expects the labels first and the values second. Passing `scores` first mixed up which list was meant to be the labels and which was meant to be the heights of the bars.
+
+**Challenge 1**
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+names = []
+scores = []
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        names.append(row["name"])
+        scores.append(int(row["score"]))
+
+plt.plot(scores)
+plt.title("Scores From File")
+plt.xlabel("Entry")
+plt.ylabel("Score")
+plt.savefig("scores_chart.png")
+plt.show()
+```
+
+**Challenge 2**
+
+```python
+import matplotlib.pyplot as plt
+
+week = [
+    {"day": "Mon", "minutes": 20},
+    {"day": "Tue", "minutes": 30},
+    {"day": "Wed", "minutes": 15},
+    {"day": "Thu", "minutes": 40},
+    {"day": "Fri", "minutes": 25},
+    {"day": "Sat", "minutes": 10},
+    {"day": "Sun", "minutes": 0}
+]
+
+days = []
+minutes = []
+
+for entry in week:
+    days.append(entry["day"])
+    minutes.append(entry["minutes"])
+
+plt.bar(days, minutes)
+plt.title("Weekly Practice")
+plt.xlabel("Day")
+plt.ylabel("Minutes")
+plt.show()
+```
+
 :::
 
 ## What you learned
 
-You can now create simple charts to show scores, progress and comparisons.
+You can now:
+
+- create line charts and bar charts using `matplotlib`;
+- add titles and axis labels;
+- plot data that came from a list of dictionaries or a CSV file;
+- show more than one line on the same chart with a legend;
+- save a chart to an image file.
 
 ## Looking ahead
 
-Next you will learn what packages are and how to install them safely.
+The next lesson explains the difference between built-in modules, installed packages, and the Python environment you are using.

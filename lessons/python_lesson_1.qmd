@@ -14,7 +14,7 @@ By the end of this lesson you should be able to:
 
 Estimated time: **45–60 minutes**
 
-## Part 1: Running your first program
+## Running your first program
 
 Open **Positron**.
 
@@ -40,7 +40,7 @@ Hello, world!
 
 Congratulations! You have written your first Python program.
 
-## Part 2: The `print()` function
+## The `print()` function
 
 A function is a command that tells Python to do something.
 
@@ -82,7 +82,7 @@ The quotation marks tell Python: treat this as text.
 
 Without quotation marks, Python treats it as mathematics.
 
-## Part 3: Variables
+## Variables
 
 Imagine you have a labelled box.
 
@@ -117,7 +117,7 @@ name = "Emma"
 print(name)
 ```
 
-## Part 4: Using variables
+## Using variables
 
 Variables make programs much easier to change.
 
@@ -144,7 +144,7 @@ Emma is 15 years old.
 
 Notice that `print()` automatically puts spaces between the different things you ask it to print.
 
-## Part 5: Doing calculations
+## Doing calculations
 
 Python is an excellent calculator.
 
@@ -170,7 +170,7 @@ Output:
 3.0
 ```
 
-## Part 6: Updating variables
+## Updating variables
 
 Variables can change.
 

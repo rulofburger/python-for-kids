@@ -31,7 +31,7 @@ answer = input("What is your name? ")
 
 Today we learn how to clean, compare and format text.
 
-## Part 1: Joining strings
+## Joining strings
 
 You can print several pieces of text together using commas.
 
@@ -68,7 +68,7 @@ Better:
 print(first + " " + second)
 ```
 
-## Part 2: F-strings
+## F-strings
 
 An **f-string** is a neat way to put variables inside a sentence.
 
@@ -86,7 +86,7 @@ Alex is 15 years old.
 
 The `f` before the quotation mark tells Python to look for variables inside curly brackets.
 
-## Part 3: Changing case
+## Changing case
 
 Python treats `Python`, `python`, and `PYTHON` as different strings.
 
@@ -119,7 +119,7 @@ Useful methods:
 | `.upper()` | changes text to uppercase |
 | `.title()` | changes text to title case |
 
-## Part 4: Removing extra spaces
+## Removing extra spaces
 
 Users sometimes type extra spaces.
 
@@ -137,7 +137,7 @@ if answer == "python":
     print("Correct!")
 ```
 
-## Part 5: Checking whether text contains something
+## Checking whether text contains something
 
 Use `in` to check whether text contains a letter or word.
 
@@ -150,7 +150,7 @@ else:
     print("That does not look like an email address.")
 ```
 
-## Part 6: String length
+## String length
 
 Use `len()` to count characters.
 

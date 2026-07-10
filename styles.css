@@ -138,3 +138,58 @@ pre code {
 .steps p {
   margin-bottom: 0.9rem;
 }
+
+/* Dark mode overrides (Quarto toggles data-bs-theme and a quarto-dark body class) */
+
+:root[data-bs-theme="dark"] .hero-banner,
+.quarto-dark .hero-banner {
+  background: linear-gradient(135deg, #16324a, #101820);
+  border-color: #2c4a66;
+}
+
+:root[data-bs-theme="dark"] .course-card,
+.quarto-dark .course-card {
+  background: #161b22;
+  border-color: #30363d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-bs-theme="dark"] details,
+.quarto-dark details {
+  background: #161b22;
+  border-color: #30363d;
+}
+
+:root[data-bs-theme="dark"] .hero,
+.quarto-dark .hero {
+  background: linear-gradient(135deg, #16324a 0%, #101820 55%, #2a2313 100%);
+  border-color: #2c4a66;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-bs-theme="dark"] .btn-primary,
+.quarto-dark .btn-primary {
+  background: #4c8bf5;
+}
+
+:root[data-bs-theme="dark"] .btn-secondary,
+.quarto-dark .btn-secondary {
+  background: #161b22;
+  color: #4c8bf5 !important;
+  border-color: #4c8bf5;
+}
+
+:root[data-bs-theme="dark"] .feature-card,
+:root[data-bs-theme="dark"] .lesson-card,
+.quarto-dark .feature-card,
+.quarto-dark .lesson-card {
+  background: #161b22;
+  border-color: #30363d;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-bs-theme="dark"] .steps,
+.quarto-dark .steps {
+  background: #101820;
+  border-left-color: #4c8bf5;
+}

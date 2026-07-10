@@ -27,7 +27,7 @@ length = len(name)
 
 Today you learn how to create your own functions.
 
-## Part 1: Why functions are useful
+## Why functions are useful
 
 A function lets us give a block of code a name.
 
@@ -42,7 +42,7 @@ greet()
 
 The function is defined once, then called many times.
 
-## Part 2: Defining and calling a function
+## Defining and calling a function
 
 A function definition starts with `def`.
 
@@ -57,7 +57,7 @@ This teaches Python what the function means. To run it, call it.
 say_hello()
 ```
 
-## Part 3: Parameters
+## Parameters
 
 A **parameter** lets a function receive information.
 
@@ -76,7 +76,7 @@ Hello, Alex!
 Hello, Ben!
 ```
 
-## Part 4: More than one parameter
+## More than one parameter
 
 ```python
 def introduce(name, age):
@@ -85,7 +85,7 @@ def introduce(name, age):
 introduce("Alex", 15)
 ```
 
-## Part 5: Returning a value
+## Returning a value
 
 Some functions calculate something and send the answer back.
 
@@ -103,7 +103,7 @@ Output:
 10
 ```
 
-## Part 6: `print()` versus `return`
+## `print()` versus `return`
 
 This prints an answer:
 
@@ -127,7 +127,7 @@ total = answer + 10
 print(total)
 ```
 
-## Part 7: Functions with cleaned input
+## Functions with cleaned input
 
 ```python
 def clean_text(text):

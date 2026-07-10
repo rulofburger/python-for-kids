@@ -4,40 +4,443 @@ title: "Mini Project 5: Score Tracker"
 
 ## Goal
 
-Build a score tracker that saves scores to a CSV file, reads them back, calculates summaries and plots progress.
+Build a score tracker that saves scores to a CSV file, reads them back, calculates summaries, and plots progress over time.
 
-## Skills used
+This project combines what you learned in Lessons 12–17:
 
-- input
+- boolean logic
+- lists of dictionaries
+- planning before coding
 - functions
 - CSV files
-- lists of dictionaries
-- averages and best scores
 - simple graphs
 
-## Steps
+## What your program should do
 
-1. Ask for a learner's name and score.
-2. Append the result to `scores.csv`.
-3. Read all previous scores.
-4. Calculate the average score.
-5. Find the best score.
-6. Plot score progress.
+The basic version should:
+
+1. Show a menu with options to add a score, view a summary, plot progress, or quit.
+2. Save each new score to `scores.csv`.
+3. Read all saved scores back from the file.
+4. Calculate the average score and find the best score.
+5. Plot score progress as a line chart.
+
+Example:
+
+```text
+Score Tracker
+
+1. Add score
+2. View summary
+3. Plot progress
+4. Quit
+
+Choose an option: 1
+Name: Alex
+Score: 8
+Score saved.
+
+Choose an option: 2
+Average score: 8.0
+Best score: Alex with 8
+
+Choose an option: 4
+Goodbye!
+```
+
+## Step 1: Plan it first
+
+Before writing any code, write a short plan using the template from Lesson 14.
+
+```text
+Goal: Track scores over time, with a summary and a chart.
+Inputs: A name and a score, typed by the user.
+Outputs: A saved CSV file, a printed summary, and a chart.
+Data needed: A list of dictionaries, each with "name" and "score", read from the file.
+Steps: menu -> add score -> view summary -> plot progress -> quit.
+Possible errors: the CSV file does not exist yet the first time the program runs.
+```
+
+## Step 2: Create the file
+
+Create a file called:
+
+```text
+mini_project_5_score_tracker.py
+```
+
+Start with:
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+print("Score Tracker")
+```
+
+## Step 3: Write `add_score()`
+
+This function should ask for a name and a score, then append them to `scores.csv`.
+
+```python
+def add_score():
+    name = input("Name: ")
+    score = input("Score: ")
+
+    with open("scores.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, score])
+
+    print("Score saved.")
+```
+
+Since `scores.csv` might not exist yet the very first time this runs, appending to it still works: Python creates the file if it is missing.
+
+## Step 4: Write `read_scores()`
+
+This function should read every row from `scores.csv` and return it as a list of dictionaries. If the file does not exist yet, it should return an empty list instead of crashing.
+
+```python
+def read_scores():
+    scores = []
+
+    try:
+        with open("scores.csv", "r") as file:
+            reader = csv.DictReader(file, fieldnames=["name", "score"])
+            for row in reader:
+                scores.append({"name": row["name"], "score": int(row["score"])})
+    except FileNotFoundError:
+        pass
+
+    return scores
+```
+
+## Step 5: Write `show_summary()`
+
+Use the "find the best record" pattern from Lesson 13 to calculate the average and the best score.
+
+```python
+def show_summary():
+    scores = read_scores()
+
+    if len(scores) == 0:
+        print("No scores yet.")
+        return
+
+    total = 0
+    best = scores[0]
+
+    for entry in scores:
+        total = total + entry["score"]
+        if entry["score"] > best["score"]:
+            best = entry
+
+    print("Average score:", total / len(scores))
+    print("Best score:", best["name"], "with", best["score"])
+```
+
+## Step 6: Write `plot_scores()`
+
+```python
+def plot_scores():
+    scores = read_scores()
+
+    if len(scores) == 0:
+        print("No scores yet.")
+        return
+
+    values = []
+    for entry in scores:
+        values.append(entry["score"])
+
+    plt.plot(values)
+    plt.title("Score Progress")
+    plt.xlabel("Attempt")
+    plt.ylabel("Score")
+    plt.show()
+```
+
+## Step 7: Build the menu
+
+Reuse the menu skeleton from Lesson 14.
+
+```python
+choice = ""
+
+while choice != "4":
+    print()
+    print("1. Add score")
+    print("2. View summary")
+    print("3. Plot progress")
+    print("4. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_score()
+    elif choice == "2":
+        show_summary()
+    elif choice == "3":
+        plot_scores()
+    elif choice == "4":
+        print("Goodbye!")
+    else:
+        print("Choose 1, 2, 3 or 4")
+```
+
+## Step 8: Test every option
+
+Run the program and test each menu option, including running it fresh with no `scores.csv` file at all, to check the "no scores yet" case works.
+
+## Debugging practice
+
+The following code has several mistakes. Fix it, then explain what was wrong.
+
+```python
+import csv
+
+def add_score()
+    name = input("Name: ")
+    score = input("Score: ")
+
+    with open("scores.csv", "a") as file
+        writer = csv.writer(file)
+        writer.writerow([name, score])
+
+def read_scores():
+    scores = []
+    with open("scores.csv", "r") as file:
+        reader = csv.DictReader(file, fieldnames=["name", "score"])
+        for row in reader:
+            scores.append({"name": row["name"], "score": row["score"]})
+    return scores
+
+scores = read_scores()
+total = 0
+
+for entry in scores:
+    total = total + entry["score"]
+
+print("Total:", total)
+```
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-Use `csv.writer()` to append rows and `csv.DictReader()` to read them. Convert scores using `int()`. Use `plt.plot(scores)` for a simple progress chart.
+**Step 3**
+
+Use mode `"a"` so each new score is added, not overwritten.
+
+**Step 4**
+
+Wrap the `open()` call in `try`/`except FileNotFoundError` so a missing file gives an empty list instead of crashing.
+
+**Step 5**
+
+Start `best` as `scores[0]`, and compare every entry's `"score"` to `best["score"]`.
+
+**Step 6**
+
+Build a plain list of just the score values before calling `plt.plot()`.
+
+**Step 7**
+
+The loop should keep running until the user chooses `"4"`.
+
+**Debugging practice**
+
+Look for a missing colon after `def add_score()`, a missing colon after the `with` line, and a missing `int()` conversion before adding scores together.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible structure
+## Click to reveal one possible solution
 
-Create functions called `add_score()`, `read_scores()`, `show_summary()` and `plot_scores()`. Then create a menu with options to add a score, view a summary, plot scores or quit.
+**Basic version**
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+
+def add_score():
+    name = input("Name: ")
+    score = input("Score: ")
+
+    with open("scores.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, score])
+
+    print("Score saved.")
+
+
+def read_scores():
+    scores = []
+
+    try:
+        with open("scores.csv", "r") as file:
+            reader = csv.DictReader(file, fieldnames=["name", "score"])
+            for row in reader:
+                scores.append({"name": row["name"], "score": int(row["score"])})
+    except FileNotFoundError:
+        pass
+
+    return scores
+
+
+def show_summary():
+    scores = read_scores()
+
+    if len(scores) == 0:
+        print("No scores yet.")
+        return
+
+    total = 0
+    best = scores[0]
+
+    for entry in scores:
+        total = total + entry["score"]
+        if entry["score"] > best["score"]:
+            best = entry
+
+    print("Average score:", total / len(scores))
+    print("Best score:", best["name"], "with", best["score"])
+
+
+def plot_scores():
+    scores = read_scores()
+
+    if len(scores) == 0:
+        print("No scores yet.")
+        return
+
+    values = []
+    for entry in scores:
+        values.append(entry["score"])
+
+    plt.plot(values)
+    plt.title("Score Progress")
+    plt.xlabel("Attempt")
+    plt.ylabel("Score")
+    plt.show()
+
+
+print("Score Tracker")
+
+choice = ""
+
+while choice != "4":
+    print()
+    print("1. Add score")
+    print("2. View summary")
+    print("3. Plot progress")
+    print("4. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_score()
+    elif choice == "2":
+        show_summary()
+    elif choice == "3":
+        plot_scores()
+    elif choice == "4":
+        print("Goodbye!")
+    else:
+        print("Choose 1, 2, 3 or 4")
+```
+
+**Version with dates added**
+
+```python
+import csv
+import datetime
+import matplotlib.pyplot as plt
+
+
+def add_score():
+    name = input("Name: ")
+    score = input("Score: ")
+    date = datetime.date.today()
+
+    with open("scores.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, score, date])
+
+    print("Score saved.")
+
+
+def read_scores():
+    scores = []
+
+    try:
+        with open("scores.csv", "r") as file:
+            reader = csv.DictReader(file, fieldnames=["name", "score", "date"])
+            for row in reader:
+                scores.append({
+                    "name": row["name"],
+                    "score": int(row["score"]),
+                    "date": row["date"]
+                })
+    except FileNotFoundError:
+        pass
+
+    return scores
+```
+
+**Debugging practice solution**
+
+```python
+import csv
+
+
+def add_score():
+    name = input("Name: ")
+    score = input("Score: ")
+
+    with open("scores.csv", "a") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, score])
+
+
+def read_scores():
+    scores = []
+    with open("scores.csv", "r") as file:
+        reader = csv.DictReader(file, fieldnames=["name", "score"])
+        for row in reader:
+            scores.append({"name": row["name"], "score": int(row["score"])})
+    return scores
+
+
+scores = read_scores()
+total = 0
+
+for entry in scores:
+    total = total + entry["score"]
+
+print("Total:", total)
+```
 
 :::
 
-## Extensions
+## Challenge extensions
 
-Add dates, topics, learner names, or separate charts for different learners.
+Try one or more of these.
+
+1. Record the date of each score, and show progress by date.
+2. Track scores for more than one learner, and let the user choose whose progress to view or plot.
+3. Highlight the best and worst attempt directly on the chart.
+4. Add a "topic" field, and let the user filter the summary by topic.
+5. Add a menu option to delete all saved scores and start again.
+6. Show a warning if the average score has dropped compared to the previous session.
+7. Save the summary (average and best score) to a separate text file each time it is viewed.
+
+## What you practised
+
+You practised how to:
+
+- combine functions, CSV files, and menus into one program;
+- read data back from a file into a list of dictionaries;
+- calculate summaries from stored records;
+- plot progress using `matplotlib`;
+- handle a missing file gracefully the first time a program runs.

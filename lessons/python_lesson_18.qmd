@@ -4,100 +4,359 @@ title: "Lesson 18: Packages and Environments"
 
 ## Learning goals
 
-Understand built-in modules, installed packages, `pip`, and the Python environment selected in Positron.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- explain the difference between a built-in module and an installed package;
+- install a package safely using `python -m pip`;
+- check your Python version and which packages are installed;
+- work through a checklist when an `import` fails;
+- explain, in plain language, what a Python environment is.
 
-Some tools come with Python.
+Estimated time: **30–45 minutes**
+
+## Quick review
+
+Across this course you have written `import random`, `import csv`, and `import matplotlib.pyplot as plt`. Two of those worked immediately. One of them needed an extra step first. This lesson explains why, and what to do when importing something does not work.
+
+## Built-in modules
+
+Some tools are included with Python itself, so you can `import` them straight away, on any computer that has Python installed.
 
 ```python
 import random
 import csv
+import math
+
+print(random.randint(1, 10))
+print(math.sqrt(16))
 ```
 
-Other tools must be installed.
+`random`, `csv`, and `math` are all built-in modules. No extra installation step is needed.
+
+## Installed packages
+
+Other tools are not included with Python. They need to be installed once, using a tool called `pip`.
 
 ```bash
 python -m pip install matplotlib
 ```
 
-Using `python -m pip` is safer than just `pip` because it asks the Python you are using to install the package.
+Only after this command finishes successfully can you do this:
 
-Check your Python version.
+```python
+import matplotlib.pyplot as plt
+```
+
+`matplotlib` is a **package**: extra code, written by other people, that you add to your Python installation.
+
+## Why `python -m pip`, not just `pip`
+
+```bash
+python -m pip install matplotlib
+```
+
+Typing `python -m pip install ...` tells the specific `python` you are using to install the package for itself. If you type only `pip install ...`, it is possible for the package to be installed for a *different* Python than the one Positron is running, especially on a computer with more than one Python installed. Using `python -m pip` avoids that confusion.
+
+## Checking your Python version
 
 ```bash
 python --version
 ```
 
-If a package import fails, check:
+This prints something like:
 
-1. Did you install it?
-2. Did the command finish without errors?
-3. Is Positron using the same Python?
-4. Did you spell the package name correctly?
+```text
+Python 3.12.3
+```
+
+If a lesson's code needs a newer feature than your installed version supports, this is the first thing to check.
+
+## Checking installed packages
+
+```bash
+python -m pip list
+```
+
+This prints every package currently installed for that Python, including `matplotlib` if the install worked.
+
+## What a Python environment is
+
+A **Python environment** is one Python installation together with whichever packages have been installed for it. Positron lets you choose which Python environment to run your code with.
+
+This matters because a package installed in one environment is not automatically available in another. If `import matplotlib.pyplot` fails even after installing it, it is worth checking whether Positron is using the same Python environment that you ran `pip install` for.
+
+You do not need to fully understand environments yet. For now, it is enough to know: **one Python, one set of installed packages.** If something that should be installed is not found, this is one of the first things to check.
+
+## A troubleshooting checklist
+
+If `import` fails with something like:
+
+```text
+ModuleNotFoundError: No module named 'matplotlib'
+```
+
+work through this checklist:
+
+1. Did you run `python -m pip install matplotlib`?
+2. Did that command finish without any red error text?
+3. Is Positron using the same Python environment you installed the package into?
+4. Did you spell the package name correctly, in both the install command and the `import` line?
+
+## Upgrading a package
+
+Occasionally a package needs to be updated to a newer version.
+
+```bash
+python -m pip install --upgrade matplotlib
+```
+
+This is the same idea as installing, but tells `pip` to replace an older version if one is already installed.
+
+## Common mistakes
+
+### Mistake 1: Using `pip install` instead of `python -m pip install`
+
+This can silently install a package for the wrong Python, especially on a computer with more than one Python installed. Prefer `python -m pip install ...`.
+
+### Mistake 2: Misspelling the package or module name
+
+```python
+import maths
+```
+
+Python's built-in module is called `math`, not `maths`. A `ModuleNotFoundError` almost always means either a spelling mistake or a missing install.
+
+### Mistake 3: Not restarting after installing a package
+
+Sometimes, after installing a package, the currently running Python session still does not see it. Restarting the terminal, or restarting Positron's Python session, usually fixes this.
+
+### Mistake 4: Assuming every import needs installing
+
+`random`, `csv`, `math`, and several other useful modules are already built in. There is no need to `pip install` them.
 
 ## Exercises
 
 ### Exercise 1
 
-Check your Python version in the terminal.
+Run `python --version` in the terminal. Write the result as a comment in a Python file.
 
 ### Exercise 2
 
-Import `random` and print a random number.
+Import `random` and print a random number between 1 and 10.
 
 ### Exercise 3
 
-Import `csv` and print a success message.
+Import `csv` and print a message confirming it imported successfully.
 
 ### Exercise 4
 
-Import `matplotlib.pyplot` and make a tiny chart.
+Import `matplotlib.pyplot` and create a tiny line chart of `[1, 2, 3]`.
+
+### Exercise 5
+
+Run `python -m pip list` in the terminal. Write down, as a comment, whether `matplotlib` appears in the list.
+
+### Exercise 6
+
+Deliberately write `import mathh` (a misspelling) and run it. Write down the exact error message, and which item on the troubleshooting checklist would catch this mistake.
+
+### Exercise 7
+
+Write, as comments, a checklist you would give a friend whose program says `ModuleNotFoundError: No module named 'matplotlib'`.
+
+### Exercise 8
+
+Write a single program that imports `random`, `csv`, and `matplotlib.pyplot`, and prints a confirmation message for each one.
 
 ## Debugging practice
 
-Fix this deliberately broken code, then explain what was wrong.
+The following code fails to run. Fix it, then explain what was wrong.
 
 ```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
+import maths
+
+print(maths.sqrt(25))
 ```
 
-## Challenge
+## Challenges
 
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+### Challenge 1: Environment report
+
+Write a program that imports `random`, `csv`, and `matplotlib.pyplot`, printing a confirmation for each. At the top of the file, add a comment recording your Python version from `python --version`.
+
+### Challenge 2: Troubleshooting guide
+
+Write a short troubleshooting guide, as comments in a Python file, for a friend who installed `matplotlib` but still gets `ModuleNotFoundError` in Positron. Cover at least three possible causes and what to check for each.
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
+**Exercise 1**
+
+Run the command in the terminal, not inside a `.py` file.
+
+**Exercise 2**
+
+Use `random.randint(1, 10)`.
+
+**Exercise 3**
+
+A simple `print("csv imported successfully")` after the `import` line is enough.
+
+**Exercise 4**
+
+Reuse the line chart code from Lesson 17.
+
+**Exercise 5**
+
+Look through the printed list for the word `matplotlib`.
+
+**Exercise 6**
+
+Python's built-in module is `math`, singular.
+
+**Exercise 7**
+
+Reuse the four-item checklist from this lesson.
+
+**Exercise 8**
+
+Add one `print()` confirmation line after each `import`.
+
+**Debugging practice**
+
+Check the spelling of the module name against Python's actual built-in modules.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+# python --version reported: Python 3.12.3
+```
+
+**Exercise 2**
 
 ```python
 import random
-print("random is working")
+
+print(random.randint(1, 10))
+```
+
+**Exercise 3**
+
+```python
+import csv
+
+print("csv imported successfully")
+```
+
+**Exercise 4**
+
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3])
+plt.show()
+```
+
+**Exercise 5**
+
+```python
+# matplotlib appeared in the output of "python -m pip list"
+```
+
+**Exercise 6**
+
+```python
+# import mathh
+# ModuleNotFoundError: No module named 'mathh'
+# Checklist item 4 catches this: check the spelling of the module name.
+```
+
+**Exercise 7**
+
+```python
+# 1. Did you run python -m pip install matplotlib?
+# 2. Did that command finish without any red error text?
+# 3. Is Positron using the same Python environment you installed into?
+# 4. Did you spell "matplotlib" correctly in both the install command and the import line?
+```
+
+**Exercise 8**
+
+```python
+import random
+print("random imported successfully")
 
 import csv
-print("csv is working")
+print("csv imported successfully")
 
 import matplotlib.pyplot as plt
-print("matplotlib is working")
+print("matplotlib imported successfully")
+```
+
+**Debugging practice solution**
+
+```python
+import math
+
+print(math.sqrt(25))
+```
+
+Python's built-in module for maths functions is called `math`, not `maths`. Misspelling a built-in module name gives the same kind of `ModuleNotFoundError` as forgetting to install a package.
+
+**Challenge 1**
+
+```python
+# Python version: 3.12.3
+
+import random
+print("random imported successfully")
+
+import csv
+print("csv imported successfully")
+
+import matplotlib.pyplot as plt
+print("matplotlib imported successfully")
+```
+
+**Challenge 2**
+
+```python
+# Troubleshooting guide: "ModuleNotFoundError: No module named 'matplotlib'"
+#
+# 1. Check the install actually finished.
+#    Run: python -m pip install matplotlib
+#    Look for any red error text in the output.
+#
+# 2. Check Positron is using the same Python you installed into.
+#    There can be more than one Python on a computer. Installing
+#    into one and running code with another causes exactly this error.
+#
+# 3. Check the spelling everywhere.
+#    It must be "matplotlib" in both the install command and the import line.
+#
+# 4. Restart the terminal or Positron's Python session.
+#    Sometimes a package that was just installed is not visible
+#    until the session is restarted.
 ```
 
 :::
 
 ## What you learned
 
-You understand the basic difference between built-in modules, installed packages and Python environments.
+You can now:
+
+- explain the difference between a built-in module and an installed package;
+- install a package safely using `python -m pip`;
+- check your Python version and installed packages;
+- work through a checklist when an import fails;
+- explain what a Python environment is, in plain language.
 
 ## Looking ahead
 
-You are ready for the final beginner projects.
+You now have every tool used in Mini Project 5: functions, files, CSV, lists of dictionaries, averages, and simple graphs. That project puts all of them together to build a Score Tracker.

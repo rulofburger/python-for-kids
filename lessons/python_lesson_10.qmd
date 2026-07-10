@@ -33,7 +33,7 @@ Lists use positions:
 
 A **dictionary** uses labels called **keys**.
 
-## Part 1: A first dictionary
+## A first dictionary
 
 A dictionary stores pairs of information.
 
@@ -61,7 +61,7 @@ Alex
 cycling
 ```
 
-## Part 2: Looking up values
+## Looking up values
 
 Use square brackets and the key.
 
@@ -83,7 +83,7 @@ Alex
 15
 ```
 
-## Part 3: Adding and changing values
+## Adding and changing values
 
 You can add a new key.
 
@@ -104,7 +104,7 @@ You can also update an existing value.
 person["age"] = 16
 ```
 
-## Part 4: A dictionary of scores
+## A dictionary of scores
 
 Dictionaries are useful when each value has a label.
 
@@ -124,7 +124,7 @@ Output:
 10
 ```
 
-## Part 5: Looping through a dictionary
+## Looping through a dictionary
 
 You can loop through the keys.
 
@@ -156,7 +156,7 @@ for name, score in scores.items():
 
 This is often easier to read.
 
-## Part 6: A dictionary for a quiz
+## A dictionary for a quiz
 
 Dictionaries are useful for storing questions and answers.
 
@@ -186,7 +186,7 @@ for question, correct_answer in questions.items():
 print("Score:", score)
 ```
 
-## Part 7: Checking whether a key exists
+## Checking whether a key exists
 
 Use `in` to check whether a key exists.
 
@@ -249,6 +249,35 @@ Dictionaries use keys:
 ```python
 person["name"]
 ```
+
+Here is the difference as a picture:
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart LR
+    subgraph List["List: foods"]
+        L0["0 → pizza"]
+        L1["1 → burgers"]
+        L2["2 → pasta"]
+    end
+    subgraph Dict["Dictionary: person"]
+        D0["'name' → Alex"]
+        D1["'age' → 15"]
+        D2["'hobby' → cycling"]
+    end
+
+    style List fill:#ffffff,stroke:#1f6feb,color:#1f6feb
+    style Dict fill:#ffffff,stroke:#1f6feb,color:#1f6feb
+    style L0 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+    style L1 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+    style L2 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+    style D0 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+    style D1 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+    style D2 fill:#eef6ff,stroke:#1f6feb,color:#1f6feb
+```
+
+A list looks things up by position. A dictionary looks things up by a label you choose.
 
 ## Exercises
 

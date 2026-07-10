@@ -4,48 +4,394 @@ title: "Mini Project 6: Personal Notebook"
 
 ## Goal
 
-Build a simple personal notebook app that can add, view and search notes.
+Build a personal notebook app that can add, view, and search notes, saving them to a file so they are still there the next time you run the program.
 
-## Skills used
+This project combines what you learned in Lessons 9, 11, and 14:
 
-- menus
-- loops
 - files
-- strings
-- functions
+- error handling
 - planning before coding
+- functions
+- menus
+- strings
 
-## Menu
+## What your program should do
+
+The basic version should:
+
+1. Show a menu with options to add a note, view all notes, search notes, or quit.
+2. Save each new note to `notes.txt`, without erasing notes already saved.
+3. View all saved notes, numbered.
+4. Search notes for a keyword, ignoring capitalisation.
+5. Work correctly even the very first time, before `notes.txt` exists.
+
+Example:
 
 ```text
+Personal Notebook
+
 1. Add note
 2. View notes
 3. Search notes
 4. Quit
+
+Choose an option: 1
+Enter your note: Buy milk after school
+Note saved.
+
+Choose an option: 1
+Enter your note: Finish Python homework
+Note saved.
+
+Choose an option: 2
+1. Buy milk after school
+2. Finish Python homework
+
+Choose an option: 3
+Search for: milk
+1. Buy milk after school
+
+Choose an option: 4
+Goodbye!
 ```
 
-## Steps
+## Step 1: Plan it first
 
-1. Write `add_note()`.
-2. Write `view_notes()`.
-3. Write `search_notes()`.
-4. Create the menu loop.
-5. Test every option.
+Before writing any code, write a short plan using the template from Lesson 14.
+
+```text
+Goal: Save, view, and search short personal notes.
+Inputs: A note typed by the user, or a search keyword.
+Outputs: A saved file, a numbered list of notes, and matching search results.
+Data needed: Nothing kept in memory between menu choices — each option
+             reads notes.txt fresh, so notes survive even if the program closes.
+Steps: menu -> add note -> view notes -> search notes -> quit.
+Possible errors: notes.txt does not exist yet the first time view or search is used.
+```
+
+## Step 2: Create the file
+
+Create a file called:
+
+```text
+mini_project_6_personal_notebook.py
+```
+
+Start with:
+
+```python
+print("Personal Notebook")
+```
+
+## Step 3: Write `add_note()`
+
+```python
+def add_note():
+    note = input("Enter your note: ")
+
+    with open("notes.txt", "a") as file:
+        file.write(note + "\n")
+
+    print("Note saved.")
+```
+
+Using mode `"a"` means each new note is added to the end of the file, without erasing the notes already there. Adding `"\n"` keeps each note on its own line.
+
+## Step 4: Write `view_notes()`
+
+This should print every saved note, numbered, and handle the case where `notes.txt` does not exist yet.
+
+```python
+def view_notes():
+    try:
+        with open("notes.txt", "r") as file:
+            notes = file.readlines()
+    except FileNotFoundError:
+        notes = []
+
+    if len(notes) == 0:
+        print("No notes yet.")
+        return
+
+    number = 1
+    for note in notes:
+        print(f"{number}. {note.strip()}")
+        number = number + 1
+```
+
+`.strip()` removes the `"\n"` at the end of each line before printing it.
+
+## Step 5: Write `search_notes()`
+
+```python
+def search_notes():
+    keyword = input("Search for: ").strip().lower()
+
+    try:
+        with open("notes.txt", "r") as file:
+            notes = file.readlines()
+    except FileNotFoundError:
+        notes = []
+
+    found_any = False
+    number = 1
+
+    for note in notes:
+        if keyword in note.strip().lower():
+            print(f"{number}. {note.strip()}")
+            found_any = True
+        number = number + 1
+
+    if not found_any:
+        print("No matching notes.")
+```
+
+Comparing `keyword in note.strip().lower()` means the search ignores capitalisation, so searching for `"milk"` also matches a note containing `"Milk"`.
+
+## Step 6: Build the menu
+
+Reuse the menu skeleton from Lesson 14.
+
+```python
+choice = ""
+
+while choice != "4":
+    print()
+    print("1. Add note")
+    print("2. View notes")
+    print("3. Search notes")
+    print("4. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_note()
+    elif choice == "2":
+        view_notes()
+    elif choice == "3":
+        search_notes()
+    elif choice == "4":
+        print("Goodbye!")
+    else:
+        print("Choose 1, 2, 3 or 4")
+```
+
+## Step 7: Put it all together
+
+Place the three functions above the menu loop, so they are already defined by the time the menu calls them, then print a welcome message before the loop starts.
+
+## Step 8: Test every option
+
+Delete `notes.txt` if you have one from testing, then run the program fresh. Check that viewing and searching with no notes yet prints a sensible message instead of crashing. Then add a few notes and test viewing and searching again.
+
+## Debugging practice
+
+The following code has several mistakes. Fix it, then explain what was wrong.
+
+```python
+def add_note():
+    note = input("Enter your note: ")
+
+    with open("notes.txt", "w") as file:
+        file.write(note)
+
+def view_notes():
+    with open("notes.txt", "r") as file:
+        notes = file.readlines()
+
+    number = 1
+    for note in notes:
+        print(number, note)
+        number = number + 1
+
+def search_notes():
+    keyword = input("Search for: ")
+
+    with open("notes.txt", "r") as file:
+        notes = file.readlines()
+
+    for note in notes:
+        if keyword in note:
+            print(note)
+```
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-Use append mode to save notes. Use `.lower()` for case-insensitive search. Use `while choice != "4"` for the menu.
+**Step 3**
+
+Use mode `"a"`, not `"w"`, so old notes are not erased.
+
+**Step 4**
+
+Wrap the `open()` call in `try`/`except FileNotFoundError`.
+
+**Step 5**
+
+Clean both the keyword and each note with `.strip().lower()` before comparing them.
+
+**Step 6**
+
+The loop should keep running until the user chooses `"4"`.
+
+**Step 7**
+
+Functions must be defined with `def` before the code that calls them.
+
+**Debugging practice**
+
+Look for a file mode that erases old notes, a missing `"\n"` when writing, and a search that is case-sensitive because it does not clean the text.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible structure
+## Click to reveal one possible solution
 
-Use three functions: `add_note()`, `view_notes()` and `search_notes()`. Keep the menu at the bottom of the file so the functions are defined before they are called.
+**Basic version**
+
+```python
+def add_note():
+    note = input("Enter your note: ")
+
+    with open("notes.txt", "a") as file:
+        file.write(note + "\n")
+
+    print("Note saved.")
+
+
+def view_notes():
+    try:
+        with open("notes.txt", "r") as file:
+            notes = file.readlines()
+    except FileNotFoundError:
+        notes = []
+
+    if len(notes) == 0:
+        print("No notes yet.")
+        return
+
+    number = 1
+    for note in notes:
+        print(f"{number}. {note.strip()}")
+        number = number + 1
+
+
+def search_notes():
+    keyword = input("Search for: ").strip().lower()
+
+    try:
+        with open("notes.txt", "r") as file:
+            notes = file.readlines()
+    except FileNotFoundError:
+        notes = []
+
+    found_any = False
+    number = 1
+
+    for note in notes:
+        if keyword in note.strip().lower():
+            print(f"{number}. {note.strip()}")
+            found_any = True
+        number = number + 1
+
+    if not found_any:
+        print("No matching notes.")
+
+
+print("Personal Notebook")
+
+choice = ""
+
+while choice != "4":
+    print()
+    print("1. Add note")
+    print("2. View notes")
+    print("3. Search notes")
+    print("4. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_note()
+    elif choice == "2":
+        view_notes()
+    elif choice == "3":
+        search_notes()
+    elif choice == "4":
+        print("Goodbye!")
+    else:
+        print("Choose 1, 2, 3 or 4")
+```
+
+**Version with dates added**
+
+```python
+import datetime
+
+
+def add_note():
+    note = input("Enter your note: ")
+    date = datetime.date.today()
+
+    with open("notes.txt", "a") as file:
+        file.write(f"{date} | {note}\n")
+
+    print("Note saved.")
+```
+
+**Debugging practice solution**
+
+```python
+def add_note():
+    note = input("Enter your note: ")
+
+    with open("notes.txt", "a") as file:
+        file.write(note + "\n")
+
+
+def view_notes():
+    with open("notes.txt", "r") as file:
+        notes = file.readlines()
+
+    number = 1
+    for note in notes:
+        print(number, note.strip())
+        number = number + 1
+
+
+def search_notes():
+    keyword = input("Search for: ").strip().lower()
+
+    with open("notes.txt", "r") as file:
+        notes = file.readlines()
+
+    for note in notes:
+        if keyword in note.strip().lower():
+            print(note.strip())
+```
+
+Using `"w"` in `add_note()` erased every previous note each time a new one was added; it needed to be `"a"`. The note was also written without a trailing `"\n"`, which would glue every note onto one line. Finally, `search_notes()` compared the raw keyword against the raw note text, so a search for `"milk"` would miss a note containing `"Milk"`.
 
 :::
 
-## Extensions
+## Challenge extensions
 
-Add dates, categories, note counts or a delete option.
+Try one or more of these.
+
+1. Save the date with each note, and show it when viewing.
+2. Add categories to notes, and let the user view or search within one category.
+3. Add an option to delete a note by its number.
+4. Add an option to edit an existing note.
+5. Sort notes alphabetically when viewing them.
+6. Show how many notes are currently saved on the menu screen.
+7. Export all notes to a separate file, one per line, with numbering.
+
+## What you practised
+
+You practised how to:
+
+- read and write a file across separate function calls, without keeping data only in memory;
+- handle a missing file gracefully the first time a program runs;
+- clean text for a case-insensitive search;
+- combine functions and a menu into a small, useful app;
+- plan a program before writing any code.

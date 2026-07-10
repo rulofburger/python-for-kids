@@ -39,7 +39,7 @@ Examples:
 - notes;
 - settings.
 
-## Part 1: Writing to a file
+## Writing to a file
 
 To write text to a file, use `open()` with `"w"`.
 
@@ -64,7 +64,7 @@ The `"w"` means **write**.
 
 If the file already exists, `"w"` replaces the old contents.
 
-## Part 2: Reading from a file
+## Reading from a file
 
 To read a file, use `"r"`.
 
@@ -85,7 +85,7 @@ text = file.read()
 
 reads the whole file and stores it in the variable `text`.
 
-## Part 3: Why use `with`?
+## Why use `with`?
 
 You will often see this pattern:
 
@@ -98,7 +98,7 @@ The word `with` helps Python open the file, use it, and close it safely afterwar
 
 For now, use this pattern whenever you work with files.
 
-## Part 4: Writing more than one line
+## Writing more than one line
 
 You can use `\n` to add a new line.
 
@@ -119,7 +119,7 @@ Eggs
 
 The `\n` means “new line”.
 
-## Part 5: Adding to a file
+## Adding to a file
 
 Use `"a"` to append to a file.
 
@@ -136,7 +136,7 @@ If you run that code several times, it keeps adding new lines.
 
 The `"a"` means **append**.
 
-## Part 6: Reading lines
+## Reading lines
 
 Sometimes you want each line separately.
 
@@ -161,7 +161,7 @@ for line in lines:
 
 The `.strip()` removes the extra newline at the end of each line.
 
-## Part 7: File not found
+## File not found
 
 This code will crash if the file does not exist:
 

@@ -4,11 +4,31 @@ title: "Lesson 16: CSV Files"
 
 ## Learning goals
 
-Read and write simple table data using the built-in `csv` module.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- explain what a CSV file is and why it is useful for table data;
+- write rows to a CSV file using the `csv` module;
+- append new rows without erasing existing data;
+- read a CSV file as dictionaries using `csv.DictReader`;
+- convert CSV values to numbers before calculating with them;
+- handle a missing CSV file without crashing.
 
-CSV files store rows and columns.
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You already know how to save and read plain text files.
+
+```python
+with open("notes.txt", "w") as file:
+    file.write("Hello\n")
+```
+
+You also know how to store records as a list of dictionaries. A CSV file is a way to save that kind of table-shaped data to disk, so it survives after your program closes.
+
+## What a CSV file looks like
+
+CSV stands for "comma-separated values." Each line is a row, and commas separate the columns.
 
 ```text
 name,score
@@ -16,7 +36,9 @@ Alex,8
 Ben,10
 ```
 
-Write a CSV file.
+The first row is usually a **header**, naming each column. You can open a CSV file in a spreadsheet program too, since it is a common format for table data.
+
+## Writing a CSV file
 
 ```python
 import csv
@@ -25,9 +47,48 @@ with open("scores.csv", "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerow(["name", "score"])
     writer.writerow(["Alex", 8])
+    writer.writerow(["Ben", 10])
 ```
 
-Read a CSV file as dictionaries.
+`newline=""` avoids extra blank lines appearing between rows on some systems. `writer.writerow()` writes one row at a time, taking a list of values.
+
+## Appending rows
+
+Opening a file with mode `"w"` erases anything already in it. To add a new row without losing existing data, use `"a"` (append) instead.
+
+```python
+import csv
+
+with open("scores.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Chloe", 7])
+```
+
+## Reading a CSV file as plain rows
+
+```python
+import csv
+
+with open("scores.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+```
+
+Output:
+
+```text
+['name', 'score']
+['Alex', '8']
+['Ben', '10']
+['Chloe', '7']
+```
+
+Each row is a list of strings, including the header row.
+
+## Reading a CSV file as dictionaries
+
+`csv.DictReader` uses the header row as keys, so each row becomes a dictionary instead of a plain list.
 
 ```python
 import csv
@@ -38,50 +99,252 @@ with open("scores.csv", "r") as file:
         print(row["name"], row["score"])
 ```
 
+Output:
+
+```text
+Alex 8
+Ben 10
+Chloe 7
+```
+
+Notice the header row is not printed here. `csv.DictReader` uses it automatically as the dictionary keys.
+
+## Everything from a CSV file is text
+
+Even though `8` looks like a number, `csv.DictReader` always gives you a string, `"8"`. Convert it before doing arithmetic.
+
+```python
+import csv
+
+total = 0
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        total = total + int(row["score"])
+
+print("Total:", total)
+```
+
+Without `int()`, `total + row["score"]` would try to add a number and a string together, which raises a `TypeError`.
+
+## Calculating a summary from a CSV file
+
+You can combine this with ideas from Lesson 13 to build a small report.
+
+```python
+import csv
+
+total = 0
+count = 0
+best_name = None
+best_score = None
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        score = int(row["score"])
+        total = total + score
+        count = count + 1
+
+        if best_score is None or score > best_score:
+            best_score = score
+            best_name = row["name"]
+
+print("Average:", total / count)
+print("Best:", best_name, best_score)
+```
+
+## Handling a missing file
+
+If `scores.csv` does not exist yet, trying to open it for reading raises a `FileNotFoundError`. Handle it the same way you handled other errors in Lesson 11.
+
+```python
+import csv
+
+try:
+    with open("scores.csv", "r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            print(row["name"], row["score"])
+except FileNotFoundError:
+    print("No score file yet.")
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting to convert values to numbers
+
+```python
+total = total + row["score"]
+```
+
+`row["score"]` is always a string. Use `int(row["score"])` or `float(row["score"])` before adding it to a number.
+
+### Mistake 2: Using `"w"` when you meant to append
+
+```python
+with open("scores.csv", "w", newline="") as file:
+```
+
+`"w"` erases the file's existing contents before writing. If you want to keep what is already there, use `"a"`.
+
+### Mistake 3: Forgetting `newline=""` when writing
+
+Leaving out `newline=""` can add extra blank lines between rows on some systems. It is safe to always include it when writing CSV files.
+
+### Mistake 4: Expecting the header row from `csv.DictReader`
+
+```python
+for row in reader:
+    print(row)
+```
+
+If you are using `csv.DictReader`, the header row is used automatically to build the keys. It is not one of the rows you loop through.
+
 ## Exercises
 
 ### Exercise 1
 
-Create `scores.csv` with names and scores.
+Create `scores.csv` with a header row and three names and scores, using `csv.writer`.
 
 ### Exercise 2
 
-Read `scores.csv` and print each row.
+Read `scores.csv` using `csv.DictReader` and print each row's name and score.
 
 ### Exercise 3
 
-Append a new score from user input.
+Ask the user for a name and a score, and append it as a new row to `scores.csv`.
 
 ### Exercise 4
 
-Read all scores and calculate the average.
+Read all scores from `scores.csv` and calculate and print the average.
+
+### Exercise 5
+
+Read all scores from `scores.csv` and print the name and score of the highest scorer.
+
+### Exercise 6
+
+Create `pets.csv` with a header row `name,animal,age`, and three pets.
+
+### Exercise 7
+
+Read `pets.csv` and print only the pets where `animal` is `dog`.
+
+### Exercise 8
+
+Try to read a file called `missing.csv`, which does not exist. Use `try` and `except` to print `No score file yet.` instead of crashing.
 
 ## Debugging practice
 
-Fix this deliberately broken code, then explain what was wrong.
+The following code crashes when it runs. Fix it, then explain what was wrong.
 
 ```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
+import csv
+
+total = 0
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        total = total + row["score"]
+
+print("Total:", total)
 ```
 
-## Challenge
+## Challenges
 
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+### Challenge 1: Score report
+
+Read `scores.csv` and print every entry, followed by the average score and the best score, all in one program.
+
+### Challenge 2: Pet manager
+
+Create `pets.csv` with a few pets. Ask the user for a new pet's name, animal, and age, and append it. Then read the file back and print only the pets older than an age the user chooses.
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
+**Exercise 1**
+
+Use `writer.writerow(["name", "score"])` for the header, then one `writerow()` call per pet.
+
+**Exercise 2**
+
+Use `csv.DictReader` and loop through it with `for row in reader:`.
+
+**Exercise 3**
+
+Open the file with mode `"a"`, not `"w"`.
+
+**Exercise 4**
+
+Convert each score with `int(row["score"])` before adding it up.
+
+**Exercise 5**
+
+Reuse the "find the best" pattern from Lesson 13, but read the scores from the file first.
+
+**Exercise 6**
+
+The header row is `name,animal,age`.
+
+**Exercise 7**
+
+Compare `row["animal"] == "dog"` inside the loop.
+
+**Exercise 8**
+
+Put the `open()` call inside a `try` block, and catch `FileNotFoundError`.
+
+**Debugging practice**
+
+Check the type of `row["score"]`, and what happens when you try to add a string to a number.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+import csv
+
+with open("scores.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["name", "score"])
+    writer.writerow(["Alex", 8])
+    writer.writerow(["Ben", 10])
+    writer.writerow(["Chloe", 7])
+```
+
+**Exercise 2**
+
+```python
+import csv
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row["name"], row["score"])
+```
+
+**Exercise 3**
+
+```python
+import csv
+
+name = input("Name: ")
+score = input("Score: ")
+
+with open("scores.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow([name, score])
+```
+
+**Exercise 4**
 
 ```python
 import csv
@@ -98,12 +361,148 @@ with open("scores.csv", "r") as file:
 print("Average:", total / count)
 ```
 
+**Exercise 5**
+
+```python
+import csv
+
+best_name = None
+best_score = None
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        score = int(row["score"])
+        if best_score is None or score > best_score:
+            best_score = score
+            best_name = row["name"]
+
+print("Best:", best_name, best_score)
+```
+
+**Exercise 6**
+
+```python
+import csv
+
+with open("pets.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["name", "animal", "age"])
+    writer.writerow(["Milo", "dog", 4])
+    writer.writerow(["Whiskers", "cat", 2])
+    writer.writerow(["Rex", "dog", 6])
+```
+
+**Exercise 7**
+
+```python
+import csv
+
+with open("pets.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        if row["animal"] == "dog":
+            print(row["name"], row["age"])
+```
+
+**Exercise 8**
+
+```python
+import csv
+
+try:
+    with open("missing.csv", "r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            print(row)
+except FileNotFoundError:
+    print("No score file yet.")
+```
+
+**Debugging practice solution**
+
+```python
+import csv
+
+total = 0
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        total = total + int(row["score"])
+
+print("Total:", total)
+```
+
+`row["score"]` is always a string, even though it looks like a number. Adding a string to `total` (a number) raises a `TypeError`, so it must be converted with `int()` first.
+
+**Challenge 1**
+
+```python
+import csv
+
+total = 0
+count = 0
+best_name = None
+best_score = None
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        score = int(row["score"])
+        print(row["name"], score)
+
+        total = total + score
+        count = count + 1
+
+        if best_score is None or score > best_score:
+            best_score = score
+            best_name = row["name"]
+
+print("Average:", total / count)
+print("Best:", best_name, best_score)
+```
+
+**Challenge 2**
+
+```python
+import csv
+
+with open("pets.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["name", "animal", "age"])
+    writer.writerow(["Milo", "dog", 4])
+    writer.writerow(["Whiskers", "cat", 2])
+
+name = input("New pet's name: ")
+animal = input("New pet's animal: ")
+age = input("New pet's age: ")
+
+with open("pets.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow([name, animal, age])
+
+minimum_age = int(input("Show pets older than: "))
+
+with open("pets.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        if int(row["age"]) > minimum_age:
+            print(row["name"], row["animal"], row["age"])
+```
+
 :::
 
 ## What you learned
 
-You can now save and read simple tables using CSV files.
+You can now:
+
+- explain what a CSV file is and how rows and columns are stored;
+- write and append rows to a CSV file;
+- read a CSV file as dictionaries using `csv.DictReader`;
+- convert CSV values to numbers before calculating with them;
+- handle a missing CSV file without crashing.
 
 ## Looking ahead
 
-Next you will visualise data with simple graphs.
+The next lesson turns table data like this into simple charts, using the `matplotlib` package.

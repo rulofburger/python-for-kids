@@ -24,7 +24,7 @@ secret = 7
 
 Randomness lets the computer choose.
 
-## Part 1: Importing `random`
+## Importing `random`
 
 Python has extra tools called **modules**. To use random numbers, import the `random` module.
 
@@ -34,7 +34,7 @@ import random
 
 Put this at the top of your Python file.
 
-## Part 2: Random integers
+## Random integers
 
 Use `random.randint()` to generate a random whole number.
 
@@ -47,7 +47,7 @@ print(number)
 
 This gives a random number from 1 to 6, including both 1 and 6.
 
-## Part 3: Simulating dice
+## Simulating dice
 
 ```python
 import random
@@ -70,7 +70,7 @@ print("Die 2:", die2)
 print("Total:", total)
 ```
 
-## Part 4: Choosing from a list
+## Choosing from a list
 
 Use `random.choice()` to choose one item from a list.
 
@@ -83,7 +83,7 @@ choice = random.choice(foods)
 print("Tonight we should eat", choice)
 ```
 
-## Part 5: Randomness and functions
+## Randomness and functions
 
 ```python
 import random
@@ -95,7 +95,7 @@ print(roll_die())
 print(roll_die())
 ```
 
-## Part 6: Random guessing game
+## Random guessing game
 
 ```python
 import random

@@ -14,6 +14,8 @@ Programmers call this kind of program an **IDE**, which stands for **Integrated 
 - a file explorer,
 - and panes for variables, plots and other useful information.
 
+Estimated time: **20–30 minutes**
+
 You do **not** need to understand every button before you start. For now, focus on the main areas in the picture below.
 
 ## The Positron window

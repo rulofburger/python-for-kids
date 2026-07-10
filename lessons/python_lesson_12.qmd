@@ -4,106 +4,429 @@ title: "Lesson 12: Boolean Logic"
 
 ## Learning goals
 
-Use `and`, `or`, and `not`; combine conditions; check ranges; and write clearer validation rules.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- combine conditions using `and`, `or`, and `not`;
+- check whether a number falls inside a range;
+- store the result of a comparison in a variable;
+- write validation rules that check more than one thing at once;
+- avoid the most common mistakes people make with boolean logic.
 
-Boolean logic lets a program check more than one condition.
+Estimated time: **45–60 minutes**
 
-Use `and` when both conditions must be true.
+## Quick review
+
+You already know how to check one condition.
 
 ```python
 age = int(input("How old are you? "))
-permission = input("Permission? yes or no? ").strip().lower()
+
+if age >= 13:
+    print("You can join the coding club.")
+```
+
+Sometimes one condition is not enough. What if you need to check age **and** whether someone has permission? Boolean logic lets you combine conditions.
+
+## `and` — both conditions must be true
+
+Use `and` when every condition needs to be true.
+
+```python
+age = int(input("How old are you? "))
+permission = input("Do you have permission? yes or no: ").strip().lower()
 
 if age >= 13 and permission == "yes":
-    print("You can join.")
+    print("You can join the coding club.")
+else:
+    print("Not yet.")
 ```
 
-Use `or` when either condition is enough.
+If `age >= 13` is `True` but `permission == "yes"` is `False`, the whole condition is `False`. Every part must be `True`.
+
+## `or` — at least one condition must be true
+
+Use `or` when any one of the conditions is enough.
 
 ```python
-colour = input("Choose red or blue: ").strip().lower()
+team = input("Who do you support, Pirates or Chiefs? ").strip().title()
 
-if colour == "red" or colour == "blue":
+if team == "Pirates" or team == "Chiefs":
     print("Good choice.")
+else:
+    print("Never heard of them.")
 ```
 
-Use range checks for boundaries.
+Only one side needs to be `True` for the whole condition to be `True`.
+
+## `not` — flip a condition
+
+`not` turns `True` into `False`, and `False` into `True`.
 
 ```python
+raining = True
+
+if not raining:
+    print("Let's play outside.")
+else:
+    print("Better stay in.")
+```
+
+`not` is useful when it is easier to describe the condition you do **not** want.
+
+```python
+answer = input("Are you finished? yes or no: ").strip().lower()
+
+if not answer == "yes":
+    print("Take your time.")
+```
+
+## Range checks
+
+You can check whether a number sits between two values using a chained comparison.
+
+```python
+mark = int(input("Enter a mark out of 100: "))
+
 if 0 <= mark <= 100:
     print("Valid mark")
+else:
+    print("That mark is not possible.")
 ```
+
+Read `0 <= mark <= 100` as: "Is `mark` greater than or equal to 0, **and** less than or equal to 100?" It is a shortcut for writing `mark >= 0 and mark <= 100`.
+
+## Mixing `and` and `or`
+
+You can combine `and` and `or` in the same condition, but it is easy to get confused about which part applies to what. Use brackets to make your intention clear.
+
+```python
+age = int(input("How old are you? "))
+has_card = input("Do you have a membership card? yes or no: ").strip().lower()
+
+if (age < 13 or age >= 60) and has_card == "yes":
+    print("You qualify for the discount.")
+else:
+    print("No discount this time.")
+```
+
+The brackets around `age < 13 or age >= 60` are checked first. Then the result is combined with `and has_card == "yes"`.
+
+## Storing a condition in a variable
+
+A comparison gives you a boolean value, `True` or `False`. You can store that value in a variable and use it later.
+
+```python
+age = int(input("How old are you? "))
+permission = input("Permission? yes or no: ").strip().lower()
+
+is_old_enough = age >= 13
+has_permission = permission == "yes"
+
+if is_old_enough and has_permission:
+    print("You can join the coding club.")
+```
+
+This can make long conditions easier to read.
+
+## Combining `and`/`or` with `in`
+
+You can combine membership checks with boolean logic.
+
+```python
+team = input("Enter a team: ").strip().title()
+score = int(input("Enter your score: "))
+
+teams = ["Pirates", "Chiefs", "Sundowns"]
+
+if team in teams and score > 0:
+    print("Valid entry.")
+else:
+    print("Not a valid entry.")
+```
+
+## Common mistakes
+
+### Mistake 1: Using `=` instead of `==`
+
+```python
+if age = 13:
+```
+
+`=` assigns a value. `==` compares two values. Inside a condition, always use `==`.
+
+### Mistake 2: Writing `if x == True`
+
+```python
+if is_old_enough == True:
+```
+
+`is_old_enough` is already `True` or `False`. Comparing it to `True` is unnecessary.
+
+```python
+if is_old_enough:
+```
+
+is exactly the same, and clearer.
+
+### Mistake 3: Confusing `and` with `or`
+
+```python
+if colour == "red" and colour == "blue":
+```
+
+`colour` cannot be `"red"` and `"blue"` at the same time. This condition can never be `True`. This should use `or`.
+
+### Mistake 4: Forgetting brackets when mixing `and` and `or`
+
+```python
+if age < 13 or age >= 60 and has_card == "yes":
+```
+
+Without brackets, it is not obvious which conditions are grouped together. Add brackets to say exactly what you mean.
 
 ## Exercises
 
 ### Exercise 1
 
-Ask for an age. Print `Teenager` if it is between 13 and 19.
+Ask for an age. Print `Teenager` if the age is between 13 and 19 (inclusive). Otherwise print `Not a teenager`.
 
 ### Exercise 2
 
-Ask for a colour. Accept `red` or `blue`.
+Ask for a favourite team. Accept `Pirates` or `Chiefs`. Print `Good choice.` for either, and `Never heard of them.` for anything else.
 
 ### Exercise 3
 
-Create a password checker: at least 8 characters and contains `a`.
+Create a password checker. A password is accepted if it is at least 8 characters long **and** contains the letter `a`. Print `Accepted` or `Not accepted`.
 
 ### Exercise 4
 
-Ask for a mark and check whether it is between 0 and 100.
+Ask for a mark. Check whether it is between 0 and 100 using a range check. Print `Valid mark` or `That mark is not possible.`
+
+### Exercise 5
+
+Ask for a team and a score. Using a list of three teams, print `Valid entry.` if the team is in the list **and** the score is greater than 0.
+
+### Exercise 6
+
+Ask whether it is raining (`yes` or `no`). Use `not` to print `Let's play outside.` when it is not raining, and `Better stay in.` otherwise.
+
+### Exercise 7
+
+Ask for an age and whether the person has a membership card (`yes` or `no`). Give the discount if the age is under 13 **or** 60 and over, **and** they have a card. Use brackets.
+
+### Exercise 8
+
+Ask for a username. Accept it only if it is at least 3 characters long **and** does not contain a space. Print `Accepted` or `Not accepted`.
 
 ## Debugging practice
 
-Fix this deliberately broken code, then explain what was wrong.
+The following code has two mistakes: one uses `=` where `==` is needed, and the other mixes `and`/`or` incorrectly. Fix it, then explain what was wrong.
 
 ```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
+age = int(input("How old are you? "))
+permission = input("Permission? yes or no: ").strip().lower()
+
+if age = 13 and permission == "yes" or permission == "no":
+    print("You can join the coding club.")
 ```
 
-## Challenge
+## Challenges
 
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+### Challenge 1: Ticket price checker
+
+Ask for someone's age. Children under 13 and pensioners 60 and over pay a discounted ticket price of R25. Everyone else pays R60. Print the correct price using Rand.
+
+### Challenge 2: Password strength checker
+
+Ask for a password. It is `Strong` if it is at least 8 characters long, contains a letter, **and** contains a digit. Otherwise it is `Weak`. Hint: you can check for a digit using `any(character.isdigit() for character in password)`, or simply loop through the characters yourself.
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
+**Exercise 1**
+
+Use `13 <= age <= 19`.
+
+**Exercise 2**
+
+Use `or` between the two team names, and remember `.strip().title()` on the input.
+
+**Exercise 3**
+
+Use `len(password) >= 8 and "a" in password`.
+
+**Exercise 4**
+
+Use `0 <= mark <= 100`.
+
+**Exercise 5**
+
+Use `team in teams and score > 0`.
+
+**Exercise 6**
+
+Compare the cleaned answer to `"yes"`, then use `not` in the `if`.
+
+**Exercise 7**
+
+Put brackets around `age < 13 or age >= 60`, then combine with `and has_card == "yes"`.
+
+**Exercise 8**
+
+Use `len(username) >= 3 and " " not in username`.
+
+**Debugging practice**
+
+Look for a single `=` that should be `==`, and think carefully about whether the last condition should be grouped with brackets.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## Click to reveal full solutions
+
+**Exercise 1**
 
 ```python
 age = int(input("How old are you? "))
 
 if 13 <= age <= 19:
     print("Teenager")
+else:
+    print("Not a teenager")
 ```
+
+**Exercise 2**
+
+```python
+team = input("Who do you support, Pirates or Chiefs? ").strip().title()
+
+if team == "Pirates" or team == "Chiefs":
+    print("Good choice.")
+else:
+    print("Never heard of them.")
+```
+
+**Exercise 3**
 
 ```python
 password = input("Create a password: ")
-clean_password = password.lower()
 
-if len(password) >= 8 and "a" in clean_password:
+if len(password) >= 8 and "a" in password:
     print("Accepted")
 else:
     print("Not accepted")
+```
+
+**Exercise 4**
+
+```python
+mark = int(input("Enter a mark out of 100: "))
+
+if 0 <= mark <= 100:
+    print("Valid mark")
+else:
+    print("That mark is not possible.")
+```
+
+**Exercise 5**
+
+```python
+teams = ["Pirates", "Chiefs", "Sundowns"]
+
+team = input("Enter a team: ").strip().title()
+score = int(input("Enter your score: "))
+
+if team in teams and score > 0:
+    print("Valid entry.")
+else:
+    print("Not a valid entry.")
+```
+
+**Exercise 6**
+
+```python
+raining = input("Is it raining? yes or no: ").strip().lower()
+
+if not raining == "yes":
+    print("Let's play outside.")
+else:
+    print("Better stay in.")
+```
+
+**Exercise 7**
+
+```python
+age = int(input("How old are you? "))
+has_card = input("Do you have a membership card? yes or no: ").strip().lower()
+
+if (age < 13 or age >= 60) and has_card == "yes":
+    print("You qualify for the discount.")
+else:
+    print("No discount this time.")
+```
+
+**Exercise 8**
+
+```python
+username = input("Choose a username: ")
+
+if len(username) >= 3 and " " not in username:
+    print("Accepted")
+else:
+    print("Not accepted")
+```
+
+**Debugging practice solution**
+
+```python
+age = int(input("How old are you? "))
+permission = input("Permission? yes or no: ").strip().lower()
+
+if age == 13 and (permission == "yes" or permission == "no"):
+    print("You can join the coding club.")
+```
+
+The `=` had to become `==`, and brackets were needed so it is clear the `or` only applies to the two permission checks, not to the age check as well.
+
+**Challenge 1**
+
+```python
+age = int(input("How old are you? "))
+
+if age < 13 or age >= 60:
+    price = 25
+else:
+    price = 60
+
+print(f"Ticket price: R{price}")
+```
+
+**Challenge 2**
+
+```python
+password = input("Create a password: ")
+
+has_letter = any(character.isalpha() for character in password)
+has_digit = any(character.isdigit() for character in password)
+
+if len(password) >= 8 and has_letter and has_digit:
+    print("Strong")
+else:
+    print("Weak")
 ```
 
 :::
 
 ## What you learned
 
-You can now combine conditions using `and`, `or`, and `not`.
+You can now:
+
+- combine conditions using `and`, `or`, and `not`;
+- check whether a number falls inside a range;
+- store a comparison result in a variable;
+- combine `and` and `or` safely using brackets;
+- avoid the most common boolean logic mistakes.
 
 ## Looking ahead
 
-Next you will store more realistic records using lists of dictionaries.
+The next lesson uses lists of dictionaries to store more realistic records, like a class list of students and their scores.

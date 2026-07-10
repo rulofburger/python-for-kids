@@ -194,7 +194,7 @@ Output:
 5
 ```
 
-##`while` loop or `for` loop?
+## `while` loop or `for` loop?
 
 Use a `while` loop when you do not know in advance how many times the loop must run.
 
@@ -216,6 +216,16 @@ names = ["Alex", "Ben", "Chloe"]
 
 for name in names:
     print("Hello,", name)
+```
+
+Here is the same decision as a picture:
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Do you know exactly how many times to repeat?] -->|Yes| B["Use a for loop"]
+    A -->|No| C["Use a while loop"]
 ```
 
 ## Common mistakes

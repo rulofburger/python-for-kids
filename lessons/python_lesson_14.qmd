@@ -4,11 +4,34 @@ title: "Lesson 14: Planning a Program"
 
 ## Learning goals
 
-Plan a small program before writing code; identify inputs and outputs; choose data structures; and break problems into steps.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- explain why planning saves time on anything longer than a few lines;
+- use a planning template to describe a program before writing code;
+- choose the right data structure for a problem;
+- turn a plan into comments, and comments into working code;
+- build a reusable menu skeleton;
+- plan for things that could go wrong.
 
-Use this planning template before larger programs.
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You now know variables, loops, functions, files, dictionaries, lists of dictionaries, and `try`/`except`. That is a lot of tools. The hard part of a bigger program is often not the Python — it is deciding what to build and in what order. This lesson is about that.
+
+## Why planning helps
+
+If you open a blank file and try to write a whole program in one go, it is easy to get stuck staring at the screen, or to write a big block of code that does not work and is hard to fix.
+
+Planning first means:
+
+- you know what "finished" looks like before you start;
+- you can break a big problem into small, testable steps;
+- you waste less time rewriting things you did not think through.
+
+Planning does not need to take long. For a small program, a few minutes is often enough.
+
+## A planning template
 
 ```text
 Goal:
@@ -20,60 +43,83 @@ Possible errors:
 Extensions:
 ```
 
-Start with the smallest version that works. Write comments first if that helps.
+- **Goal** — one sentence describing what the program does.
+- **Inputs** — what the user types in, or what data the program reads.
+- **Outputs** — what the program prints, saves, or shows.
+- **Data needed** — what variables, lists, or dictionaries you will need to store things.
+- **Steps** — the order of actions, written as a short list.
+- **Possible errors** — what could go wrong, and what you will do about it.
+- **Extensions** — ideas for later, once the basic version works.
 
-```python
-# Ask the user for a note
-# Save the note to a file
-# Print a confirmation message
+## A worked example
+
+Here is a plan for a shopping-list program.
+
+```text
+Goal: Let the user add items to a shopping list and save it to a file.
+Inputs: Item names typed by the user.
+Outputs: A confirmation message, and a saved file.
+Data needed: A list to hold the items while the program runs.
+Steps:
+  1. Ask the user for an item.
+  2. Add it to the list.
+  3. Repeat until the user types "done".
+  4. Save the list to a file, one item per line.
+Possible errors: The user types nothing. Skip empty entries.
+Extensions: Let the user remove an item, or load an existing list from the file.
 ```
 
-## Exercises
+Notice this plan does not contain any Python yet. It describes the program in plain language first.
 
-### Exercise 1
+## From plan to comments
 
-Write a plan for a password checker.
-
-### Exercise 2
-
-Write a plan for a shopping-list program that saves items to a file.
-
-### Exercise 3
-
-Write comments for a quiz game before writing code.
-
-### Exercise 4
-
-Create a three-option menu that only prints which option was selected.
-
-## Debugging practice
-
-Fix this deliberately broken code, then explain what was wrong.
+Once you have a plan, turn the steps into comments. This gives you a skeleton to fill in.
 
 ```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
+# Ask the user for an item
+# Add it to the list
+# Repeat until the user types "done"
+# Save the list to a file
 ```
 
-## Challenge
+## From comments to code
 
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+Now fill in each comment, one at a time.
 
-::: {.callout-tip collapse="true"}
-## Click to reveal hints
+```python
+items = []
 
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
+item = input("Enter an item, or type 'done' to finish: ")
 
-:::
+while item != "done":
+    items.append(item)
+    item = input("Enter an item, or type 'done' to finish: ")
 
-::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+with open("shopping_list.txt", "w") as file:
+    for entry in items:
+        file.write(entry + "\n")
 
-A useful menu skeleton:
+print("Shopping list saved.")
+```
+
+Writing one comment, then one block of code, then testing it, is much easier than trying to write the whole program at once.
+
+## Choosing the right data structure
+
+A plan often reveals what kind of data you need. Use this as a quick guide.
+
+| You need to store... | Use |
+|---|---|
+| one value | a variable |
+| several similar values | a list |
+| several labelled fields about one thing | a dictionary |
+| several records, each with several fields | a list of dictionaries |
+
+For example, "a shopping list" is a list. "One student's name and score" is a dictionary. "A whole class's names and scores" is a list of dictionaries.
+
+## A reusable menu skeleton
+
+Many small programs share the same shape: show a menu, do something based on the choice, repeat until the user quits.
 
 ```python
 choice = ""
@@ -95,12 +141,383 @@ while choice != "3":
         print("Choose 1, 2 or 3")
 ```
 
+You can reuse this skeleton for almost any menu-driven program by changing the menu text and filling in each branch. Here is the same flow as a picture:
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Show the menu] --> B[Ask for a choice]
+    B --> C{Which option?}
+    C -->|"1"| D[Run option 1]
+    C -->|"2"| E[Run option 2]
+    C -->|"3 (quit)"| F[Say goodbye and stop]
+    C -->|anything else| G[Show an error message]
+    D --> A
+    E --> A
+    G --> A
+```
+
+## Planning for errors
+
+A good plan also thinks ahead about what could go wrong.
+
+```text
+Possible errors:
+  - The user types letters instead of a number. Use try/except.
+  - The file does not exist yet when the program tries to read it.
+  - The user searches for a name that is not in the records.
+```
+
+Thinking about this before you code means you can decide in advance whether to use `try`/`except`, an `if name in ...` check, or something else, instead of discovering the problem later.
+
+## Common mistakes
+
+### Mistake 1: Skipping the plan and getting stuck
+
+Jumping straight into code for anything longer than a few lines often leads to getting stuck halfway through, unsure what to write next. A short plan avoids this.
+
+### Mistake 2: Planning in too much detail before writing anything
+
+A plan does not need to describe every line of code. If you find yourself writing Python inside your plan, it is time to stop planning and start coding the first step.
+
+### Mistake 3: Choosing the wrong data structure
+
+Using several separate lists that are supposed to line up with each other (one list of names, one list of scores) is harder to keep correct than a single list of dictionaries. If two pieces of data belong together, keep them together.
+
+## Exercises
+
+### Exercise 1
+
+Write a full plan (using the template) for a password checker that only accepts passwords of at least 8 characters.
+
+### Exercise 2
+
+Write a full plan for a shopping-list program that saves items to a file.
+
+### Exercise 3
+
+Write comments only (no code yet) describing the steps of a quiz game that asks three questions and keeps score.
+
+### Exercise 4
+
+Build a working three-option menu. It should only print which option was selected, without doing anything else yet.
+
+### Exercise 5
+
+For each of the following, decide whether you would use a variable, a list, a dictionary, or a list of dictionaries, and say why: (a) a single high score, (b) five players' names, (c) one player's name and age, (d) a whole team's names and ages.
+
+### Exercise 6
+
+Write a full plan for a simple contact book that can add a contact and view all contacts.
+
+### Exercise 7
+
+Extend the menu from Exercise 4 so that it has a fourth option, `View history`, that prints `View history selected`.
+
+### Exercise 8
+
+Write a plan for any small program of your choice that lists at least two possible errors and how you would handle each one.
+
+## Debugging practice
+
+The following menu skeleton has two mistakes: the quit option never actually ends the loop, and one comparison uses the wrong type. Fix it, then explain what was wrong.
+
+```python
+choice = 0
+
+while choice != "2":
+    print("1. Say hello")
+    print("2. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == 1:
+        print("Hello!")
+    elif choice == "2":
+        print("Goodbye")
+```
+
+## Challenges
+
+### Challenge 1: Rock, paper, scissors planner
+
+First write a full plan for a rock-paper-scissors game against the computer. Then build it: ask the user for their choice, use `random.choice()` to pick the computer's move, and print who won.
+
+### Challenge 2: Contact book, built
+
+Using your plan from Exercise 6, build the contact book. Store contacts as a list of dictionaries with `name` and `number`. Use a menu with options to add a contact, view all contacts, or quit.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Think about what counts as "invalid" input, not just "too short."
+
+**Exercise 2**
+
+Reuse the worked example in this lesson as a starting point, then adjust it.
+
+**Exercise 3**
+
+Write one comment per step, in the order they should happen.
+
+**Exercise 4**
+
+Copy the menu skeleton and change the menu text and options.
+
+**Exercise 5**
+
+One value → variable. Several similar values → list. One record → dictionary. Several records → list of dictionaries.
+
+**Exercise 6**
+
+Think about what "adding a contact" needs as input, and what "viewing contacts" needs as output.
+
+**Exercise 7**
+
+Add a new `elif` branch, and remember to update the quit condition if the option numbers change.
+
+**Exercise 8**
+
+Pick errors that are actually likely, such as invalid input or a missing file.
+
+**Debugging practice**
+
+Check what type `input()` always returns, and check what happens to `choice` inside the loop.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```text
+Goal: Check whether a password is at least 8 characters long.
+Inputs: A password typed by the user.
+Outputs: A message saying whether the password is accepted.
+Data needed: A single string variable to hold the password.
+Steps:
+  1. Ask the user for a password.
+  2. Check whether its length is at least 8.
+  3. Print "Accepted" or "Not accepted".
+Possible errors: The user types nothing. This is still just a short password, so it is handled automatically.
+Extensions: Also require a digit or a special character.
+```
+
+**Exercise 2**
+
+```text
+Goal: Let the user add items to a shopping list and save it to a file.
+Inputs: Item names typed by the user.
+Outputs: A confirmation message, and a saved file.
+Data needed: A list to hold the items while the program runs.
+Steps:
+  1. Ask the user for an item.
+  2. Add it to the list.
+  3. Repeat until the user types "done".
+  4. Save the list to a file, one item per line.
+Possible errors: The user types nothing. Skip empty entries.
+Extensions: Let the user remove an item, or load an existing list from the file.
+```
+
+**Exercise 3**
+
+```python
+# Create a list of three questions and answers
+# Set score to 0
+# Loop through the questions
+#   Ask the question
+#   Clean the answer
+#   Check whether it matches
+#   If correct, increase the score
+# Print the final score
+```
+
+**Exercise 4**
+
+```python
+choice = ""
+
+while choice != "3":
+    print("1. Option A")
+    print("2. Option B")
+    print("3. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("Option A selected")
+    elif choice == "2":
+        print("Option B selected")
+    elif choice == "3":
+        print("Goodbye")
+    else:
+        print("Choose 1, 2 or 3")
+```
+
+**Exercise 5**
+
+```text
+(a) a single high score -> variable, because it is one value.
+(b) five players' names -> list, because they are several similar values.
+(c) one player's name and age -> dictionary, because there are several labelled fields about one thing.
+(d) a whole team's names and ages -> list of dictionaries, because there are several records, each with several fields.
+```
+
+**Exercise 6**
+
+```text
+Goal: Store contacts and let the user add or view them.
+Inputs: A name and a phone number when adding a contact.
+Outputs: A printed list of all contacts.
+Data needed: A list of dictionaries, each with "name" and "number".
+Steps:
+  1. Show a menu with "Add contact", "View contacts", and "Quit".
+  2. If adding, ask for a name and number, and append a new dictionary.
+  3. If viewing, loop through the list and print each contact.
+  4. Repeat until the user quits.
+Possible errors: The list is empty when viewing. Print a message instead of nothing.
+Extensions: Search for a contact by name, or save contacts to a file.
+```
+
+**Exercise 7**
+
+```python
+choice = ""
+
+while choice != "4":
+    print("1. Option A")
+    print("2. Option B")
+    print("3. View history")
+    print("4. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("Option A selected")
+    elif choice == "2":
+        print("Option B selected")
+    elif choice == "3":
+        print("View history selected")
+    elif choice == "4":
+        print("Goodbye")
+    else:
+        print("Choose 1, 2, 3 or 4")
+```
+
+**Exercise 8**
+
+```text
+Goal: A simple quiz game with three questions.
+Inputs: The user's typed answers.
+Outputs: Feedback for each answer, and a final score.
+Data needed: A dictionary of questions and answers.
+Steps:
+  1. Loop through the questions.
+  2. Ask each question and clean the answer.
+  3. Compare it to the correct answer.
+  4. Print the final score.
+Possible errors:
+  - The user types answers with different capitalisation. Handle this with .strip().lower().
+  - The user presses Enter without typing anything. Treat this as simply an incorrect answer.
+```
+
+**Debugging practice solution**
+
+```python
+choice = ""
+
+while choice != "2":
+    print("1. Say hello")
+    print("2. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("Hello!")
+    elif choice == "2":
+        print("Goodbye")
+```
+
+`choice` started as `0`, a number, but `input()` always returns text, so `choice != "2"` and `choice == 1` could never match correctly. Starting `choice` as `""` and comparing against `"1"` and `"2"` as strings fixes both problems.
+
+**Challenge 1**
+
+```python
+import random
+
+# Goal: Play one round of rock-paper-scissors against the computer.
+# Inputs: The user's choice.
+# Outputs: The computer's choice and who won.
+# Data needed: A list of possible moves.
+# Steps: ask for a move, pick a random move, compare, print the winner.
+
+moves = ["rock", "paper", "scissors"]
+
+user_move = input("Choose rock, paper, or scissors: ").strip().lower()
+computer_move = random.choice(moves)
+
+print("Computer chose:", computer_move)
+
+if user_move == computer_move:
+    print("It's a tie!")
+elif (
+    (user_move == "rock" and computer_move == "scissors")
+    or (user_move == "paper" and computer_move == "rock")
+    or (user_move == "scissors" and computer_move == "paper")
+):
+    print("You win!")
+else:
+    print("Computer wins!")
+```
+
+**Challenge 2**
+
+```python
+contacts = []
+
+choice = ""
+
+while choice != "3":
+    print("1. Add contact")
+    print("2. View contacts")
+    print("3. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        name = input("Name: ")
+        number = input("Number: ")
+        contacts.append({"name": name, "number": number})
+        print("Contact added.")
+    elif choice == "2":
+        if len(contacts) == 0:
+            print("No contacts yet.")
+        else:
+            for contact in contacts:
+                print(contact["name"], contact["number"])
+    elif choice == "3":
+        print("Goodbye")
+    else:
+        print("Choose 1, 2 or 3")
+```
+
 :::
 
 ## What you learned
 
-You can now plan a program using goals, inputs, outputs, data and steps.
+You can now:
+
+- explain why a short plan saves time on longer programs;
+- use a planning template to describe a program before coding it;
+- choose an appropriate data structure for a problem;
+- turn a plan into comments, and comments into working code;
+- reuse a menu skeleton for new programs;
+- plan for likely errors in advance.
 
 ## Looking ahead
 
-Next you will learn simple testing with `assert`.
+The next lesson introduces `assert`, a simple way to test whether your functions actually give the answers you expect.

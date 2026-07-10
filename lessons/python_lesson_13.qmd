@@ -4,11 +4,34 @@ title: "Lesson 13: Lists of Dictionaries"
 
 ## Learning goals
 
-Store records using a list of dictionaries; loop through records; calculate summaries; and filter records.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- store a group of records as a list of dictionaries;
+- loop through records and read their fields;
+- calculate totals and averages across all records;
+- find the record with the highest or lowest value;
+- filter records using conditions from the last lesson;
+- add and update records in the list.
 
-A list of dictionaries is useful for storing records.
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You know how to store one record in a dictionary.
+
+```python
+student = {"name": "Alex", "score": 8}
+```
+
+You also know how to store several items in a list.
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+```
+
+What if you need several records, and each one has several fields? You combine them: a **list of dictionaries**.
+
+## A list of dictionaries
 
 ```python
 students = [
@@ -18,92 +41,455 @@ students = [
 ]
 ```
 
-Loop through the records.
+`students` is a list. Each item inside it is a dictionary. You reach one student with a list index, and one field with a dictionary key.
+
+```python
+print(students[0])
+print(students[0]["name"])
+```
+
+Output:
+
+```text
+{'name': 'Alex', 'score': 8}
+Alex
+```
+
+## Looping through records
 
 ```python
 for student in students:
     print(student["name"], student["score"])
 ```
 
-Calculate an average.
+Output:
+
+```text
+Alex 8
+Ben 10
+Chloe 7
+```
+
+Each time through the loop, `student` becomes one dictionary from the list.
+
+## Calculating a total and an average
 
 ```python
 total = 0
+
 for student in students:
     total = total + student["score"]
-print(total / len(students))
+
+average = total / len(students)
+
+print("Average:", average)
 ```
+
+`len(students)` counts how many records are in the list, which is exactly how many scores were added up.
+
+## Finding the best record
+
+Start by assuming the first record is the best, then check whether anyone beats it.
+
+```python
+best = students[0]
+
+for student in students:
+    if student["score"] > best["score"]:
+        best = student
+
+print("Best:", best["name"], best["score"])
+```
+
+The same idea works for finding the lowest score, just change `>` to `<`.
+
+## Filtering records
+
+You can print only the records that match a condition.
+
+```python
+for student in students:
+    if student["score"] >= 8:
+        print(student["name"], "passed with", student["score"])
+```
+
+Output:
+
+```text
+Alex passed with 8
+Ben passed with 10
+```
+
+## Counting matching records
+
+```python
+count = 0
+
+for student in students:
+    if student["score"] >= 8:
+        count = count + 1
+
+print("Students who scored at least 8:", count)
+```
+
+## Updating a record
+
+You can change a field on a record while looping, using its position or a matching condition.
+
+```python
+for student in students:
+    if student["name"] == "Ben":
+        student["score"] = 9
+
+print(students)
+```
+
+Because `student` refers to the same dictionary that lives inside the list, changing `student["score"]` changes it inside `students` too.
+
+## Adding a new record
+
+Use `.append()` to add a whole new dictionary to the list.
+
+```python
+students.append({"name": "Dana", "score": 9})
+
+print(students)
+```
+
+## Common mistakes
+
+### Mistake 1: Forgetting the key when reading a field
+
+```python
+print(student)
+```
+
+This prints the whole dictionary, not just one field. To get one field, use the key:
+
+```python
+print(student["name"])
+```
+
+### Mistake 2: Starting `best` from nothing
+
+```python
+best = 0
+
+for student in students:
+    if student["score"] > best["score"]:
+```
+
+`best` needs to be a **record** (a dictionary), not a number, so it has a `["score"]` field to compare. Start with `best = students[0]`.
+
+### Mistake 3: Trying to find the best record in an empty list
+
+```python
+best = students[0]
+```
+
+If `students` is empty, this line crashes because there is no item at position 0. Check `len(students) > 0` first if the list might be empty.
 
 ## Exercises
 
 ### Exercise 1
 
-Create a list of three pets with `name`, `animal`, and `age`.
+Create a list of three pets, each with `name`, `animal`, and `age`. Print each pet's name and age.
 
 ### Exercise 2
 
-Create a list of students and scores. Calculate the average score.
+Create a list of five students and their scores. Calculate and print the average score.
 
 ### Exercise 3
 
-Find the student with the highest score.
+Using the same list, find and print the student with the highest score.
 
 ### Exercise 4
 
 Print all students who scored at least 8.
 
+### Exercise 5
+
+Count and print how many students scored below 8.
+
+### Exercise 6
+
+Add a new student to the list, then print the full updated list.
+
+### Exercise 7
+
+Ask the user for a name. Update that student's score to a new value entered by the user. If the name is not found, print `Student not found.`
+
+### Exercise 8
+
+Create a list of three shopping items, each with `name` and `price`. Print the total price of everything in Rand.
+
 ## Debugging practice
 
-Fix this deliberately broken code, then explain what was wrong.
+The following code has two mistakes: `best` starts as a number instead of a record, and one field is read without its key. Fix it, then explain what was wrong.
 
 ```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10}
+]
+
+best = 0
+
+for student in students:
+    if student["score"] > best["score"]:
+        best = student
+
+print("Best:", best)
 ```
 
-## Challenge
+## Challenges
 
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+### Challenge 1: Class report
+
+Create a list of five students, each with `name` and `score`. Print a report that shows each student's name and score, followed by the class average, the highest score, and the lowest score.
+
+### Challenge 2: Shopping basket
+
+Create a list of at least four shopping items, each with `name` and `price`. Ask the user for a maximum budget. Print only the items that cost less than the budget, and print the total price of just those items in Rand.
 
 ::: {.callout-tip collapse="true"}
 ## Click to reveal hints
 
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
+**Exercise 1**
+
+```python
+pets = [
+    {"name": "Milo", "animal": "dog", "age": 4}
+]
+```
+
+**Exercise 2**
+
+Add up `student["score"]` for every student, then divide by `len(students)`.
+
+**Exercise 3**
+
+Start with `best = students[0]`, then compare every student's score to `best["score"]`.
+
+**Exercise 4**
+
+Use an `if` inside the loop to check `student["score"] >= 8`.
+
+**Exercise 5**
+
+Use a counter variable that starts at 0 and add 1 inside the `if`.
+
+**Exercise 6**
+
+Use `students.append({...})`.
+
+**Exercise 7**
+
+Loop through the list and compare `student["name"]` to the input. Use a variable to track whether you found a match.
+
+**Exercise 8**
+
+Add up `item["price"]` for every item in the list.
+
+**Debugging practice**
+
+`best` needs to start as a dictionary, not `0`. Also check whether you are printing the whole record or just one field.
 
 :::
 
 ::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+pets = [
+    {"name": "Milo", "animal": "dog", "age": 4},
+    {"name": "Whiskers", "animal": "cat", "age": 2},
+    {"name": "Rex", "animal": "dog", "age": 6}
+]
+
+for pet in pets:
+    print(pet["name"], pet["age"])
+```
+
+**Exercise 2**
 
 ```python
 students = [
     {"name": "Alex", "score": 8},
     {"name": "Ben", "score": 10},
-    {"name": "Chloe", "score": 7}
+    {"name": "Chloe", "score": 7},
+    {"name": "Dana", "score": 9},
+    {"name": "Emma", "score": 6}
 ]
 
-best = students[0]
 total = 0
 
 for student in students:
     total = total + student["score"]
+
+print("Average:", total / len(students))
+```
+
+**Exercise 3**
+
+```python
+best = students[0]
+
+for student in students:
     if student["score"] > best["score"]:
         best = student
 
-print("Average:", total / len(students))
 print("Best:", best["name"], best["score"])
+```
+
+**Exercise 4**
+
+```python
+for student in students:
+    if student["score"] >= 8:
+        print(student["name"], student["score"])
+```
+
+**Exercise 5**
+
+```python
+count = 0
+
+for student in students:
+    if student["score"] < 8:
+        count = count + 1
+
+print("Students below 8:", count)
+```
+
+**Exercise 6**
+
+```python
+students.append({"name": "Frank", "score": 9})
+
+print(students)
+```
+
+**Exercise 7**
+
+```python
+name = input("Which student do you want to update? ")
+new_score = int(input("Enter the new score: "))
+
+found = False
+
+for student in students:
+    if student["name"] == name:
+        student["score"] = new_score
+        found = True
+
+if not found:
+    print("Student not found.")
+else:
+    print(students)
+```
+
+**Exercise 8**
+
+```python
+items = [
+    {"name": "Milk", "price": 24},
+    {"name": "Bread", "price": 18},
+    {"name": "Eggs", "price": 52}
+]
+
+total = 0
+
+for item in items:
+    total = total + item["price"]
+
+print(f"Total: R{total}")
+```
+
+**Debugging practice solution**
+
+```python
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10}
+]
+
+best = students[0]
+
+for student in students:
+    if student["score"] > best["score"]:
+        best = student
+
+print("Best:", best["name"], best["score"])
+```
+
+**Challenge 1**
+
+```python
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10},
+    {"name": "Chloe", "score": 7},
+    {"name": "Dana", "score": 9},
+    {"name": "Emma", "score": 6}
+]
+
+total = 0
+best = students[0]
+worst = students[0]
+
+for student in students:
+    print(student["name"], student["score"])
+    total = total + student["score"]
+
+    if student["score"] > best["score"]:
+        best = student
+
+    if student["score"] < worst["score"]:
+        worst = student
+
+print("Average:", total / len(students))
+print("Highest:", best["name"], best["score"])
+print("Lowest:", worst["name"], worst["score"])
+```
+
+**Challenge 2**
+
+```python
+items = [
+    {"name": "Milk", "price": 24},
+    {"name": "Bread", "price": 18},
+    {"name": "Eggs", "price": 52},
+    {"name": "Chocolate", "price": 18}
+]
+
+budget = int(input("Enter your maximum budget for a single item: "))
+
+total = 0
+
+for item in items:
+    if item["price"] < budget:
+        print(item["name"], f"R{item['price']}")
+        total = total + item["price"]
+
+print(f"Total of affordable items: R{total}")
 ```
 
 :::
 
 ## What you learned
 
-You can now store several labelled records and calculate summaries from them.
+You can now:
+
+- store several records as a list of dictionaries;
+- loop through records and read their fields;
+- calculate totals and averages across records;
+- find the highest or lowest record;
+- filter and count records that match a condition;
+- update existing records and add new ones.
 
 ## Looking ahead
 
-Next you will learn to plan a program before coding.
+The next lesson steps back from typing code straight away, and teaches you how to plan a program before you write it.

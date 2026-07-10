@@ -26,7 +26,7 @@ Debugging means:
 
 > Finding and fixing the mistake.
 
-## Part 1: Syntax errors
+## Syntax errors
 
 A **syntax error** means Python could not understand the structure of your code.
 
@@ -53,7 +53,7 @@ Common syntax errors:
 - missing closing bracket;
 - incorrect indentation.
 
-## Part 2: Name errors
+## Name errors
 
 A **name error** happens when you use a variable name that does not exist.
 
@@ -75,7 +75,7 @@ print(name)
 
 Name errors are often spelling mistakes.
 
-## Part 3: Type errors
+## Type errors
 
 A **type error** happens when Python is asked to combine things that do not fit together.
 
@@ -95,7 +95,7 @@ age = int(input("How old are you? "))
 print(age + 1)
 ```
 
-## Part 4: Value errors
+## Value errors
 
 A **value error** happens when the type is right, but the value cannot be used.
 
@@ -113,7 +113,7 @@ Python cannot turn that into an integer.
 
 This gives a value error.
 
-## Part 5: Using `try` and `except`
+## Using `try` and `except`
 
 You can use `try` and `except` to stop a program from crashing.
 
@@ -129,7 +129,7 @@ Read this as:
 
 > Try this code. If there is a `ValueError`, do this instead.
 
-## Part 6: Repeating until input is valid
+## Repeating until input is valid
 
 You can combine `try`, `except`, and a loop.
 
@@ -149,7 +149,7 @@ For now, understand `None` as meaning:
 
 > No valid answer yet.
 
-## Part 7: A debugging routine
+## A debugging routine
 
 When your code breaks, use this routine.
 
@@ -168,7 +168,7 @@ When your code breaks, use this routine.
 Do not change five things at once. Change one thing, then run the program again.
 :::
 
-## Part 8: Using `print()` to inspect values
+## Using `print()` to inspect values
 
 If a program is not doing what you expect, print important variables.
 

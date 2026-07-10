@@ -6,6 +6,7 @@ book:
   title: "Python for Beginners"
   subtitle: "From first program to small useful projects"
   author: "Rulof Burger"
+  favicon: images/favicon.svg
   search: true
   page-navigation: true
   reader-mode: true
@@ -48,9 +49,6 @@ book:
         - projects/mini_project_5_score_tracker.qmd
         - projects/mini_project_6_personal_notebook.qmd
         - projects/final_project_beginner_program.qmd
-    - part: "Project Library"
-      chapters:
-        - projects/index.qmd
     - part: "Extra Challenges"
       chapters:
         - challenges/index.qmd

@@ -4,11 +4,43 @@ title: "Lesson 15: Testing with Assert"
 
 ## Learning goals
 
-Use `assert` to test simple functions with known answers and edge cases.
+By the end of this lesson you should be able to:
 
-## Main ideas
+- explain why testing a function is worth the extra effort;
+- use `assert` to check that a function gives the answer you expect;
+- read an `AssertionError` and use it to find a bug;
+- write tests for boundaries and edge cases, not just typical cases;
+- group several assertions together as a simple test suite for a function.
 
-A test checks whether code gives the answer you expect.
+Estimated time: **45–60 minutes**
+
+## Quick review
+
+You already know how to write functions.
+
+```python
+def double(number):
+    return number * 2
+```
+
+How do you know `double()` actually works? So far, you have probably just called it once and looked at the output. Testing means checking it more carefully, and in a way you can repeat any time you change your code.
+
+## What a test is
+
+A test checks whether code gives the answer you expect, for an input where you already know the correct answer.
+
+```python
+def double(number):
+    return number * 2
+
+assert double(3) == 6
+```
+
+Read this as: "I assert that `double(3)` equals `6`." If it is true, nothing happens. If it is false, Python raises an error.
+
+## Several tests for one function
+
+One test is rarely enough. Test a few different inputs.
 
 ```python
 def double(number):
@@ -16,11 +48,33 @@ def double(number):
 
 assert double(3) == 6
 assert double(10) == 20
+assert double(0) == 0
 ```
 
-If an assertion passes, Python says nothing. If it fails, Python gives an error.
+If all three lines run without any output, all three tests passed.
 
-Test edge cases near boundaries.
+## When a test fails
+
+Try changing the function to something wrong.
+
+```python
+def double(number):
+    return number * 3  # bug: should be * 2
+
+assert double(3) == 6
+```
+
+Running this gives:
+
+```text
+AssertionError
+```
+
+The line number in the error message tells you exactly which assertion failed, which tells you exactly which case is broken.
+
+## Testing boundaries
+
+The most useful tests are often at the edges of a condition, not just typical values in the middle.
 
 ```python
 def is_passing(mark):
@@ -31,50 +85,9 @@ assert is_passing(50) == True
 assert is_passing(51) == True
 ```
 
-## Exercises
+`49`, `50`, and `51` are chosen deliberately: one just below the boundary, one exactly on it, and one just above it. This is where bugs like using `>` instead of `>=` usually show up.
 
-### Exercise 1
-
-Write and test `double(number)`.
-
-### Exercise 2
-
-Write and test `is_even(number)`.
-
-### Exercise 3
-
-Write and test `clean_text(text)`.
-
-### Exercise 4
-
-Write and test `check_answer(user_answer, correct_answer)`.
-
-## Debugging practice
-
-Fix this deliberately broken code, then explain what was wrong.
-
-```python
-# Broken on purpose: read the error, fix one thing, and run again.
-if True
-print("debugging practice")
-```
-
-## Challenge
-
-Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
-
-::: {.callout-tip collapse="true"}
-## Click to reveal hints
-
-- Start with the smallest working version.
-- Add one feature at a time.
-- Use `print()` to inspect values.
-- Test with more than one example.
-
-:::
-
-::: {.callout-note collapse="true"}
-## Click to reveal one possible solution or approach
+## Testing text functions
 
 ```python
 def clean_text(text):
@@ -82,21 +95,334 @@ def clean_text(text):
 
 assert clean_text(" Python ") == "python"
 assert clean_text("HELLO") == "hello"
+assert clean_text("already clean") == "already clean"
+```
+
+## Testing functions built from other functions
+
+```python
+def clean_text(text):
+    return text.strip().lower()
 
 
 def check_answer(user_answer, correct_answer):
     return clean_text(user_answer) == clean_text(correct_answer)
 
 assert check_answer("Python", "python") == True
-assert check_answer(" java ", "python") == False
+assert check_answer(" PYTHON ", "python") == True
+assert check_answer("java", "python") == False
+```
+
+Testing `check_answer()` also tests `clean_text()` indirectly, since `check_answer()` depends on it.
+
+## Testing with an empty or unusual input
+
+Do not only test the inputs you expect. Also test unusual ones.
+
+```python
+def calculate_total(prices):
+    total = 0
+    for price in prices:
+        total = total + price
+    return total
+
+assert calculate_total([10, 20, 30]) == 60
+assert calculate_total([]) == 0
+assert calculate_total([5]) == 5
+```
+
+An empty list is a common edge case that is easy to forget.
+
+## What `assert` does not catch
+
+`assert` only checks the cases you thought of. If you never test a boundary or an unusual input, a bug can hide there undetected. Testing improves your confidence in a function, but it does not prove there is no bug anywhere.
+
+::: {.callout-tip}
+## Testing rule
+
+When you write a function, write at least one test for a typical case, one for a boundary, and one for an unusual or empty input.
+:::
+
+## Common mistakes
+
+### Mistake 1: Only testing the happy path
+
+```python
+assert double(4) == 8
+```
+
+This is a good start, but testing only "normal" inputs misses bugs that only appear near a boundary, at zero, or with an empty input.
+
+### Mistake 2: Testing the function's printed output instead of its return value
+
+```python
+def double(number):
+    print(number * 2)
+
+assert double(3) == 6
+```
+
+`double()` here prints instead of returning, so it returns `None`, and the assertion fails even though the printed number looks correct. Functions you want to test should `return` their answer.
+
+### Mistake 3: Not reading which line failed
+
+When an `AssertionError` appears, look at the line number in the error message. It points directly at the failing assertion, which tells you exactly which input broke the function.
+
+## Exercises
+
+### Exercise 1
+
+Write `double(number)` and test it with at least three assertions, including zero.
+
+### Exercise 2
+
+Write `is_even(number)` and test it, including the edge case `0`.
+
+### Exercise 3
+
+Write `clean_text(text)` and test it with extra spaces and mixed capitalisation.
+
+### Exercise 4
+
+Write `check_answer(user_answer, correct_answer)` and test it with matching and non-matching answers.
+
+### Exercise 5
+
+Write `is_passing(mark)`, which returns `True` if `mark >= 50`. Test the boundary at 49, 50, and 51.
+
+### Exercise 6
+
+Write `calculate_total(prices)`, which adds up a list of prices. Test it with a normal list and an empty list.
+
+### Exercise 7
+
+Write `is_valid_username(username)`, which returns `True` if the username is at least 3 characters long and contains no spaces. Test it with a valid username, a too-short one, and one with a space.
+
+### Exercise 8
+
+The function below has a bug. Write assertions first, run them, and use the failure to find and fix the bug.
+
+```python
+def average(numbers):
+    total = 0
+    for number in numbers:
+        total = total + number
+    return total / len(numbers) + 1
+```
+
+## Debugging practice
+
+The following function has a bug that only shows up for one particular input. Write a few assertions to find it, then fix the function.
+
+```python
+def is_even(number):
+    return number % 2 == 1
+```
+
+## Challenges
+
+### Challenge 1: Best score finder, tested
+
+Write a function `find_best(scores)` that returns the highest number in a list. Test it with a list where the highest number is first, one where it is last, and a list with only one number.
+
+### Challenge 2: Ticket price function, tested
+
+Using the rule from Lesson 12 (children under 13 and pensioners 60 and over pay R25, everyone else pays R60), write a function `ticket_price(age)`. Test it at ages 12, 13, 59, and 60.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+**Exercise 1**
+
+Test a positive number, zero, and a negative number.
+
+**Exercise 2**
+
+`number % 2 == 0` means even.
+
+**Exercise 3**
+
+Use `.strip().lower()`.
+
+**Exercise 4**
+
+Reuse `clean_text()` inside `check_answer()`.
+
+**Exercise 5**
+
+Use `mark >= 50`, and test 49, 50, and 51.
+
+**Exercise 6**
+
+Remember `calculate_total([])` should be `0`, not an error.
+
+**Exercise 7**
+
+Use `len(username) >= 3 and " " not in username`.
+
+**Exercise 8**
+
+Write `assert average([1, 2, 3]) == 2` first, run it, and read the error before changing anything.
+
+**Debugging practice**
+
+Test `is_even(2)` and `is_even(3)` separately and compare the results to what you expect.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal full solutions
+
+**Exercise 1**
+
+```python
+def double(number):
+    return number * 2
+
+assert double(3) == 6
+assert double(0) == 0
+assert double(-4) == -8
+```
+
+**Exercise 2**
+
+```python
+def is_even(number):
+    return number % 2 == 0
+
+assert is_even(4) == True
+assert is_even(7) == False
+assert is_even(0) == True
+```
+
+**Exercise 3**
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+assert clean_text(" Python ") == "python"
+assert clean_text("HELLO") == "hello"
+```
+
+**Exercise 4**
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+
+def check_answer(user_answer, correct_answer):
+    return clean_text(user_answer) == clean_text(correct_answer)
+
+assert check_answer("Python", "python") == True
+assert check_answer("java", "python") == False
+```
+
+**Exercise 5**
+
+```python
+def is_passing(mark):
+    return mark >= 50
+
+assert is_passing(49) == False
+assert is_passing(50) == True
+assert is_passing(51) == True
+```
+
+**Exercise 6**
+
+```python
+def calculate_total(prices):
+    total = 0
+    for price in prices:
+        total = total + price
+    return total
+
+assert calculate_total([10, 20, 30]) == 60
+assert calculate_total([]) == 0
+```
+
+**Exercise 7**
+
+```python
+def is_valid_username(username):
+    return len(username) >= 3 and " " not in username
+
+assert is_valid_username("alex") == True
+assert is_valid_username("al") == False
+assert is_valid_username("al ex") == False
+```
+
+**Exercise 8**
+
+```python
+def average(numbers):
+    total = 0
+    for number in numbers:
+        total = total + number
+    return total / len(numbers)
+
+assert average([1, 2, 3]) == 2
+assert average([10, 20]) == 15
+```
+
+The bug was the extra `+ 1` at the end, which was found because `average([1, 2, 3])` gave `3` instead of the expected `2`.
+
+**Debugging practice solution**
+
+```python
+def is_even(number):
+    return number % 2 == 0
+
+assert is_even(2) == True
+assert is_even(3) == False
+```
+
+The original code used `== 1`, which actually tests for odd numbers, not even ones.
+
+**Challenge 1**
+
+```python
+def find_best(scores):
+    best = scores[0]
+    for score in scores:
+        if score > best:
+            best = score
+    return best
+
+assert find_best([10, 5, 3]) == 10
+assert find_best([3, 5, 10]) == 10
+assert find_best([7]) == 7
+```
+
+**Challenge 2**
+
+```python
+def ticket_price(age):
+    if age < 13 or age >= 60:
+        return 25
+    else:
+        return 60
+
+assert ticket_price(12) == 25
+assert ticket_price(13) == 60
+assert ticket_price(59) == 60
+assert ticket_price(60) == 25
 ```
 
 :::
 
 ## What you learned
 
-You can now use `assert` to check whether simple functions work.
+You can now:
+
+- explain why testing a function matters;
+- use `assert` to check a function's return value;
+- read an `AssertionError` to find which case failed;
+- write tests for boundaries and unusual inputs, not just typical ones;
+- group several assertions together to test a function thoroughly.
 
 ## Looking ahead
 
-Next you will save table data with CSV files.
+The next lesson shows you how to save and read table-shaped data using CSV files, which is a natural next step from lists of dictionaries.
