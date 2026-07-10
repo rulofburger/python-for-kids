@@ -1,0 +1,102 @@
+---
+title: "Lesson 15: Testing with Assert"
+---
+
+## Learning goals
+
+Use `assert` to test simple functions with known answers and edge cases.
+
+## Main ideas
+
+A test checks whether code gives the answer you expect.
+
+```python
+def double(number):
+    return number * 2
+
+assert double(3) == 6
+assert double(10) == 20
+```
+
+If an assertion passes, Python says nothing. If it fails, Python gives an error.
+
+Test edge cases near boundaries.
+
+```python
+def is_passing(mark):
+    return mark >= 50
+
+assert is_passing(49) == False
+assert is_passing(50) == True
+assert is_passing(51) == True
+```
+
+## Exercises
+
+### Exercise 1
+
+Write and test `double(number)`.
+
+### Exercise 2
+
+Write and test `is_even(number)`.
+
+### Exercise 3
+
+Write and test `clean_text(text)`.
+
+### Exercise 4
+
+Write and test `check_answer(user_answer, correct_answer)`.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+def clean_text(text):
+    return text.strip().lower()
+
+assert clean_text(" Python ") == "python"
+assert clean_text("HELLO") == "hello"
+
+
+def check_answer(user_answer, correct_answer):
+    return clean_text(user_answer) == clean_text(correct_answer)
+
+assert check_answer("Python", "python") == True
+assert check_answer(" java ", "python") == False
+```
+
+:::
+
+## What you learned
+
+You can now use `assert` to check whether simple functions work.
+
+## Looking ahead
+
+Next you will save table data with CSV files.

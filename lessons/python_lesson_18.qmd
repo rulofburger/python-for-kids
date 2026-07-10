@@ -1,0 +1,103 @@
+---
+title: "Lesson 18: Packages and Environments"
+---
+
+## Learning goals
+
+Understand built-in modules, installed packages, `pip`, and the Python environment selected in Positron.
+
+## Main ideas
+
+Some tools come with Python.
+
+```python
+import random
+import csv
+```
+
+Other tools must be installed.
+
+```bash
+python -m pip install matplotlib
+```
+
+Using `python -m pip` is safer than just `pip` because it asks the Python you are using to install the package.
+
+Check your Python version.
+
+```bash
+python --version
+```
+
+If a package import fails, check:
+
+1. Did you install it?
+2. Did the command finish without errors?
+3. Is Positron using the same Python?
+4. Did you spell the package name correctly?
+
+## Exercises
+
+### Exercise 1
+
+Check your Python version in the terminal.
+
+### Exercise 2
+
+Import `random` and print a random number.
+
+### Exercise 3
+
+Import `csv` and print a success message.
+
+### Exercise 4
+
+Import `matplotlib.pyplot` and make a tiny chart.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+import random
+print("random is working")
+
+import csv
+print("csv is working")
+
+import matplotlib.pyplot as plt
+print("matplotlib is working")
+```
+
+:::
+
+## What you learned
+
+You understand the basic difference between built-in modules, installed packages and Python environments.
+
+## Looking ahead
+
+You are ready for the final beginner projects.

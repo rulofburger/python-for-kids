@@ -1,0 +1,109 @@
+---
+title: "Lesson 13: Lists of Dictionaries"
+---
+
+## Learning goals
+
+Store records using a list of dictionaries; loop through records; calculate summaries; and filter records.
+
+## Main ideas
+
+A list of dictionaries is useful for storing records.
+
+```python
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10},
+    {"name": "Chloe", "score": 7}
+]
+```
+
+Loop through the records.
+
+```python
+for student in students:
+    print(student["name"], student["score"])
+```
+
+Calculate an average.
+
+```python
+total = 0
+for student in students:
+    total = total + student["score"]
+print(total / len(students))
+```
+
+## Exercises
+
+### Exercise 1
+
+Create a list of three pets with `name`, `animal`, and `age`.
+
+### Exercise 2
+
+Create a list of students and scores. Calculate the average score.
+
+### Exercise 3
+
+Find the student with the highest score.
+
+### Exercise 4
+
+Print all students who scored at least 8.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+students = [
+    {"name": "Alex", "score": 8},
+    {"name": "Ben", "score": 10},
+    {"name": "Chloe", "score": 7}
+]
+
+best = students[0]
+total = 0
+
+for student in students:
+    total = total + student["score"]
+    if student["score"] > best["score"]:
+        best = student
+
+print("Average:", total / len(students))
+print("Best:", best["name"], best["score"])
+```
+
+:::
+
+## What you learned
+
+You can now store several labelled records and calculate summaries from them.
+
+## Looking ahead
+
+Next you will learn to plan a program before coding.

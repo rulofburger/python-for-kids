@@ -1,0 +1,60 @@
+---
+title: "Final Project: Build Your Own Beginner Program"
+---
+
+## Goal
+
+Design and build one small program of your own. This is the final project for the beginner course.
+
+## Choose one project
+
+1. Quiz game with saved scores
+2. Flashcard trainer
+3. Score tracker
+4. Personal notebook
+5. Shopping list app
+6. Dice or guessing game
+7. Practice log
+8. Your own idea
+
+## Requirements
+
+Your program should include at least five of these:
+
+- `input()`
+- variables
+- `if`, `elif`, or `else`
+- a loop
+- a list
+- a dictionary
+- a function
+- reading or writing a file
+- error handling
+- simple tests with `assert`
+- a graph
+
+## Planning template
+
+```text
+Project name:
+Goal:
+Inputs:
+Outputs:
+Data needed:
+Functions needed:
+Files needed:
+Steps:
+Possible errors:
+Extension ideas:
+```
+
+## Checklist
+
+- [ ] The program runs without crashing in normal use.
+- [ ] The instructions are clear.
+- [ ] The variable names make sense.
+- [ ] The program uses functions where helpful.
+- [ ] The program saves information if needed.
+- [ ] The program handles at least one possible error.
+- [ ] I tested the program with more than one example.
+- [ ] I can explain how the program works.

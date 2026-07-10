@@ -1,0 +1,51 @@
+---
+title: "Mini Project 6: Personal Notebook"
+---
+
+## Goal
+
+Build a simple personal notebook app that can add, view and search notes.
+
+## Skills used
+
+- menus
+- loops
+- files
+- strings
+- functions
+- planning before coding
+
+## Menu
+
+```text
+1. Add note
+2. View notes
+3. Search notes
+4. Quit
+```
+
+## Steps
+
+1. Write `add_note()`.
+2. Write `view_notes()`.
+3. Write `search_notes()`.
+4. Create the menu loop.
+5. Test every option.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+Use append mode to save notes. Use `.lower()` for case-insensitive search. Use `while choice != "4"` for the menu.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible structure
+
+Use three functions: `add_note()`, `view_notes()` and `search_notes()`. Keep the menu at the bottom of the file so the functions are defined before they are called.
+
+:::
+
+## Extensions
+
+Add dates, categories, note counts or a delete option.

@@ -1,0 +1,109 @@
+---
+title: "Lesson 16: CSV Files"
+---
+
+## Learning goals
+
+Read and write simple table data using the built-in `csv` module.
+
+## Main ideas
+
+CSV files store rows and columns.
+
+```text
+name,score
+Alex,8
+Ben,10
+```
+
+Write a CSV file.
+
+```python
+import csv
+
+with open("scores.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["name", "score"])
+    writer.writerow(["Alex", 8])
+```
+
+Read a CSV file as dictionaries.
+
+```python
+import csv
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row["name"], row["score"])
+```
+
+## Exercises
+
+### Exercise 1
+
+Create `scores.csv` with names and scores.
+
+### Exercise 2
+
+Read `scores.csv` and print each row.
+
+### Exercise 3
+
+Append a new score from user input.
+
+### Exercise 4
+
+Read all scores and calculate the average.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+import csv
+
+total = 0
+count = 0
+
+with open("scores.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        total = total + int(row["score"])
+        count = count + 1
+
+print("Average:", total / count)
+```
+
+:::
+
+## What you learned
+
+You can now save and read simple tables using CSV files.
+
+## Looking ahead
+
+Next you will visualise data with simple graphs.

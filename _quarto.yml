@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Python for Beginners"
-  subtitle: "A hands-on coding course for curious learners"
+  subtitle: "From first program to small useful projects"
   author: "Rulof Burger"
   search: true
   page-navigation: true
@@ -13,54 +13,47 @@ book:
     - index.qmd
     - setup.qmd
     - lessons/positron_intro.qmd
-
-    - part: "Core Lessons"
+    - part: "Part 1: Getting Started"
       chapters:
         - lessons/python_lesson_1.qmd
         - lessons/python_lesson_2.qmd
         - lessons/python_lesson_3.qmd
-
-    - part: "Mini Projects"
-      chapters:
         - projects/mini_project_1_quiz_game.qmd
-
-    - part: "More Core Lessons"
+    - part: "Part 2: Loops, Lists and Games"
       chapters:
         - lessons/python_lesson_4.qmd
         - lessons/python_lesson_5.qmd
-
-    - part: "More Mini Projects"
-      chapters:
         - projects/mini_project_2_guess_the_number.qmd
-
-    - part: "Strings, Functions and Randomness"
+    - part: "Part 3: Strings, Functions and Randomness"
       chapters:
         - lessons/python_lesson_6.qmd
         - lessons/python_lesson_7.qmd
         - lessons/python_lesson_8.qmd
-
-    - part: "Game Project"
-      chapters:
         - projects/mini_project_3_dice_game.qmd
-
-    - part: "Files, Dictionaries and Debugging"
+    - part: "Part 4: Files, Dictionaries and Debugging"
       chapters:
         - lessons/python_lesson_9.qmd
         - lessons/python_lesson_10.qmd
         - lessons/python_lesson_11.qmd
-
-    - part: "Study Tool Project"
-      chapters:
         - projects/mini_project_4_flashcard_trainer.qmd
-
+    - part: "Part 5: Becoming a Capable Beginner"
+      chapters:
+        - lessons/python_lesson_12.qmd
+        - lessons/python_lesson_13.qmd
+        - lessons/python_lesson_14.qmd
+        - lessons/python_lesson_15.qmd
+        - lessons/python_lesson_16.qmd
+        - lessons/python_lesson_17.qmd
+        - lessons/python_lesson_18.qmd
+        - projects/mini_project_5_score_tracker.qmd
+        - projects/mini_project_6_personal_notebook.qmd
+        - projects/final_project_beginner_program.qmd
     - part: "Project Library"
       chapters:
         - projects/index.qmd
-
     - part: "Extra Challenges"
       chapters:
         - challenges/index.qmd
-
 
 format:
   html:

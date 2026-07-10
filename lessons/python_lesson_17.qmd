@@ -1,0 +1,107 @@
+---
+title: "Lesson 17: Simple Graphs"
+---
+
+## Learning goals
+
+Create simple line charts and bar charts using `matplotlib`.
+
+## Main ideas
+
+Install matplotlib if needed.
+
+```bash
+python -m pip install matplotlib
+```
+
+Create a line chart.
+
+```python
+import matplotlib.pyplot as plt
+
+scores = [5, 7, 6, 8, 10]
+
+plt.plot(scores)
+plt.title("Score Progress")
+plt.xlabel("Attempt")
+plt.ylabel("Score")
+plt.show()
+```
+
+Create a bar chart.
+
+```python
+names = ["Alex", "Ben", "Chloe"]
+scores = [8, 10, 7]
+
+plt.bar(names, scores)
+plt.show()
+```
+
+## Exercises
+
+### Exercise 1
+
+Plot a list of scores as a line chart.
+
+### Exercise 2
+
+Add a title and axis labels.
+
+### Exercise 3
+
+Create a bar chart of three names and scores.
+
+### Exercise 4
+
+Plot practice minutes over five days.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+import matplotlib.pyplot as plt
+
+names = ["Alex", "Ben", "Chloe"]
+scores = [8, 10, 7]
+
+plt.bar(names, scores)
+plt.title("Quiz Scores")
+plt.xlabel("Name")
+plt.ylabel("Score")
+plt.show()
+```
+
+:::
+
+## What you learned
+
+You can now create simple charts to show scores, progress and comparisons.
+
+## Looking ahead
+
+Next you will learn what packages are and how to install them safely.

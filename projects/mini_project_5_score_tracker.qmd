@@ -1,0 +1,43 @@
+---
+title: "Mini Project 5: Score Tracker"
+---
+
+## Goal
+
+Build a score tracker that saves scores to a CSV file, reads them back, calculates summaries and plots progress.
+
+## Skills used
+
+- input
+- functions
+- CSV files
+- lists of dictionaries
+- averages and best scores
+- simple graphs
+
+## Steps
+
+1. Ask for a learner's name and score.
+2. Append the result to `scores.csv`.
+3. Read all previous scores.
+4. Calculate the average score.
+5. Find the best score.
+6. Plot score progress.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+Use `csv.writer()` to append rows and `csv.DictReader()` to read them. Convert scores using `int()`. Use `plt.plot(scores)` for a simple progress chart.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible structure
+
+Create functions called `add_score()`, `read_scores()`, `show_summary()` and `plot_scores()`. Then create a menu with options to add a score, view a summary, plot scores or quit.
+
+:::
+
+## Extensions
+
+Add dates, topics, learner names, or separate charts for different learners.

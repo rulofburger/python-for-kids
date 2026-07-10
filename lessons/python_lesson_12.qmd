@@ -1,0 +1,109 @@
+---
+title: "Lesson 12: Boolean Logic"
+---
+
+## Learning goals
+
+Use `and`, `or`, and `not`; combine conditions; check ranges; and write clearer validation rules.
+
+## Main ideas
+
+Boolean logic lets a program check more than one condition.
+
+Use `and` when both conditions must be true.
+
+```python
+age = int(input("How old are you? "))
+permission = input("Permission? yes or no? ").strip().lower()
+
+if age >= 13 and permission == "yes":
+    print("You can join.")
+```
+
+Use `or` when either condition is enough.
+
+```python
+colour = input("Choose red or blue: ").strip().lower()
+
+if colour == "red" or colour == "blue":
+    print("Good choice.")
+```
+
+Use range checks for boundaries.
+
+```python
+if 0 <= mark <= 100:
+    print("Valid mark")
+```
+
+## Exercises
+
+### Exercise 1
+
+Ask for an age. Print `Teenager` if it is between 13 and 19.
+
+### Exercise 2
+
+Ask for a colour. Accept `red` or `blue`.
+
+### Exercise 3
+
+Create a password checker: at least 8 characters and contains `a`.
+
+### Exercise 4
+
+Ask for a mark and check whether it is between 0 and 100.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+```python
+age = int(input("How old are you? "))
+
+if 13 <= age <= 19:
+    print("Teenager")
+```
+
+```python
+password = input("Create a password: ")
+clean_password = password.lower()
+
+if len(password) >= 8 and "a" in clean_password:
+    print("Accepted")
+else:
+    print("Not accepted")
+```
+
+:::
+
+## What you learned
+
+You can now combine conditions using `and`, `or`, and `not`.
+
+## Looking ahead
+
+Next you will store more realistic records using lists of dictionaries.

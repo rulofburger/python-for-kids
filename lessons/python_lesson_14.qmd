@@ -1,0 +1,106 @@
+---
+title: "Lesson 14: Planning a Program"
+---
+
+## Learning goals
+
+Plan a small program before writing code; identify inputs and outputs; choose data structures; and break problems into steps.
+
+## Main ideas
+
+Use this planning template before larger programs.
+
+```text
+Goal:
+Inputs:
+Outputs:
+Data needed:
+Steps:
+Possible errors:
+Extensions:
+```
+
+Start with the smallest version that works. Write comments first if that helps.
+
+```python
+# Ask the user for a note
+# Save the note to a file
+# Print a confirmation message
+```
+
+## Exercises
+
+### Exercise 1
+
+Write a plan for a password checker.
+
+### Exercise 2
+
+Write a plan for a shopping-list program that saves items to a file.
+
+### Exercise 3
+
+Write comments for a quiz game before writing code.
+
+### Exercise 4
+
+Create a three-option menu that only prints which option was selected.
+
+## Debugging practice
+
+Fix this deliberately broken code, then explain what was wrong.
+
+```python
+# Broken on purpose: read the error, fix one thing, and run again.
+if True
+print("debugging practice")
+```
+
+## Challenge
+
+Build a small program that uses this lesson's idea together with at least two earlier ideas from the course.
+
+::: {.callout-tip collapse="true"}
+## Click to reveal hints
+
+- Start with the smallest working version.
+- Add one feature at a time.
+- Use `print()` to inspect values.
+- Test with more than one example.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal one possible solution or approach
+
+A useful menu skeleton:
+
+```python
+choice = ""
+
+while choice != "3":
+    print("1. Add note")
+    print("2. View notes")
+    print("3. Quit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("Add note selected")
+    elif choice == "2":
+        print("View notes selected")
+    elif choice == "3":
+        print("Goodbye")
+    else:
+        print("Choose 1, 2 or 3")
+```
+
+:::
+
+## What you learned
+
+You can now plan a program using goals, inputs, outputs, data and steps.
+
+## Looking ahead
+
+Next you will learn simple testing with `assert`.

@@ -4,155 +4,43 @@ title: "Projects"
 
 ## Project library
 
-Projects are larger programs that combine several ideas from the lessons.
-
-::: {.callout-tip}
-## How to use projects
-
-Try to build the first version yourself. Then improve it by adding your own features.
-:::
-
-## Mini projects in this course
+Projects combine several ideas from the lessons.
 
 ::: {.lesson-grid}
 
 ::: {.lesson-card}
 ### Mini Project 1: Quiz Game
-
-Build a three-question quiz that checks answers and keeps score.
-
-Skills used:
-
-- variables
-- `input()`
-- `int()`
-- `if`, `else`, and `elif`
-
 [Open Mini Project 1](mini_project_1_quiz_game.qmd)
 :::
 
 ::: {.lesson-card}
 ### Mini Project 2: Guess the Number
-
-Build a guessing game that uses a loop and counts guesses.
-
-Skills used:
-
-- variables
-- `input()`
-- `int()`
-- `while`
-- `if`, `elif`, and `else`
-
 [Open Mini Project 2](mini_project_2_guess_the_number.qmd)
 :::
 
 ::: {.lesson-card}
 ### Mini Project 3: Dice Game
-
-Build a dice battle game using randomness, functions and loops.
-
-Skills used:
-
-- `random.randint()`
-- functions
-- loops
-- scorekeeping
-- `if`, `elif`, and `else`
-
 [Open Mini Project 3](mini_project_3_dice_game.qmd)
 :::
 
 ::: {.lesson-card}
 ### Mini Project 4: Flashcard Trainer
-
-Build a study tool that asks questions, checks answers and saves scores.
-
-Skills used:
-
-- dictionaries
-- files
-- functions
-- loops
-- randomness
-- debugging
-
 [Open Mini Project 4](mini_project_4_flashcard_trainer.qmd)
 :::
 
+::: {.lesson-card}
+### Mini Project 5: Score Tracker
+[Open Mini Project 5](mini_project_5_score_tracker.qmd)
 :::
 
-## Future project ideas
-
-### Shopping Receipt
-
-Ask for item prices and quantities. Print a neat receipt.
-
-### Mini Adventure Game
-
-The player chooses what to do next and the story changes.
-
-### Calculator Toolkit
-
-Use functions to create a reusable calculator.
-
-### High Score Table
-
-Save scores to a file and load them again later.
-
-### Word Guessing Game
-
-Use strings, lists, loops and randomness to build a word game.
-
-## Project template
-
-Use this structure for new projects:
-
-```markdown
----
-title: "Project name"
----
-
-## Goal
-
-What should the program do?
-
-## Skills you will use
-
-- Skill 1
-- Skill 2
-
-## What the program should do
-
-Describe the target behaviour.
-
-## Step 1
-
-Build the smallest working version.
-
-## Step 2
-
-Add one feature.
-
-## Challenge extensions
-
-Add optional improvements.
-
-::: {.callout-tip collapse="true"}
-## Click to reveal hints
-
-Put hints here.
-
+::: {.lesson-card}
+### Mini Project 6: Personal Notebook
+[Open Mini Project 6](mini_project_6_personal_notebook.qmd)
 :::
 
-::: {.callout-note collapse="true"}
-## Click to reveal one possible solution
-
-Put a full solution here.
-
+::: {.lesson-card}
+### Final Project
+[Open Final Project](final_project_beginner_program.qmd)
 :::
 
-## What you practised
-
-Summarise what the learner practised.
-```
+:::
